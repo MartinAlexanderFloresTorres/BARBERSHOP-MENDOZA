@@ -4,4 +4,5 @@ Proyecto web creado con React full stack de una barbería de reserva de citas.
 
 ## RUN REACT
 `npm i`
+
 `npm run dev`
