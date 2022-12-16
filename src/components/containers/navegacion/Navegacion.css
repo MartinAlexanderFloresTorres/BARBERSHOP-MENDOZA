@@ -1,0 +1,122 @@
+.navegacion {
+  width: 100%;
+  position: sticky;
+  right: 0;
+  left: 0;
+  bottom: -50px;
+  transition: var(--transition-3s);
+  transition-property: bottom;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+.navegacion.visible {
+  opacity: 1;
+  visibility: visible;
+  bottom: 10px;
+}
+
+.navegacion_sub {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  border: var(--shadow-border);
+  box-shadow: var(--shadow-card);
+  z-index: 20;
+  opacity: 0;
+  top: -100px;
+  transition: var(--transition-3s);
+}
+.navegacion_sub .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+.navegacion_subVisible {
+  opacity: 1;
+  top: 0;
+}
+.navegacion__links {
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 14px;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 12px;
+  margin: 0 auto;
+  border: var(--shadow-border);
+}
+.navegacion__links a {
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  transition: var(--transition-3s);
+}
+.navegacion__links a span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-transform: lowercase;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 6px;
+  position: absolute;
+  bottom: 30px;
+  opacity: 0;
+  transition: var(--transition-3s);
+}
+.navegacion__links a svg {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  transition: var(--transition-3s);
+}
+.navegacion__links a.active {
+  color: var(--primary);
+}
+.navegacion__links a:hover span {
+  bottom: 45px;
+  opacity: 1;
+}
+.navegacion__links a::after {
+  content: '';
+  width: 38px;
+  height: 38px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #fff;
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition-3s);
+}
+.navegacion__links a:hover::after {
+  opacity: 0.07;
+}
+.navegacion__links a.active::after {
+  opacity: 1;
+}

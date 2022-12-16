@@ -1,0 +1,32 @@
+.presentacion {
+  position: relative;
+}
+.presentacion__redes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+  position: absolute;
+  right: 20px;
+  top: -300px;
+  z-index: 10;
+}
+.presentacion__redes a {
+  color: var(--gray);
+  font-weight: 600;
+  transition: var(--transition-3s);
+}
+.presentacion__redes a.title {
+  transform: rotate(90deg);
+}
+.presentacion__redes a.title::after {
+  top: auto;
+  bottom: -10px;
+}
+.presentacion__redes a.title:hover:after {
+  top: auto;
+  bottom: -30px;
+}
+.presentacion__redes a:hover {
+  color: var(--primary);
+}

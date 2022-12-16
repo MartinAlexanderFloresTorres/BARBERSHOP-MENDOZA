@@ -1,0 +1,145 @@
+.barberos {
+  padding: 50px 20px;
+  position: relative;
+}
+.barberos__tool1,
+.barberos__tool2 {
+  position: absolute;
+  top: 15%;
+  width: auto;
+  height: 500px;
+  z-index: -1;
+  transition: var(--transition-3s);
+  animation: barberos__tool 10s infinite linear;
+}
+.barberos__tool1 {
+  animation-delay: 0s;
+}
+.barberos__tool2 {
+  animation-delay: 5s;
+}
+@keyframes barberos__tool {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.barberos__tool1 {
+  left: 0;
+}
+.barberos__tool2 {
+  right: 0;
+}
+.barberos__top {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.barberos__top h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+.barberos__top p {
+  font-size: 16px;
+  font-weight: 400;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+.barberos__bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: flex-start;
+  grid-gap: 20px;
+  row-gap: 20px;
+  overflow: auto;
+}
+.barberos__item {
+  min-width: 360px;
+  position: relative;
+  border-radius: 10px;
+  border: var(--shadow-border);
+  background: rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-3s);
+  overflow: hidden;
+}
+.barberos__item::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 2;
+}
+.barberos__item:nth-child(3)::before {
+  content: 'Pronto';
+}
+.barberos__item:nth-child(2)::before {
+  content: 'Barbero Profesional';
+}
+.barberos__item:nth-child(1)::before {
+  content: 'Pronto';
+}
+.barberos__imagen {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.barberos__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.barberos__imagen.misterioso img {
+  filter: invert(1);
+}
+.barberos__info {
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+  opacity: 0;
+  transition: var(--transition-3s);
+}
+.barberos__item:hover .barberos__info {
+  bottom: 0;
+  opacity: 1;
+}
+.barberos__info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.barberos__info p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-2);
+}
+@media (max-width: 780px) {
+  .barberos__tool1,
+  .barberos__tool2 {
+    display: none;
+  }
+}
