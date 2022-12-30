@@ -2,7 +2,7 @@ import Barberos from '../../components/containers/barberos/Barberos'
 import Presentacion from '../../components/containers/presentacion/Presentacion'
 import Servicios from '../../components/containers/servicios/Servicios'
 
-const Home = (): JSX.Element => {
+const HomePage = (): JSX.Element => {
   return (
     <>
       <Presentacion />
@@ -12,4 +12,4 @@ const Home = (): JSX.Element => {
   )
 }
 
-export default Home
+export default HomePage

@@ -1,32 +1,109 @@
 .presentacion {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.presentacion__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+.presentacion__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.presentacion__titulo {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.presentacion__parrafo {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.presentacion__reservar {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.presentacion__formulario {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 8px 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: var(--shadow-border);
+  box-shadow: var(--shadow-card);
+}
+.presentacion__formulario input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: var(--transition-3s);
+}
+.presentacion__formulario button.title:hover::after {
+  top: -30px;
+}
+
+/*=============== redes ===============*/
+.redes {
   position: relative;
 }
-.presentacion__redes {
+.redes__redes {
   display: flex;
   align-items: center;
   flex-direction: column;
   row-gap: 20px;
   position: absolute;
   right: 20px;
-  top: -300px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
 }
-.presentacion__redes a {
+.redes__redes a {
   color: var(--gray);
   font-weight: 600;
   transition: var(--transition-3s);
 }
-.presentacion__redes a.title {
+.redes__redes a.title {
   transform: rotate(90deg);
 }
-.presentacion__redes a.title::after {
+.redes__redes a.title::after {
   top: auto;
   bottom: -10px;
 }
-.presentacion__redes a.title:hover:after {
+.redes__redes a.title:hover:after {
   top: auto;
   bottom: -30px;
 }
-.presentacion__redes a:hover {
+.redes__redes a:hover {
   color: var(--primary);
 }

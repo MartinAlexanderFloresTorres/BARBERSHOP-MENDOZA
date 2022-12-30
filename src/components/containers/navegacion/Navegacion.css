@@ -8,14 +8,13 @@
   transition-property: bottom;
   opacity: 0;
   visibility: hidden;
-  z-index: 100;
+  z-index: 120;
 }
 .navegacion.visible {
   opacity: 1;
   visibility: visible;
   bottom: 10px;
 }
-
 .navegacion_sub {
   position: fixed;
   top: 0;
@@ -24,7 +23,7 @@
   backdrop-filter: blur(10px);
   border: var(--shadow-border);
   box-shadow: var(--shadow-card);
-  z-index: 20;
+  z-index: 120;
   opacity: 0;
   top: -100px;
   transition: var(--transition-3s);

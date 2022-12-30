@@ -2,13 +2,13 @@ const Snow = (): JSX.Element => (
   <>
     <div className="snow">❄</div>
     <div className="snow">
-      <img src="/secadora.svg" alt="secadora" />
+      <img src="/svg/secadora.svg" alt="secadora" />
     </div>
     <div className="snow">
-      <img src="/peine.svg" alt="peine" />
+      <img src="/svg/peine.svg" alt="peine" />
     </div>
     <div className="snow">
-      <img src="/elegante.svg" alt="elegante" />
+      <img src="/svg/elegante.svg" alt="elegante" />
     </div>
   </>
 )
