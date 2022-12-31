@@ -24,7 +24,7 @@ const Presentacion = (): JSX.Element => {
             <SearchSvg />
           </button>
         </form>
-        <Link className="presentacion__reservar btn-primary" to="/citas">
+        <Link to="/servicios" className="presentacion__reservar btn-primary">
           Reservar cita
         </Link>
       </div>

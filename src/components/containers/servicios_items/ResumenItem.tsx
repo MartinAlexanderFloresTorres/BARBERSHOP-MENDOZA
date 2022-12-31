@@ -1,39 +1,25 @@
+import useMain from '../../../hooks/useMain'
+import Servicio from './servicios/Servicio'
+
 const ResumenItem = (): JSX.Element => {
+  // useMain
+  const { carrito } = useMain()
+
   return (
-    <div className="container">
+    <div>
       <div className="servicios__encabezado">
         <h2>Resumen</h2>
         <p>Resumen de la cita</p>
       </div>
 
       <section className="servicios__resumen servicios_servicios">
-        <article className="servicios__resumen-item servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios__resumen-item servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios__resumen-item servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios__resumen-item servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <span>S/.10.00</span>
-        </article>
+        {carrito.length > 0 ? (
+          carrito.map(servicio => (
+            <Servicio key={servicio.id} servicio={servicio} resumen={true} />
+          ))
+        ) : (
+          <p className="alerta">No hay servicios seleccionados</p>
+        )}
       </section>
     </div>
   )

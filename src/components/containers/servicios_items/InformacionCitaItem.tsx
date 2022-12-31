@@ -1,6 +1,6 @@
 const InformacionCitaItem = (): JSX.Element => {
   return (
-    <div className="container">
+    <div>
       <div className="servicios__encabezado">
         <h2>Información de la cita</h2>
         <p>Ingrese la información de la cita</p>

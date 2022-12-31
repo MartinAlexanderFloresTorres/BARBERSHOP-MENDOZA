@@ -1,43 +1,22 @@
+import useMain from '../../../hooks/useMain'
+import Servicio from './servicios/Servicio'
+
 const ServiciosItem = (): JSX.Element => {
+  // useMain
+  const { servicios } = useMain()
+
   return (
-    <div className="container">
+    <div>
       <div className="servicios__encabezado">
         <h2>Servicios</h2>
         <p>Elija los servicios que desea realizar</p>
       </div>
 
       <section className="servicios_servicios">
-        <article className="servicios_servicio selecionado">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <button className="btn-primary">Seleccionar</button>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <button className="btn-primary">Seleccionar</button>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <button className="btn-primary">Seleccionar</button>
-          <span>S/.10.00</span>
-        </article>
-
-        <article className="servicios_servicio">
-          <img src="/servicios/servicio-1.jpg" alt="Servicio1" />
-          <h2>Nombre del servicio</h2>
-          <p>Descripción del servicio</p>
-          <button className="btn-primary">Seleccionar</button>
-          <span>S/.10.00</span>
-        </article>
+        {servicios.length > 0 &&
+          servicios.map(servicio => (
+            <Servicio key={servicio.id} servicio={servicio} resumen={false} />
+          ))}
       </section>
     </div>
   )

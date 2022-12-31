@@ -1,7 +1,13 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronLeftSvg } from '../../../assets/svg'
 
 const RegisterPage = (): JSX.Element => {
+  // Efecto de scroll al inicio
+  useEffect(() => {
+    // Scroll al inicio
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <form className="form">
       <div className="form__cabezera">

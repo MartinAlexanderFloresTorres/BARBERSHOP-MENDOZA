@@ -3,17 +3,16 @@
   position: sticky;
   right: 0;
   left: 0;
-  bottom: -50px;
+  bottom: 20px;
   transition: var(--transition-3s);
   transition-property: bottom;
-  opacity: 0;
-  visibility: hidden;
   z-index: 120;
+  display: none;
 }
-.navegacion.visible {
-  opacity: 1;
-  visibility: visible;
-  bottom: 10px;
+@media (max-width: 1000px) {
+  .navegacion.visible {
+    display: block;
+  }
 }
 .navegacion_sub {
   position: fixed;
@@ -21,6 +20,7 @@
   left: 0;
   width: 100%;
   backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
   border: var(--shadow-border);
   box-shadow: var(--shadow-card);
   z-index: 120;
@@ -38,7 +38,7 @@
   font-size: 20px;
   font-weight: 500;
   text-transform: capitalize;
-  padding: 8px 12px;
+  padding: 10px 20px;
   border-radius: 10px;
 }
 .navegacion_subVisible {
@@ -46,10 +46,11 @@
   top: 0;
 }
 .navegacion__links {
-  max-width: fit-content;
+  max-width: 300px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   column-gap: 14px;
   backdrop-filter: blur(4px);
   background: rgba(0, 0, 0, 0.5);

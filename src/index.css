@@ -117,6 +117,9 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  gap: 10px;
   text-align: center;
   background: linear-gradient(90deg, var(--secondary), var(--primary));
   color: #fff;
@@ -153,11 +156,56 @@ svg {
   background: rgb(93, 93, 93);
   cursor: not-allowed;
 }
-.btn-black {
+.btn-danger {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  gap: 10px;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(201, 9, 9), rgb(248, 49, 49));
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: var(--transition-3s);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  opacity: 0;
+  transition: var(--transition-3s);
+  background: linear-gradient(90deg, rgb(248, 49, 49), rgb(201, 9, 9));
+  z-index: -1;
+}
+.btn-danger:hover::before {
+  opacity: 1;
+}
+.btn-danger:active {
+  transform: scale(0.95);
+}
+.btn-danger:disabled {
+  background: rgb(93, 93, 93);
+  cursor: not-allowed;
+}
+.btn-black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  gap: 10px;
   text-align: center;
   border: var(--shadow-border);
   background: linear-gradient(90deg, var(--btn-black), var(--btn-black-oscuro));
@@ -170,7 +218,11 @@ svg {
   transition: var(--transition-3s);
   position: relative;
   z-index: 1;
-  overflow: hidden;
+}
+.btn-black img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 .btn-black::before {
   content: '';
@@ -194,6 +246,21 @@ svg {
 .btn-black:disabled {
   background: rgb(93, 93, 93);
   cursor: not-allowed;
+}
+/*=============== alerta ===============*/
+.alerta {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: var(--shadow-border);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  font-size: 16px;
 }
 /*=============== logo ===============*/
 .logo {

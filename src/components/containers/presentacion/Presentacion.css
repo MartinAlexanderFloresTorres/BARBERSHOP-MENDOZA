@@ -1,5 +1,5 @@
 .presentacion {
-  padding: 50px 0;
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +82,7 @@
   align-items: center;
   flex-direction: column;
   row-gap: 20px;
+  column-gap: 20px;
   position: absolute;
   right: 20px;
   top: 50%;
@@ -106,4 +107,24 @@
 }
 .redes__redes a:hover {
   color: var(--primary);
+}
+@media (max-width: 1000px) {
+  .presentacion {
+    flex-direction: column;
+  }
+  .redes {
+    position: absolute;
+    bottom: 20px;
+  }
+  .redes__redes {
+    position: static;
+    transform: none;
+    flex-direction: row;
+  }
+  .redes__redes a.title {
+    transform: none;
+  }
+  .redes__redes a.title:hover:after {
+    display: none;
+  }
 }

@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import {
-  CarritoSvg,
-  ColeccionSvg,
-  HomeSvg,
-  TijeraSvg,
-} from '../../../assets/svg'
+import { HomeSvg, ShoppingCartSvg, TijeraSvg } from '../../../assets/svg'
+import useMain from '../../../hooks/useMain'
 import './Navegacion.css'
 
 const Navegacion = (): JSX.Element => {
@@ -14,6 +10,9 @@ const Navegacion = (): JSX.Element => {
 
   // useLocation
   const { pathname } = useLocation()
+
+  // useMain
+  const { carrito, changeItem } = useMain()
 
   // Handle is Visible
   const handleIsVisible = (): void => {
@@ -48,41 +47,39 @@ const Navegacion = (): JSX.Element => {
             <span>Inicio</span>
           </Link>
           <Link
-            to={'/citas'}
-            title="Citas"
-            className={pathname === '/citas' ? 'active' : ''}
-          >
-            <ColeccionSvg />
-            <span>Citas</span>
-          </Link>
-          <Link
-            to={'/cortes'}
-            title="Cortes"
-            className={pathname === '/cortes' ? 'active' : ''}
+            to={'/servicios'}
+            title="Servicios"
+            className={pathname === '/servicios' ? 'active' : ''}
+            onClick={() => changeItem(1)}
           >
             <TijeraSvg />
-            <span>Cortes</span>
+            <span>Servicios</span>
           </Link>
-          <Link
-            to={'/carrito'}
-            title="Carrito"
-            className={pathname === '/carrito' ? 'active' : ''}
-          >
-            <CarritoSvg />
-            <span>Carrito</span>
-          </Link>
+
+          {carrito.length > 0 && (
+            <Link to="/servicios" title="Resumen" onClick={() => changeItem(3)}>
+              <ShoppingCartSvg />
+              <span>Continuar compra</span>
+            </Link>
+          )}
         </div>
       </section>
 
-      <section
-        className={`${isVisible ? 'navegacion_subVisible' : ''} navegacion_sub`}
-      >
-        <div className="container">
-          <h2>Reservar cita</h2>
+      {pathname !== '/servicios' && (
+        <section
+          className={`${
+            isVisible ? 'navegacion_subVisible' : ''
+          } navegacion_sub`}
+        >
+          <div className="container">
+            <h2>Reservar cita</h2>
 
-          <button className="btn-primary">Reservar Ahora</button>
-        </div>
-      </section>
+            <Link to={'/servicios'} className="btn-primary">
+              Reservar Ahora
+            </Link>
+          </div>
+        </section>
+      )}
     </>
   )
 }

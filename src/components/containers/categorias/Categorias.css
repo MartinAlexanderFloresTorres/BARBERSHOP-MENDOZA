@@ -1,4 +1,4 @@
-.servicios {
+.categorias {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -7,7 +7,7 @@
   row-gap: 20px;
   overflow: auto;
 }
-.servicios__card {
+.categorias__card {
   min-width: 360px;
   position: relative;
   display: grid;
@@ -26,7 +26,7 @@
   transition: var(--transition-3s);
   overflow: hidden;
 }
-.servicios__card:hover {
+.categorias__card:hover {
   transform: scale(1.04);
   animation: enfocar 0.5s ease forwards;
 }
@@ -41,7 +41,7 @@
     transform: scale(1);
   }
 }
-.servicios__card::after {
+.categorias__card::after {
   content: '';
   position: absolute;
   top: 0;
@@ -52,7 +52,7 @@
   border-radius: 10px;
   z-index: -1;
 }
-.servicios__card::before {
+.categorias__card::before {
   content: 'Exclusivo';
   position: absolute;
   top: 0px;
@@ -64,22 +64,22 @@
   font-size: 14px;
   font-weight: 700;
 }
-.servicios__card:nth-last-child(3) {
+.categorias__card:nth-last-child(3) {
   background-image: url('/servicios/servicio-1.jpg');
 }
-.servicios__card:nth-last-child(2) {
+.categorias__card:nth-last-child(2) {
   background-image: url('/servicios/servicio-2.jpg');
 }
-.servicios__card:nth-last-child(1) {
+.categorias__card:nth-last-child(1) {
   background-image: url('/servicios/servicio-3.jpg');
 }
-.servicios__card h2 {
+.categorias__card h2 {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.servicios__card p {
+.categorias__card p {
   color: #fff;
   font-size: 1.2rem;
   font-weight: 400;

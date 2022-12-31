@@ -1,9 +1,9 @@
-import './Servicios.css'
+import './Categorias.css'
 
-const Servicios = (): JSX.Element => {
+const Categorias = (): JSX.Element => {
   return (
-    <section className="servicios container">
-      <div className="servicios__card">
+    <section className="categorias container">
+      <div className="categorias__card">
         <h2>Cabello</h2>
         <p>
           Es la esencia de nuestro salón. Nuestros técnicos especializados
@@ -15,7 +15,7 @@ const Servicios = (): JSX.Element => {
         </a>
       </div>
 
-      <div className="servicios__card">
+      <div className="categorias__card">
         <h2>Barba</h2>
         <p>
           Sin duda, el mejor afeitado de Madrid. Nuestro afeitado es la mezcla
@@ -27,7 +27,7 @@ const Servicios = (): JSX.Element => {
         </a>
       </div>
 
-      <div className="servicios__card">
+      <div className="categorias__card">
         <h2>Piel</h2>
         <p>
           Nuestros tratamientos faciales están diseñados para mejorar la salud y
@@ -43,4 +43,4 @@ const Servicios = (): JSX.Element => {
   )
 }
 
-export default Servicios
+export default Categorias

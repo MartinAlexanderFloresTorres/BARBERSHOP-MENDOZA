@@ -1,25 +1,28 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import {
-  CarritoSvg,
   CloseSvg,
-  ColeccionSvg,
-  FacebookSvg,
-  HomeSvg,
-  InstagramSvg,
   LoginSvg,
   MenuSvg,
-  SearchSvg,
+  ShoppingCartSvg,
   TijeraSvg,
   UserSvg,
-  WhatsAppSvg,
 } from '../../../assets/svg'
 import Logo from '../logo/Logo'
 import './Header.css'
+import useMain from '../../../hooks/useMain'
 
 const Header = (): JSX.Element => {
+  // Estado para mostrar el menu
   const [showMenu, setShowMenu] = useState(false)
 
+  // useMain
+  const { carrito, changeItem } = useMain()
+
+  // useLocation para obtener la ruta actual
+  const { pathname } = useLocation()
+
+  // Funcion para mostrar el menu
   const handleShowMenu = (): void => {
     setShowMenu(!showMenu)
   }
@@ -33,27 +36,29 @@ const Header = (): JSX.Element => {
         </button>
 
         <nav className={`header__navegacion ${showMenu ? 'open' : ''}`}>
-          <Link to="/" title="Inicio">
-            <HomeSvg />
-            <span>Inicio</span>
-          </Link>
-          <Link to="/citas" title="Citas">
-            <ColeccionSvg />
-            <span>Citas</span>
-          </Link>
-          <Link to="/servicios" title="servicios">
-            <TijeraSvg />
-            <span>servicios</span>
-          </Link>
-          <Link to="/carrito" title="Carrito">
-            <CarritoSvg />
-            <span>Carrito</span>
-          </Link>
+          {pathname !== '/servicios' && (
+            <Link
+              to="/servicios"
+              title="servicios"
+              onClick={() => changeItem(1)}
+            >
+              <TijeraSvg />
+              <span>servicios</span>
+            </Link>
+          )}
+
+          {carrito.length > 0 && (
+            <Link to="/servicios" title="Resumen" onClick={() => changeItem(3)}>
+              <ShoppingCartSvg />
+              <span>Continuar compra</span>
+            </Link>
+          )}
 
           <Link to="/auth/login" title="Login">
             <LoginSvg />
             <span>Login</span>
           </Link>
+
           <Link to="/auth/register" title="Register">
             <UserSvg />
             <span>Register</span>
