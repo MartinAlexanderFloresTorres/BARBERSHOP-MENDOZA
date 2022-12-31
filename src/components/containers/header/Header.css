@@ -19,7 +19,8 @@
   column-gap: 10px;
   row-gap: 10px;
 }
-.header__navegacion a {
+.header__navegacion a,
+.header__navegacion button {
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -36,14 +37,17 @@
   position: relative;
   z-index: 1;
 }
-.header__navegacion a:hover {
+.header__navegacion a:hover,
+.header__navegacion button:hover {
   background: rgba(125, 125, 125, 0.1);
 }
-.header__navegacion a:active {
+.header__navegacion a:active,
+.header__navegacion button:active {
   background: rgba(125, 125, 125, 0.2);
   transform: scale(0.95);
 }
-.header__navegacion a svg {
+.header__navegacion a svg,
+.header__navegacion button svg {
   width: 20px;
   height: 20px;
   min-width: 20px;
@@ -71,7 +75,8 @@
     padding: 10px;
     border-radius: 10px;
   }
-  .header__navegacion a {
+  .header__navegacion a,
+  .header__navegacion button {
     width: 100%;
     display: grid;
     grid-template-columns: 20px 1fr;

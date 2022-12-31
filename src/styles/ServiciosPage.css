@@ -166,7 +166,7 @@
   gap: 20px;
   -webkit-column-gap: 20px;
 }
-.servicios__botones button:last-of-type {
+.servicios__botones button:nth-last-child(1) {
   margin-left: auto;
 }
 .servicios__botones button {
@@ -177,6 +177,23 @@ button.btn-black {
   width: fit-content;
   margin-left: auto;
   border-color: var(--white);
+}
+.servicios__auth {
+  position: relative;
+}
+.servicios__auth button {
+  width: 100%;
+}
+.servicios__authContainer {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--fondo);
+  padding: 20px;
+  border-radius: 5px;
+  border: var(--shadow-border);
+  box-shadow: var(--shadow-card);
 }
 @media (max-width: 780px) {
   .servicios__grid {

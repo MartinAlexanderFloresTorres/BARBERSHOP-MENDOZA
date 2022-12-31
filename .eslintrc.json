@@ -18,6 +18,7 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/comma-dangle": "off",
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
   }
 }

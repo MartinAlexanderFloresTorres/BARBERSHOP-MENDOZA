@@ -302,6 +302,51 @@ export const ChevronRigthtSvg = ({ ...props }): JSX.Element => {
   )
 }
 
+export const GoogleSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg
+      {...props}
+      viewBox="0 0 20 20"
+      preserveAspectRatio="xMidYMid meet"
+      focusable="false"
+    >
+      <path
+        d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z"
+        fill="#4285F4"
+      ></path>
+      <path
+        d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z"
+        fill="#34A853"
+      ></path>
+      <path
+        d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z"
+        fill="#FBBC05"
+      ></path>
+      <path
+        d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z"
+        fill="#EA4335"
+      ></path>
+    </svg>
+  )
+}
+
+export const GithubSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg
+      {...props}
+      viewBox="0 0 20 20"
+      preserveAspectRatio="xMidYMid meet"
+      focusable="false"
+    >
+      <path
+        d="M10 0C4.476 0 0 4.477 0 10c0 4.418 2.865 8.166 6.84 9.49.5.09.68-.218.68-.483 0-.237-.007-.866-.012-1.7-2.782.603-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.464-1.11-1.464-.907-.62.07-.608.07-.608 1.003.07 1.53 1.03 1.53 1.03.893 1.53 2.342 1.087 2.912.83.09-.645.35-1.085.634-1.335-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.03-2.683-.105-.253-.448-1.27.096-2.647 0 0 .84-.268 2.75 1.026A9.555 9.555 0 0110 4.836a9.59 9.59 0 012.504.337c1.91-1.294 2.747-1.026 2.747-1.026.548 1.377.204 2.394.1 2.647.64.7 1.03 1.592 1.03 2.683 0 3.842-2.34 4.687-4.566 4.935.36.308.678.92.678 1.852 0 1.336-.01 2.415-.01 2.743 0 .267.18.578.687.48A10 10 0 0020 10c0-5.522-4.478-10-10-10"
+        fill="#666"
+        fillRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
+
 export const InstagramSvg = ({ ...props }): JSX.Element => {
   return (
     <svg
@@ -350,11 +395,7 @@ export const InstagramSvg = ({ ...props }): JSX.Element => {
 
 export const FacebookSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="ht
-    {...props}tp://www.w3.org/2000/svg"
-    >
+    <svg {...props} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path
         fill="#3B5999"
         d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
@@ -363,6 +404,66 @@ export const FacebookSvg = ({ ...props }): JSX.Element => {
   )
 }
 
+export const MailSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg
+      {...props}
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      />
+    </svg>
+  )
+}
+
+export const LoaderSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg
+      {...props}
+      className="pl"
+      viewBox="0 0 128 128"
+      width="128px"
+      height="128px"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="hsl(193,90%,55%)" />
+          <stop offset="100%" stopColor="hsl(223,90%,55%)" />
+        </linearGradient>
+      </defs>
+      <circle
+        className="pl__ring"
+        r="56"
+        cx="64"
+        cy="64"
+        fill="none"
+        stroke="hsla(0,10%,10%,0.1)"
+        strokeWidth="16"
+        strokeLinecap="round"
+      />
+      <path
+        className="pl__worm"
+        d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z"
+        fill="none"
+        stroke="url(#pl-grad)"
+        strokeWidth="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeDasharray="44 1111"
+        strokeDashoffset="10"
+      />
+    </svg>
+  )
+}
 export const WhatsAppSvg = ({ ...props }): JSX.Element => {
   return (
     <svg

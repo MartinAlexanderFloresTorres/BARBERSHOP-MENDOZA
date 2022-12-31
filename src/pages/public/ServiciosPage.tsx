@@ -1,14 +1,15 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Fragment, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import ServiciosItem from '../../components/containers/servicios_items/ServiciosItem'
 import InformacionCitaItem from '../../components/containers/servicios_items/InformacionCitaItem'
 import ResumenItem from '../../components/containers/servicios_items/ResumenItem'
 import useMain from '../../hooks/useMain'
 import useAuth from '../../hooks/useAuth'
+import RedesAuth from '../../components/containers/redes/RedesAuth'
 import {
   ChevronLeftSvg,
   ChevronRigthtSvg,
-  LoginSvg,
+  MailSvg,
   ShoppingCartSvg,
 } from '../../assets/svg'
 import '../../styles/ServiciosPage.css'
@@ -16,6 +17,9 @@ import '../../styles/ServiciosPage.css'
 const ServiciosPage = (): JSX.Element => {
   // useMain
   const { carrito, item, changeItem } = useMain()
+
+  // useLocation para obtener la ruta actual
+  const location = useLocation()
 
   // useNavigate
   const navigate = useNavigate()
@@ -53,7 +57,7 @@ const ServiciosPage = (): JSX.Element => {
             className={item === 3 ? 'active' : ''}
             onClick={() => changeItem(3)}
           >
-            Resumen
+            Resumen {carrito.length > 0 && `(${carrito.length})`}
           </button>
         </div>
 
@@ -97,13 +101,26 @@ const ServiciosPage = (): JSX.Element => {
               )}
 
               {!auth && (
-                <button
-                  className="btn-black"
-                  onClick={() => navigate('/auth/login')}
-                >
-                  Iniciar Sesión
-                  <LoginSvg />
-                </button>
+                <section className="servicios__auth">
+                  <button
+                    className="btn-black"
+                    onClick={() => navigate('/auth/login', { state: location })}
+                  >
+                    Debes iniciar sesión
+                  </button>
+
+                  <section className="servicios__authContainer">
+                    <button
+                      className="btn-primary"
+                      onClick={() =>
+                        navigate('/auth/login', { state: location })
+                      }
+                    >
+                      Email <MailSvg />
+                    </button>
+                    <RedesAuth />
+                  </section>
+                </section>
               )}
             </>
           )}

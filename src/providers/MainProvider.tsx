@@ -1,4 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase'
+import { ServicioInterface, UserInterface } from '../types'
 
 const DEFAULT_STATE = {
   servicios: [],
@@ -7,19 +10,13 @@ const DEFAULT_STATE = {
   carrito: [],
   item: 1,
   changeItem: () => {},
+  user: null,
+  loadingLogin: false,
+  errorLogin: undefined,
 }
 
 export interface MainProviderProps {
   children: JSX.Element
-}
-
-export interface ServicioInterface {
-  id: number
-  nombre: string
-  descripcion: string
-  precio: number
-  imagen: string
-  cantidad: number
 }
 
 export interface MainContextProps {
@@ -29,6 +26,9 @@ export interface MainContextProps {
   carrito: ServicioInterface[]
   item: number
   changeItem: (n: number) => void
+  user: UserInterface | null | undefined
+  loadingLogin: boolean
+  errorLogin: Error | undefined
 }
 export const MainContext = createContext<MainContextProps>(DEFAULT_STATE)
 
@@ -36,8 +36,17 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   // Estado se servicios
   const [servicios, setServicios] = useState<MainContextProps['servicios']>([])
   const [carrito, setCarrito] = useState<MainContextProps['servicios']>([])
+
   // Estado para controlar el item que se muestra
   const [item, setItem] = useState<number>(1)
+
+  // Estado para el usuario
+  const [user, loadingLogin, errorLogin] = useAuthState(auth)
+
+  // Efecto para  Obtener servicios
+  useEffect(() => {
+    void getServicios()
+  }, [])
 
   // Obtener servicios
   const getServicios = async (): Promise<void> => {
@@ -107,13 +116,19 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
     }
   }
 
-  useEffect(() => {
-    void getServicios()
-  }, [])
-
   return (
     <MainContext.Provider
-      value={{ servicios, addCart, deleteCart, carrito, item, changeItem }}
+      value={{
+        user,
+        loadingLogin,
+        errorLogin,
+        servicios,
+        addCart,
+        deleteCart,
+        carrito,
+        item,
+        changeItem,
+      }}
     >
       {children}
     </MainContext.Provider>
