@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { ServicioInterface } from '../../../../providers/MainProvider'
 import useMain from '../../../../hooks/useMain'
 import { TrashSvg } from '../../../../assets/svg'
 import { formatMoney } from '../../../../helpers'
+import { ServicioType } from '../../../../types'
 
 interface ServicioProps {
-  servicio: ServicioInterface
+  servicio: ServicioType
   resumen: boolean
 }
 
@@ -39,15 +39,15 @@ const Servicio = ({ servicio, resumen }: ServicioProps): JSX.Element => {
   return (
     <article
       key={servicio.id}
-      className={`servicios_servicio ${
-        servicio.cantidad > 0 ? '' : 'agotado'
-      } ${selected && !resumen ? 'selecionado' : ''}`}
+      className={`servicios_servicio ${servicio.stock > 0 ? '' : 'agotado'} ${
+        selected && !resumen ? 'selecionado' : ''
+      }`}
     >
-      <img src={servicio.imagen} alt={servicio.nombre} />
-      <h2>{servicio.nombre}</h2>
+      <img src={servicio.imagen} alt={servicio.servicio} />
+      <h2>{servicio.servicio}</h2>
       {!resumen && <p>{servicio.descripcion}</p>}
 
-      {servicio.cantidad > 0 ? (
+      {servicio.stock > 0 ? (
         resumen ? (
           <button
             className="btn-black title"

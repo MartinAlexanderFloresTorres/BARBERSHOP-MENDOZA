@@ -1,121 +1,173 @@
-import { createContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { auth, db } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth } from '../firebase'
-import { ServicioInterface, UserInterface } from '../types'
-
-const DEFAULT_STATE = {
-  servicios: [],
-  addCart: () => {},
-  deleteCart: () => {},
-  carrito: [],
-  item: 1,
-  changeItem: () => {},
-  user: null,
-  loadingLogin: false,
-  errorLogin: undefined,
-}
-
-export interface MainProviderProps {
-  children: JSX.Element
-}
-
-export interface MainContextProps {
-  servicios: ServicioInterface[]
-  addCart: (servicio: ServicioInterface) => void
-  deleteCart: (servicio: ServicioInterface) => void
-  carrito: ServicioInterface[]
-  item: number
-  changeItem: (n: number) => void
-  user: UserInterface | null | undefined
-  loadingLogin: boolean
-  errorLogin: Error | undefined
-}
-export const MainContext = createContext<MainContextProps>(DEFAULT_STATE)
+import { addDoc, collection, deleteDoc, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { DEFAULT_STATE_CITA, MainContext, MainContextProps, MainProviderProps } from '../contexts/MainContext'
+import { EstadoType, ServicioCitaType, ServicioType } from '../types'
+import { camposCita } from '../components/containers/admin/modales/ModalCita'
 
 const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
-  // Estado se servicios
+  // ESTADOS
   const [servicios, setServicios] = useState<MainContextProps['servicios']>([])
   const [carrito, setCarrito] = useState<MainContextProps['servicios']>([])
-
-  // Estado para controlar el item que se muestra
   const [item, setItem] = useState<number>(1)
-
-  // Estado para el usuario
   const [user, loadingLogin, errorLogin] = useAuthState(auth)
+  const [rol, setRol] = useState<MainContextProps['rol']>(null)
+  const [loadingRol, setLoadingRol] = useState<boolean>(false)
 
-  // Efecto para  Obtener servicios
+  // Estados para el formulario de citas
+  const [cita, setCita] = useState<MainContextProps['cita']>(DEFAULT_STATE_CITA)
+  const [isValidForm, setIsValidForm] = useState<boolean>(false)
+
+  // Estados para servicios page
+  const [servicioEdit, setServicioEdit] = useState<ServicioType | null>(null)
+  const [loadingServicio, setLoadingServicio] = useState<boolean>(true)
+
+  // Estados para Citas page
+  const [citaEdit, setCitaEdit] = useState<ServicioCitaType | null>(null)
+  const [loadingCita, setLoadingCita] = useState<boolean>(false)
+
+  // Obtener Servicios
   useEffect(() => {
-    void getServicios()
-  }, [])
+    const unsubscribe = onSnapshot(collection(db, 'servicios'), snapshot => {
+      const serviciosFirebase = snapshot.docs.map(doc => ({
+        ...(doc.data() as {}),
+        id: doc.id,
+      })) as []
 
-  // Obtener servicios
-  const getServicios = async (): Promise<void> => {
+      setLoadingServicio(false)
+      setServicios(serviciosFirebase)
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [])
+  // agregar un campo de rol para todo los usuarios
+  /*   const handleRol = async (rol: MainContextProps['rol']): Promise<void> => {
     try {
-      const data = [
-        {
-          id: 1,
-          nombre: 'Servicio 1',
-          descripcion:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-          precio: 1000,
-          imagen: 'https://picsum.photos/200/300',
-          cantidad: 1,
-        },
-        {
-          id: 2,
-          nombre: 'Servicio 2',
-          descripcion:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-          precio: 1000,
-          imagen: 'https://picsum.photos/200/100',
-          cantidad: 5,
-        },
-      ]
-      setServicios(data)
+      const user = auth.currentUser
+      if (user) {
+        await setDoc(doc(db, 'usuarios', user.uid), {
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          nombre: user.displayName,
+          photoURL: user.photoURL,
+          rol: 'admin',
+          uid: user.uid,
+        })
+      }
     } catch (error) {
       console.log(error)
     }
-  }
+  } */
 
+  // Efecto de redireccionamiento
+  useEffect(() => {
+    if (user) {
+      // Obtener el rol del usuario
+      const getRol = async (): Promise<void> => {
+        setLoadingRol(true)
+        try {
+          const docRef = doc(db, 'usuarios', user.uid)
+          const docSnap = await getDoc(docRef)
+          if (docSnap.exists()) {
+            const rol = docSnap.data()?.rol as MainContextProps['rol']
+            setRol(rol)
+          }
+        } catch (error) {
+          console.log(error)
+        }
+        setLoadingRol(false)
+      }
+      void getRol()
+    } else {
+      setRol(null)
+    }
+  }, [user])
+
+  // handleCita para el formulario de citas
+  const handleCita = (cita: Function): void => {
+    setCita(cita())
+
+    if (Object.values(cita()).includes('')) {
+      setIsValidForm(false)
+    } else {
+      setIsValidForm(true)
+    }
+  }
   // Chage item
   const changeItem = (item: number): void => {
     setItem(item)
   }
 
   // agregar al carrito
-  const addCart = (servicio: ServicioInterface): void => {
-    const existe = carrito.find(item => item.id === servicio.id)
-    if (existe != null) {
-      setCarrito(
-        carrito.map(item =>
-          item.id === servicio.id
-            ? { ...item, cantidad: item.cantidad + 1 }
-            : item,
-        ),
-      )
-    } else {
-      setCarrito([...carrito, { ...servicio, cantidad: 1 }])
-    }
+  const addCart = (servicio: ServicioType): void => {
+    const existe = carrito.find(item => item.id.toString() === servicio.id.toString())
+    if (existe) return
+
+    setCarrito([...carrito, servicio])
   }
 
   // eliminar del carrito
-  const deleteCart = (servicio: ServicioInterface): void => {
+  const deleteCart = (servicio: ServicioType): void => {
     const existe = carrito.find(item => item.id === servicio.id)
-    if (existe != null) {
-      if (existe.cantidad === 1) {
-        setCarrito(carrito.filter(item => item.id !== servicio.id))
-      } else {
-        setCarrito(
-          carrito.map(item =>
-            item.id === servicio.id
-              ? { ...item, cantidad: item.cantidad - 1 }
-              : item,
-          ),
-        )
-      }
+    if (!existe) {
+      setCarrito(carrito.filter(item => item.id !== servicio.id))
     }
   }
 
+  // resertear carrito
+  const resetCart = (): void => {
+    setCarrito([])
+  }
+
+  // Add Servicio
+  const addServicio = async (servicio: object): Promise<void> => {
+    await addDoc(collection(db, 'servicios'), servicio)
+  }
+
+  // Delete Servicio
+  const deleteServicio = async (id: string): Promise<void> => {
+    return await deleteDoc(doc(db, 'servicios', id))
+  }
+
+  // Add Servicio Edit
+  const addServicioEdit = (servicio: ServicioType): void => {
+    setServicioEdit(servicio)
+  }
+
+  // EditServicio
+  const EditServicio = async (servicio: ServicioType): Promise<void> => {
+    await updateDoc(doc(db, 'servicios', servicio.id), { ...servicio })
+  }
+
+  // Add Cita Edit
+  const addCitaEdit = (cita: ServicioCitaType): void => {
+    setCitaEdit(cita)
+  }
+
+  // Edit Cita
+
+  const EditCita = async (cita: camposCita): Promise<void> => {
+    if (cita.id) {
+      await updateDoc(doc(db, 'citas', cita.id), { ...cita })
+    }
+  }
+
+  // delete Cita
+  const DeleteCita = async (id: string): Promise<void> => {
+    await deleteDoc(doc(db, 'citas', id))
+  }
+
+  // Actualizar Estado
+  const updateEstado = async (id: string, estado: EstadoType): Promise<void> => {
+    try {
+      await updateDoc(doc(db, 'citas', id), { estado })
+    } catch (error) {
+      console.error(error)
+    }
+  }
   return (
     <MainContext.Provider
       value={{
@@ -125,9 +177,27 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
         servicios,
         addCart,
         deleteCart,
+        resetCart,
         carrito,
         item,
         changeItem,
+        cita,
+        handleCita,
+        isValidForm,
+        rol,
+        loadingRol,
+        addServicio,
+        deleteServicio,
+        addServicioEdit,
+        servicioEdit,
+        EditServicio,
+        loadingServicio,
+        EditCita,
+        DeleteCita,
+        addCitaEdit,
+        citaEdit,
+        loadingCita,
+        updateEstado,
       }}
     >
       {children}

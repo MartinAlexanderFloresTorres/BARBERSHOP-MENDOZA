@@ -1,0 +1,117 @@
+.Asidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 120;
+  padding: 10px 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  border: var(--shadow-border);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-3s);
+}
+.Asidebar * {
+  min-width: max-content;
+}
+.Asidebar.close {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  min-width: 0;
+  max-width: 0;
+}
+.Asidebar__top {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.Asidebar__center {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.Asidebar__navegacion {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.Asidebar__navegacion a,
+.Asidebar__navegacion button {
+  width: 100%;
+  text-transform: capitalize;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 10px;
+  column-gap: 8px;
+  row-gap: 8px;
+  transition: var(--transition-3s);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+.Asidebar__navegacion a.active,
+.Asidebar__navegacion button.active {
+  background: rgba(125, 125, 125, 0.3);
+}
+.Asidebar__navegacion span,
+.Asidebar__navegacion button span {
+  margin-right: auto;
+}
+.Asidebar__navegacion a:hover,
+.Asidebar__navegacion button:hover {
+  background: rgba(125, 125, 125, 0.1);
+}
+.Asidebar__navegacion a:active,
+.Asidebar__navegacion button:active {
+  background: rgba(125, 125, 125, 0.2);
+  transform: scale(0.95);
+}
+.Asidebar__navegacion a svg,
+.Asidebar__navegacion button svg {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+}
+.Asidebar__menu {
+  display: none;
+}
+.Asidebar__photoURL {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.Asidebar__displayName {
+  max-width: 150px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .Asidebar {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 76px);
+    z-index: 150;
+  }
+  .Asidebar.close {
+    left: -100%;
+    transform: none;
+  }
+}

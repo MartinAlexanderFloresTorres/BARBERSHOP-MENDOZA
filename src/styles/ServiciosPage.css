@@ -166,9 +166,6 @@
   gap: 20px;
   -webkit-column-gap: 20px;
 }
-.servicios__botones button:nth-last-child(1) {
-  margin-left: auto;
-}
 .servicios__botones button {
   column-gap: 10px;
   gap: 10px;

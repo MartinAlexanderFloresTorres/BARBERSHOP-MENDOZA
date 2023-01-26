@@ -56,6 +56,22 @@
 .header__menu {
   display: none;
 }
+.header__photoURL {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.header__displayName {
+  max-width: 150px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 @media (max-width: 1000px) {
   .header__navegacion {
     position: fixed;
@@ -79,7 +95,7 @@
   .header__navegacion button {
     width: 100%;
     display: grid;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: auto 1fr;
     text-align: left;
     column-gap: 10px;
   }

@@ -19,6 +19,7 @@
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/comma-dangle": "off",
     "multiline-ternary": "off",
-    "@typescript-eslint/strict-boolean-expressions": "off"
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }

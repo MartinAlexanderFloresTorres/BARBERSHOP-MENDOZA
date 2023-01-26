@@ -8,6 +8,7 @@ const RecuperacionPage = (): JSX.Element => {
     // Scroll al inicio
     window.scrollTo(0, 0)
   }, [])
+
   return (
     <form className="form">
       <div className="form__cabezera">

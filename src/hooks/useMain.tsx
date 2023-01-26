@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { MainContext, MainContextProps } from '../providers/MainProvider'
+import { MainContext, MainContextProps } from '../contexts/MainContext'
 
 const useMain = (): MainContextProps => {
   return useContext(MainContext)

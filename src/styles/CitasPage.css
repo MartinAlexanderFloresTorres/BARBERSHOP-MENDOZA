@@ -1,0 +1,158 @@
+.CitasPage {
+  width: 100%;
+}
+.CitasPage__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.CitasPage__top form {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.CitasPage__top form input[type='search'],
+.CitasPage__top select,
+.CitasPage__top button {
+  border: var(--shadow-border);
+  border-radius: 5px;
+  padding: 14px;
+  height: 50px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+}
+.CitasPage__top form button {
+  height: 50px;
+  padding: 10px;
+}
+.CitasPage__topRight {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.CitasPage__center {
+  width: 100%;
+  overflow: auto;
+}
+.CitasPage__center table {
+  width: 100%;
+  border-collapse: collapse;
+  border: var(--shadow-border);
+}
+.CitasPage__centerBottom {
+  padding: 20px;
+  border: var(--shadow-border);
+}
+.CitasPage__centerTop {
+  width: 100%;
+  border: var(--shadow-border);
+  border-bottom: 0;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+.CitasPage__centerTop th {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  transition: var(--transition-3s);
+}
+.CitasPage__centerTop th:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.CitasPage__centerBottom {
+  backdrop-filter: blur(10px);
+}
+.CitasPage__centerBottom td {
+  padding: 10px 20px;
+  text-align: center;
+}
+.CitasPage__centerBottom .estado {
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  user-select: none;
+  padding: 4px;
+}
+.CitasPage__centerBottom .estado option {
+  background: var(--fondo);
+  color: #fff;
+}
+.CitasPage__centerBottom .precio {
+  display: block;
+  word-break: normal;
+  min-width: min-content;
+  padding: 4px;
+  background: rgba(69, 145, 69, 0.292);
+  color: rgb(83, 167, 83);
+  border-radius: 5px;
+  font-size: 16px;
+  user-select: none;
+}
+.CitasPage__centerBottom:hover .precio {
+  background: rgba(69, 145, 69, 0.292);
+  color: rgb(83, 167, 83);
+}
+.CitasPage__centerBottom td p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(159, 159, 159);
+  transition: var(--transition-3s);
+}
+.CitasPage__centerBottom td p.break-all {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.CitasPage__centerBottom:hover p {
+  color: var(--white);
+}
+.CitasPage__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+.CitasPage__centerBottomServicios {
+  max-height: 140px;
+  overflow: auto;
+}
+.CitasPage__centerBottomServicios div {
+  background: rgba(110, 110, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.CitasPage__centerBottomServicios div h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.CitasPage__centerBottomServicios div span {
+  display: block;
+  margin-bottom: 5px;
+  color: gray;
+}
+.CitasPage__centerBottomServicios div img {
+  height: 80px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .CitasPage__top {
+    flex-direction: column;
+  }
+  .CitasPage__top form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .CitasPage__top form input[type='search'],
+  .CitasPage__topRight {
+    width: 100%;
+  }
+}

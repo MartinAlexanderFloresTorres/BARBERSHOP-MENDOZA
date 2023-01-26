@@ -15,3 +15,45 @@ export interface UserInterface {
   photoURL: string | null
   uid: string | null
 }
+
+export interface AlertInterface {
+  mensaje: string
+  tipo: 'error' | 'success' | 'warning' | 'info'
+}
+
+export type Roles = 'admin' | 'user' | 'barbero' | null
+
+export interface UserType {
+  id: string
+  uid: string
+  nombre: string
+  email: string | null
+  phoneNumber: string | null
+  photoURL: string
+  rol: Roles
+}
+
+export interface ServicioType {
+  id: string
+  imagen: string
+  servicio: string
+  descripcion: string
+  precio: number
+  barberos: string[]
+  duracion: number
+  stock: number
+}
+
+export type EstadoType = 'pendiente' | 'cancelado' | 'atendido' | 'reprogramado' | 'warning'
+
+export type ServicioCitaType = {
+  id?: string | null | undefined
+  user: string
+  email: string
+  fecha: string
+  hora: string
+  nombre: string
+  pagado: boolean
+  servicios: ServicioType[]
+  estado: EstadoType
+}

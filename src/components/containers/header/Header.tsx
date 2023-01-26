@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import {
   CloseSvg,
+  ColeccionSvg,
   LoaderSvg,
   LoginSvg,
   LogoutSvg,
@@ -25,17 +26,25 @@ const Header = (): JSX.Element => {
   const [signOut, loadingOut] = useSignOut(authApp)
 
   // useMain
-  const { user, loadingLogin, carrito, changeItem } = useMain()
+  const { user, rol, loadingLogin, carrito, changeItem } = useMain()
 
   // useAuth
   const auth = useAuth()
 
   // useLocation para obtener la ruta actual
-  const { pathname } = useLocation()
+  const location = useLocation()
+  const { pathname } = location
 
   // Funcion para mostrar el menu
   const handleShowMenu = (): void => {
     setShowMenu(!showMenu)
+  }
+
+  // cerrar sesion
+  const handleSignOut = (): void => {
+    signOut().catch(error => {
+      console.log(error)
+    })
   }
 
   return (
@@ -47,6 +56,13 @@ const Header = (): JSX.Element => {
         </button>
 
         <nav className={`header__navegacion ${showMenu ? 'open' : ''}`}>
+          {rol === 'admin' && (
+            <Link to="/admin" title="Admin">
+              <ColeccionSvg />
+              <span>Panel Administrador</span>
+            </Link>
+          )}
+
           {pathname !== '/servicios' && (
             <Link
               to="/servicios"
@@ -70,13 +86,26 @@ const Header = (): JSX.Element => {
           ) : auth ? (
             <>
               <Link to="/auth/profile" title="Perfil">
-                <UserSvg />
-                <span>{user?.displayName}</span>
+                {user?.photoURL ? (
+                  <img
+                    className="header__photoURL"
+                    src={user?.photoURL}
+                    onError={e => {
+                      const img = e.target as HTMLImageElement
+                      img.src = 'https://picsum.photos/200/300'
+                      console.warn('No se pudo cargar la imagen')
+                    }}
+                    alt={user?.displayName ?? 'usuario'}
+                  />
+                ) : (
+                  <UserSvg />
+                )}
+                <span className="header__displayName">{user?.displayName}</span>
               </Link>
 
               <button
                 title="Cerrar Sesion"
-                onClick={() => signOut()}
+                onClick={handleSignOut}
                 disabled={loadingOut}
               >
                 {loadingOut ? (
@@ -91,7 +120,7 @@ const Header = (): JSX.Element => {
             </>
           ) : (
             <>
-              <Link to="/auth/login" title="Login">
+              <Link to="/auth/login" state={location} title="Login">
                 <LoginSvg />
                 <span>Login</span>
               </Link>
