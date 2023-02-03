@@ -1,8 +1,11 @@
 .Asidebar {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  z-index: 120;
+  position: fixed;
+  top: 76px;
+  left: 0;
+  bottom: 0;
+  height: calc(100vh - 76px);
+  z-index: 150;
+
   padding: 10px 20px;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.1);
@@ -14,9 +17,9 @@
   min-width: max-content;
 }
 .Asidebar.close {
+  left: -100%;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-100%);
   min-width: 0;
   max-width: 0;
 }
@@ -100,18 +103,4 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-@media (max-width: 1200px) {
-  .Asidebar {
-    position: fixed;
-    top: 76px;
-    left: 0;
-    bottom: 0;
-    height: calc(100vh - 76px);
-    z-index: 150;
-  }
-  .Asidebar.close {
-    left: -100%;
-    transform: none;
-  }
 }

@@ -39,9 +39,18 @@ export interface ServicioType {
   servicio: string
   descripcion: string
   precio: number
-  barberos: string[]
+  barberos: BarberoType[]
   duracion: number
   stock: number
+}
+
+export interface BarberoType {
+  id: string
+  imagen: string
+  titulo: string
+  nombre: string
+  especialidades: string
+  incognito: boolean
 }
 
 export type EstadoType = 'pendiente' | 'cancelado' | 'atendido' | 'reprogramado' | 'warning'

@@ -37,23 +37,23 @@ const Servicio = ({ servicio, resumen }: ServicioProps): JSX.Element => {
   }
 
   return (
-    <article
-      key={servicio.id}
-      className={`servicios_servicio ${servicio.stock > 0 ? '' : 'agotado'} ${
-        selected && !resumen ? 'selecionado' : ''
-      }`}
-    >
+    <article key={servicio.id} className={`servicios_servicio ${servicio.stock > 0 ? '' : 'agotado'} ${selected && !resumen ? 'selecionado' : ''}`}>
       <img src={servicio.imagen} alt={servicio.servicio} />
       <h2>{servicio.servicio}</h2>
       {!resumen && <p>{servicio.descripcion}</p>}
 
+      <div className="servicios_barberos">
+        {servicio.barberos.map(barbero => (
+          <div key={barbero.id} className="servicios_barbero">
+            <img className="servicios_barberoImagen" src={barbero.imagen} alt={barbero.imagen} />
+            <p>{barbero.nombre}</p>
+          </div>
+        ))}
+      </div>
+
       {servicio.stock > 0 ? (
         resumen ? (
-          <button
-            className="btn-black title"
-            onClick={() => deleteCart(servicio)}
-            title="Quitar"
-          >
+          <button className="btn-black title" onClick={() => deleteCart(servicio)} title="Quitar">
             <TrashSvg />
           </button>
         ) : (
@@ -64,6 +64,7 @@ const Servicio = ({ servicio, resumen }: ServicioProps): JSX.Element => {
       ) : (
         <div className="agotado">Agotado</div>
       )}
+
       <span>{formatMoney(servicio.precio)}</span>
     </article>
   )

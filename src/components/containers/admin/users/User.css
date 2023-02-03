@@ -10,4 +10,28 @@
   border: var(--shadow-border);
   padding: 20px;
   margin-bottom: 10px;
+  backdrop-filter: blur(10px);
+}
+.User img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.User select {
+  width: 100%;
+  text-align: center;
+  border: var(--shadow-border);
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+}
+.User a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition-3s);
+}
+.User a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
 }

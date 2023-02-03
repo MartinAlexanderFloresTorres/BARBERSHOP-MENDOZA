@@ -1,6 +1,8 @@
 .barberos {
   padding: 50px 20px;
   position: relative;
+  height: 100%;
+  min-height: 611px;
 }
 .barberos__tool1,
 .barberos__tool2 {
@@ -57,10 +59,9 @@
   align-content: flex-start;
   grid-gap: 20px;
   row-gap: 20px;
-  overflow: auto;
+  grid-auto-flow: dense;
 }
 .barberos__item {
-  min-width: 360px;
   position: relative;
   border-radius: 10px;
   border: var(--shadow-border);
@@ -81,14 +82,11 @@
   font-weight: 700;
   z-index: 2;
 }
-.barberos__item:nth-child(3)::before {
-  content: 'Pronto';
+.barberos__item:not([title='Pronto']):nth-child(1) {
+  grid-column: 2 / 3;
 }
-.barberos__item:nth-child(2)::before {
-  content: 'Barbero Profesional';
-}
-.barberos__item:nth-child(1)::before {
-  content: 'Pronto';
+.barberos__item::before {
+  content: attr(title);
 }
 .barberos__imagen {
   width: 100%;
@@ -137,9 +135,21 @@
   font-weight: 400;
   color: var(--gray-2);
 }
-@media (max-width: 780px) {
+@media (max-width: 900px) {
+  .barberos__bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+  .barberos__item:not([title='Pronto']):nth-child(1) {
+    grid-column: auto;
+  }
   .barberos__tool1,
   .barberos__tool2 {
     display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .barberos__bottom {
+    grid-template-columns: 1fr;
   }
 }

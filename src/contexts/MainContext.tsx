@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { EstadoType, Roles, ServicioCitaType, ServicioInterface, ServicioType, UserInterface } from '../types'
+import { BarberoType, EstadoType, Roles, ServicioCitaType, ServicioType, UserInterface } from '../types'
 import { camposCita } from '../components/containers/admin/modales/ModalCita'
 
 export const DEFAULT_STATE_CITA = {
@@ -47,9 +47,17 @@ const DEFAULT_STATE = {
 
   addCitaEdit: () => {},
   citaEdit: null,
-  loadingCita: false,
 
   updateEstado: async () => await Promise.resolve(),
+
+  barberoEdit: null,
+  loadingBarbero: true,
+  barberos: [],
+
+  EditBarbero: async () => await Promise.resolve(),
+  addBarberoEdit: () => {},
+  addBarbero: async () => await Promise.resolve(),
+  DeleteBarbero: async () => await Promise.resolve(),
 }
 export interface MainContextProps {
   servicios: ServicioType[]
@@ -79,8 +87,16 @@ export interface MainContextProps {
 
   addCitaEdit: (cita: ServicioCitaType) => void
   citaEdit: ServicioCitaType | null
-  loadingCita: boolean
 
   updateEstado: (id: string, estado: EstadoType) => Promise<void>
+
+  barberoEdit: BarberoType | null
+  loadingBarbero: boolean
+  barberos: BarberoType[]
+
+  EditBarbero: (barbero: BarberoType) => Promise<void>
+  addBarberoEdit: (barbero: BarberoType) => void
+  addBarbero: (barbero: BarberoType) => Promise<void>
+  DeleteBarbero: (id: string) => Promise<void>
 }
 export const MainContext = createContext<MainContextProps>(DEFAULT_STATE)

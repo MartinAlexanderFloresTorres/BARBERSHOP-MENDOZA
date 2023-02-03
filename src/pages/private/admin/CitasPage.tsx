@@ -1,53 +1,78 @@
 import { useEffect, useState } from 'react'
-import { db } from '../../../firebase'
-import { collection, onSnapshot } from 'firebase/firestore'
 import { LoaderSvg, SearchSvg } from '../../../assets/svg'
-import { ServicioCitaType } from '../../../types'
+import { EstadoType, ServicioCitaType } from '../../../types'
 import { estados } from '../../../constants'
 import Cita from '../../../components/containers/admin/citas/Cita'
 import useMain from '../../../hooks/useMain'
 import ModalCita from '../../../components/containers/admin/modales/ModalCita'
 import '../../../styles/CitasPage.css'
+import useGetCitas from '../../../hooks/useGetCitas'
 
 const CitasPage = (): JSX.Element => {
-  // Estados
-  const [loadingCitas, setLoadingCitas] = useState<boolean>(true)
-  const [citas, setCitas] = useState<ServicioCitaType[]>([])
+  // UseGetCitas
+  const { loadingCitas, citas } = useGetCitas()
+  const [busqueda, setBusqueda] = useState('')
+  const [resultados, setResultados] = useState<ServicioCitaType[]>([])
+  const [estado, setEstado] = useState('' as EstadoType)
 
   // useMain
   const { citaEdit } = useMain()
 
-  // UseEffect
+  // Effecto de default select estado y resultados de busqueda
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'citas'), snapshot => {
-      const serviciosFirebase = snapshot.docs.map(doc => ({
-        ...doc.data(),
-        id: doc.id,
-      })) as []
+    const busquedaMinus = busqueda.toLowerCase().trim()
+    const filtro = (cita: ServicioCitaType): boolean => cita.nombre.toLowerCase().trim().includes(busquedaMinus)
 
-      setLoadingCitas(false)
-      setCitas(serviciosFirebase)
-    })
-
-    return () => {
-      unsubscribe()
+    if (estado.length > 0) {
+      const resultados = citas.filter(filtro).filter(cita => cita.estado === estado)
+      setResultados(resultados)
+    } else if (busqueda.length > 0) {
+      const resultados = citas.filter(filtro)
+      setResultados(resultados)
+    } else {
+      setResultados(citas)
     }
-  }, [])
+  }, [estado, busqueda, citas])
 
+  // Handle Busqueda
+  const handleBusqueda = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setBusqueda(e.target.value)
+  }
+
+  // Handle Filtro
+  const handleEstado = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    setEstado(e.target.value as EstadoType)
+  }
+
+  // handle Search
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault()
+    const busquedaMinus = busqueda.toLowerCase().trim()
+    const resultados = citas.filter(cita => cita.nombre.toLowerCase().trim().includes(busquedaMinus)).filter(cita => cita.estado === estado)
+    setResultados(resultados)
+  }
+
+  // Reset Resultados
+  const resetResultados = (): void => {
+    setResultados(citas)
+    setBusqueda('')
+    setEstado('' as EstadoType)
+  }
   return (
     <>
       <section className="CitasPage">
         <div className="CitasPage__top">
-          <form>
-            <input type="search" placeholder="Buscar" />
+          <form onSubmit={handleSearch}>
+            <input type="search" placeholder="Buscar" value={busqueda} onChange={handleBusqueda} />
             <button type="submit" title="Buscar" className="title">
               {<SearchSvg />}
             </button>
           </form>
           <div className="CitasPage__topRight">
-            <select name="filtar" id="filtar">
+            <select name="filtar" id="filtar" value={estado} onChange={handleEstado}>
+              <option value="">Todos</option>
               {Object.entries(estados).map(([key, value]) => (
-                <option /* selected={key === 'pendiente'} */ key={key} value={key}>
+                <option key={key} value={key}>
                   {value}
                 </option>
               ))}
@@ -71,22 +96,27 @@ const CitasPage = (): JSX.Element => {
               {loadingCitas ? (
                 <tr>
                   <td colSpan={7}>
-                    <div className="CitasPage__centerLoader">
+                    <div className="loader__center">
                       <LoaderSvg />
                     </div>
                   </td>
                 </tr>
-              ) : citas.length > 0 ? (
-                citas.map((cita, index) => <Cita key={index} cita={cita} />)
+              ) : resultados.length > 0 ? (
+                resultados.map((cita, index) => <Cita key={index} cita={cita} />)
               ) : (
                 <tr>
                   <td colSpan={7}>
-                    <p className="vacio">No hay citas aun </p>
+                    <p className="vacio">No hay citas</p>
                   </td>
                 </tr>
               )}
             </tbody>
           </table>
+          {!loadingCitas && resultados.length === 0 && (
+            <button className="mx-auto my-10 btn btn-primary" onClick={resetResultados}>
+              restablecer
+            </button>
+          )}
         </div>
       </section>
 

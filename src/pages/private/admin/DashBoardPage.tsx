@@ -1,7 +1,7 @@
-import React from 'react'
+import Barberos from '../../../components/containers/barberos/Barberos'
 
 const DashBoardPage = (): JSX.Element => {
-  return <div>DashBoardPage</div>
+  return <Barberos />
 }
 
 export default DashBoardPage

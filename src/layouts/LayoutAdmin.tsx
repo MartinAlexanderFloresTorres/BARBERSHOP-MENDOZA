@@ -24,27 +24,25 @@ const LayoutAdmin = (): JSX.Element => {
 
   // Funcion para mostrar el menu
   const handleShowMenu = (): void => {
-    setShowMenu(!showMenu)
+    setShowMenu((prev: boolean) => !prev)
   }
+
   return auth ? (
     <>
-      <section className={`headerAdmin__aside ${showMenu ? 'grid' : ''}`}>
+      <section className={'headerAdmin__aside'}>
+        <HeaderAdminTop handleShowMenu={handleShowMenu} showMenu={showMenu} />
+
         {loadingRol ? (
           <div className="loader__center">
             <LoaderSvg />
           </div>
         ) : (
-          rol === 'admin' && <Asidebar showMenu={showMenu} />
-        )}
-
-        <aside>
-          <HeaderAdminTop handleShowMenu={handleShowMenu} showMenu={showMenu} />
-          {rol === 'admin' && (
+          rol === 'admin' && (
             <main className="headerAdmin__main">
               <Outlet />
             </main>
-          )}
-        </aside>
+          )
+        )}
       </section>
       <SnowContainer />
     </>

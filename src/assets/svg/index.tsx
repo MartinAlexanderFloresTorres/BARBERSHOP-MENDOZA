@@ -1,380 +1,165 @@
 export const ShoppingCartSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+  )
+}
+
+export const UsersSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
     </svg>
   )
 }
 
 export const CarritoSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>
   )
 }
 
 export const TicketSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
     </svg>
   )
 }
 
 export const TrashSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
     </svg>
   )
 }
 
 export const SpeakerphoneSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
     </svg>
   )
 }
 
 export const TagsSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
     </svg>
   )
 }
 
 export const TijeraSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
     </svg>
   )
 }
 
 export const ColeccionSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
     </svg>
   )
 }
 
 export const HomeSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
     </svg>
   )
 }
 
 export const LoginSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
     </svg>
   )
 }
 
 export const LogoutSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
     </svg>
   )
 }
 
 export const UserSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
     </svg>
   )
 }
 
 export const MenuSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M4 6h16M4 12h16M4 18h16"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   )
 }
 
 export const CloseSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M6 18L18 6M6 6l12 12"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
   )
 }
 
 export const ChevronLeftSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 19l-7-7 7-7"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
     </svg>
   )
 }
 
 export const ChevronRigthtSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M9 5l7 7-7 7"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
     </svg>
   )
 }
 
 export const GoogleSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      viewBox="0 0 20 20"
-      preserveAspectRatio="xMidYMid meet"
-      focusable="false"
-    >
-      <path
-        d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z"
-        fill="#4285F4"
-      ></path>
-      <path
-        d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z"
-        fill="#34A853"
-      ></path>
-      <path
-        d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z"
-        fill="#FBBC05"
-      ></path>
-      <path
-        d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z"
-        fill="#EA4335"
-      ></path>
+    <svg {...props} viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <path d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z" fill="#4285F4"></path>
+      <path d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z" fill="#34A853"></path>
+      <path d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z" fill="#FBBC05"></path>
+      <path d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z" fill="#EA4335"></path>
     </svg>
   )
 }
 
 export const GithubSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      viewBox="0 0 20 20"
-      preserveAspectRatio="xMidYMid meet"
-      focusable="false"
-    >
-      <path
-        d="M10 0C4.476 0 0 4.477 0 10c0 4.418 2.865 8.166 6.84 9.49.5.09.68-.218.68-.483 0-.237-.007-.866-.012-1.7-2.782.603-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.464-1.11-1.464-.907-.62.07-.608.07-.608 1.003.07 1.53 1.03 1.53 1.03.893 1.53 2.342 1.087 2.912.83.09-.645.35-1.085.634-1.335-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.03-2.683-.105-.253-.448-1.27.096-2.647 0 0 .84-.268 2.75 1.026A9.555 9.555 0 0110 4.836a9.59 9.59 0 012.504.337c1.91-1.294 2.747-1.026 2.747-1.026.548 1.377.204 2.394.1 2.647.64.7 1.03 1.592 1.03 2.683 0 3.842-2.34 4.687-4.566 4.935.36.308.678.92.678 1.852 0 1.336-.01 2.415-.01 2.743 0 .267.18.578.687.48A10 10 0 0020 10c0-5.522-4.478-10-10-10"
-        fill="#666"
-        fillRule="evenodd"
-      ></path>
+    <svg {...props} viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <path d="M10 0C4.476 0 0 4.477 0 10c0 4.418 2.865 8.166 6.84 9.49.5.09.68-.218.68-.483 0-.237-.007-.866-.012-1.7-2.782.603-3.37-1.34-3.37-1.34-.454-1.157-1.11-1.464-1.11-1.464-.907-.62.07-.608.07-.608 1.003.07 1.53 1.03 1.53 1.03.893 1.53 2.342 1.087 2.912.83.09-.645.35-1.085.634-1.335-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.03-2.683-.105-.253-.448-1.27.096-2.647 0 0 .84-.268 2.75 1.026A9.555 9.555 0 0110 4.836a9.59 9.59 0 012.504.337c1.91-1.294 2.747-1.026 2.747-1.026.548 1.377.204 2.394.1 2.647.64.7 1.03 1.592 1.03 2.683 0 3.842-2.34 4.687-4.566 4.935.36.308.678.92.678 1.852 0 1.336-.01 2.415-.01 2.743 0 .267.18.578.687.48A10 10 0 0020 10c0-5.522-4.478-10-10-10" fill="#666" fillRule="evenodd"></path>
     </svg>
   )
 }
 
 export const InstagramSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      enableBackground="new 0 0 128 128"
-      id="Social_Icons"
-      version="1.1"
-      viewBox="0 0 128 128"
-      xmlSpace="preserve"
-    >
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" enableBackground="new 0 0 128 128" id="Social_Icons" version="1.1" viewBox="0 0 128 128" xmlSpace="preserve">
       <g id="_x37__stroke">
         <g id="Instagram_1_">
-          <rect
-            clipRule="evenodd"
-            fill="none"
-            fillRule="evenodd"
-            height="128"
-            width="128"
-          />
-          <radialGradient
-            cx="19.1111"
-            cy="128.4444"
-            gradientUnits="userSpaceOnUse"
-            id="Instagram_2_"
-            r="163.5519"
-          >
+          <rect clipRule="evenodd" fill="none" fillRule="evenodd" height="128" width="128" />
+          <radialGradient cx="19.1111" cy="128.4444" gradientUnits="userSpaceOnUse" id="Instagram_2_" r="163.5519">
             <stop offset="0" stopColor="#FFB140" />
             <stop offset="0.2559" stopColor="#FF5445" />
             <stop offset="0.599" stopColor="#FC2B82" />
@@ -396,189 +181,109 @@ export const InstagramSvg = ({ ...props }): JSX.Element => {
 export const FacebookSvg = ({ ...props }): JSX.Element => {
   return (
     <svg {...props} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fill="#3B5999"
-        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-      ></path>
+      <path fill="#3B5999" d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
     </svg>
   )
 }
 
 export const MailSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      className="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-      />
+    <svg {...props} className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>
   )
 }
 
 export const LoaderSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      className="pl"
-      viewBox="0 0 128 128"
-      width="128px"
-      height="128px"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg {...props} className="pl" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="hsl(193,90%,55%)" />
           <stop offset="100%" stopColor="hsl(223,90%,55%)" />
         </linearGradient>
       </defs>
-      <circle
-        className="pl__ring"
-        r="56"
-        cx="64"
-        cy="64"
-        fill="none"
-        stroke="hsla(0,10%,10%,0.1)"
-        strokeWidth="16"
-        strokeLinecap="round"
-      />
-      <path
-        className="pl__worm"
-        d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z"
-        fill="none"
-        stroke="url(#pl-grad)"
-        strokeWidth="16"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeDasharray="44 1111"
-        strokeDashoffset="10"
-      />
+      <circle className="pl__ring" r="56" cx="64" cy="64" fill="none" stroke="hsla(0,10%,10%,0.1)" strokeWidth="16" strokeLinecap="round" />
+      <path className="pl__worm" d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z" fill="none" stroke="url(#pl-grad)" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="44 1111" strokeDashoffset="10" />
+    </svg>
+  )
+}
+
+export const CitasSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-stack-2" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <polyline points="12 4 4 8 12 12 20 8 12 4" />
+      <polyline points="4 12 12 16 20 12" />
+      <polyline points="4 16 12 20 20 16" />
+    </svg>
+  )
+}
+
+export const FriendsSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-friends" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <circle cx="7" cy="5" r="2" />
+      <path d="M5 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5" />
+      <circle cx="17" cy="5" r="2" />
+      <path d="M15 22v-4h-2l2 -6a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1l2 6h-2v4" />
+    </svg>
+  )
+}
+
+export const ChartBarSvg = ({ ...props }): JSX.Element => {
+  return (
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
     </svg>
   )
 }
 
 export const CalendarSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
     </svg>
   )
 }
 
 export const EyeSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-      />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
     </svg>
   )
 }
 
 export const PencilSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
-      />
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
     </svg>
   )
 }
 
 export const PlusSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"
-      />
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
     </svg>
   )
 }
 
 export const EyeSlashSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.5}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"
-      />
+    <svg {...props} fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
     </svg>
   )
 }
 
 export const WhatsAppSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="44"
-      height="44"
-      viewBox="0 0 24 24"
-      strokeWidth="1.8"
-      stroke="rgb(81, 200, 93)"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.8" stroke="rgb(81, 200, 93)" fill="none" strokeLinecap="round" strokeLinejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
       <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
@@ -588,231 +293,68 @@ export const WhatsAppSvg = ({ ...props }): JSX.Element => {
 
 export const SearchSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-      />
+    <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
     </svg>
   )
 }
 
 export const BarberSvg = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      data-name="Layer 1"
-      width="1144"
-      height="714.9"
-      viewBox="0 0 1144 714.9"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="1144" height="714.9" viewBox="0 0 1144 714.9" xmlnsXlink="http://www.w3.org/1999/xlink">
       <title>barber</title>
-      <path
-        d="M1172,586.79a180,180,0,0,0-76-147.42,184.71,184.71,0,0,0,1-18.77c0-99.14-79.24-179.51-177-179.51a174.28,174.28,0,0,0-85.91,22.54c-69.19-45.52-159.52-73.07-258.34-73.07-160.79,0-299.1,72.95-360.46,177.55-3.41-.2-6.84-.31-10.3-.31-97.74,0-177,80.37-177,179.51A180.53,180.53,0,0,0,57.12,646h0c0,89.2,84.19,161.5,188,161.5H998.24c81.54,0,147.64-56.77,147.64-126.81h0A180.52,180.52,0,0,0,1172,586.79Z"
-        transform="translate(-28 -92.59)"
-        fill="#6c63ff"
-        opacity="0.1"
-      />
-      <path
-        d="M856.58,256.72c-7.54,3.18-15.1,6.37-22.12,10.57-3.19,1.9-6.25,4-9.53,5.73-3.53,1.88-7.28,3.3-11,4.82a245.21,245.21,0,0,0-29.84,14.62c.83-10.75-.74-22.43-7.17-30.81a27,27,0,0,0-3.14-3.46c-4.55-4.22-11-5.31-15.47-9,2.72-4.78,8.76-9.12,12.87-12.77q6.66-5.89,13.82-11.17a196.76,196.76,0,0,1,30.35-18.43c6.76-3.31,13.82-6.27,21.28-7.28a4.62,4.62,0,0,1,2.81.25c1.16.64,1.58,2.08,1.86,3.37,1.39,6.45,2.1,13.07,3.26,19.57a83.48,83.48,0,0,0,2.31,9.89,120.66,120.66,0,0,0,4.31,11.31Q853.89,250.32,856.58,256.72Z"
-        transform="translate(-28 -92.59)"
-        fill="#fbbebe"
-      />
-      <path
-        d="M642.57,439A63,63,0,0,1,528.8,476.29,62.84,62.84,0,0,1,516.57,439a63,63,0,0,1,126,0Z"
-        transform="translate(-28 -92.59)"
-        fill="#be6f72"
-      />
-      <path
-        d="M557,494.52c3.37,5.81,6.77,11.67,8.93,18s3,13.34,1.22,19.81c21.46-11.3,47-10.39,70.62-16.11a2.54,2.54,0,0,0,1.63-.86,2.59,2.59,0,0,0,0-2.08,172.89,172.89,0,0,1-5.63-56.2l-12.33,7.29a157.84,157.84,0,0,1-16.75,9c-8.15,3.57-16.8,5.73-25.31,8.23-6.74,2-20.12,4.59-24.36,10.48A11.9,11.9,0,0,1,557,494.52Z"
-        transform="translate(-28 -92.59)"
-        fill="#be6f72"
-      />
-      <path
-        d="M522.29,409.8c-4.1,1.65-8.92,3.55-12.69,1.24-2.77-1.71-3.91-5.26-3.74-8.51s1.41-6.33,2.39-9.43c2-6.37,3.08-13,5.31-19.34s5.87-12.45,11.65-15.8c10.64-6.16,24.41-1.07,36.22-4.48,5-1.43,9.35-4.31,14-6.57s9.88-4,14.9-2.79c5.88,1.37,10.22,6.32,15.7,8.84,6,2.76,13.18,2.57,18.64,6.26,3.87,2.62,6.31,6.85,8.48,11a208.81,208.81,0,0,1,16.35,41.9,63.54,63.54,0,0,1,2.67,16c.05,6.94-1.83,13.74-3.69,20.44l-3,10.6c-1.11,4-2.25,8-4.35,11.62s-5.34,6.67-9.35,7.72c-5,1.29-10.82-1.21-13-5.89-1.34-2.9-1.28-6.22-1.35-9.41a104.74,104.74,0,0,0-2-18.6c-.62-3.07-1.45-6.26-3.54-8.58-2.7-3-7-4-11-4.07-4.68-.06-9.81,1.21-12.54,5-2.19,3.06-2.57,7.36-5.48,9.75a9.07,9.07,0,0,1-4.45,1.81,14.87,14.87,0,0,1-15.73-9.45c-.92-2.64-1.37-5.92-3.87-7.16-1.3-.65-2.85-.53-4.24-.95-4.26-1.29-5.38-6.69-5.77-11.12-.45-5.19,1.28-15.44-5.17-15.79C536.69,403.66,528.68,407.67,522.29,409.8Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M537.4,478.09c-2.22,1.07-4.65,2.32-5.52,4.62-.34.9-.4,1.89-.71,2.81-1.41,4.07-6.91,4.87-9.75,8.11a12.77,12.77,0,0,0-2.51,5.61,40.68,40.68,0,0,0,1.76,24.24,19.56,19.56,0,0,0,4,6.6c5.08,5.18,13.84,5.08,20.17,1.55s10.7-9.72,14.41-16a55.68,55.68,0,0,0,4.91-10,61,61,0,0,0,2.43-10.89c2.22-14.41,5.12-30.39,4.12-45-3-.19-8.73-.4-11.38,1.48-3.32,2.36-2.4,7.12-3.6,10.57C552.89,470.09,544.65,474.47,537.4,478.09Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M540,480c-3.75.23-10.47-3.92-14.23-3.71A117.11,117.11,0,0,1,519,462.43c2-2.87,5.22-3.57,10.09,0C533,465.18,538.4,474.69,540,480Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M596.53,322c-4.07,2.15-6.59,2.25-8.6,1.82s-6,1.57-6,1.57c-35.25,12.06-36.64,17.75-36.64,17.75l40.81-14.41c7.85-3.44,8-2.23,8-2.23,6,5.64,13.64,1.82,13.64,1.82s10.57-5,7.46-9.81S600.61,319.89,596.53,322Zm17-.9s-3,8-13.79,6.7c0,0-5.3-.78-3.06-4.73,0,0,11-4.62,13.91-4.29S613.5,321.14,613.5,321.14Z"
-        transform="translate(-28 -92.59)"
-        fill="#e8e8f0"
-      />
-      <path
-        d="M596.53,322c-4.07,2.15-6.59,2.25-8.6,1.82s-6,1.57-6,1.57c-35.25,12.06-36.64,17.75-36.64,17.75l40.81-14.41c7.85-3.44,8-2.23,8-2.23,6,5.64,13.64,1.82,13.64,1.82s10.57-5,7.46-9.81S600.61,319.89,596.53,322Zm17-.9s-3,8-13.79,6.7c0,0-5.3-.78-3.06-4.73,0,0,11-4.62,13.91-4.29S613.5,321.14,613.5,321.14Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
-      <path
-        d="M598.77,299.7c-6.1.2-7.37,4.76-7.37,4.76a8.79,8.79,0,0,0-.57,10.53L580,325.76a10.89,10.89,0,0,0-5.06,4s-23.78,21-23.43,22.91c0,0,3.88,2,28.49-20.43l6.46-5.72s1.43-10.69,11.52-12.72c0,0,1,.44,1.53-1.94a11.34,11.34,0,0,1,2.23-3.07C603.08,307.55,604.87,299.49,598.77,299.7Zm1.71,7.23s-3.27,8.44-7.93,6-.13-8.07-.13-8.07C600.5,297,600.48,306.93,600.48,306.93Z"
-        transform="translate(-28 -92.59)"
-        fill="#e8e8f0"
-      />
+      <path d="M1172,586.79a180,180,0,0,0-76-147.42,184.71,184.71,0,0,0,1-18.77c0-99.14-79.24-179.51-177-179.51a174.28,174.28,0,0,0-85.91,22.54c-69.19-45.52-159.52-73.07-258.34-73.07-160.79,0-299.1,72.95-360.46,177.55-3.41-.2-6.84-.31-10.3-.31-97.74,0-177,80.37-177,179.51A180.53,180.53,0,0,0,57.12,646h0c0,89.2,84.19,161.5,188,161.5H998.24c81.54,0,147.64-56.77,147.64-126.81h0A180.52,180.52,0,0,0,1172,586.79Z" transform="translate(-28 -92.59)" fill="#6c63ff" opacity="0.1" />
+      <path d="M856.58,256.72c-7.54,3.18-15.1,6.37-22.12,10.57-3.19,1.9-6.25,4-9.53,5.73-3.53,1.88-7.28,3.3-11,4.82a245.21,245.21,0,0,0-29.84,14.62c.83-10.75-.74-22.43-7.17-30.81a27,27,0,0,0-3.14-3.46c-4.55-4.22-11-5.31-15.47-9,2.72-4.78,8.76-9.12,12.87-12.77q6.66-5.89,13.82-11.17a196.76,196.76,0,0,1,30.35-18.43c6.76-3.31,13.82-6.27,21.28-7.28a4.62,4.62,0,0,1,2.81.25c1.16.64,1.58,2.08,1.86,3.37,1.39,6.45,2.1,13.07,3.26,19.57a83.48,83.48,0,0,0,2.31,9.89,120.66,120.66,0,0,0,4.31,11.31Q853.89,250.32,856.58,256.72Z" transform="translate(-28 -92.59)" fill="#fbbebe" />
+      <path d="M642.57,439A63,63,0,0,1,528.8,476.29,62.84,62.84,0,0,1,516.57,439a63,63,0,0,1,126,0Z" transform="translate(-28 -92.59)" fill="#be6f72" />
+      <path d="M557,494.52c3.37,5.81,6.77,11.67,8.93,18s3,13.34,1.22,19.81c21.46-11.3,47-10.39,70.62-16.11a2.54,2.54,0,0,0,1.63-.86,2.59,2.59,0,0,0,0-2.08,172.89,172.89,0,0,1-5.63-56.2l-12.33,7.29a157.84,157.84,0,0,1-16.75,9c-8.15,3.57-16.8,5.73-25.31,8.23-6.74,2-20.12,4.59-24.36,10.48A11.9,11.9,0,0,1,557,494.52Z" transform="translate(-28 -92.59)" fill="#be6f72" />
+      <path d="M522.29,409.8c-4.1,1.65-8.92,3.55-12.69,1.24-2.77-1.71-3.91-5.26-3.74-8.51s1.41-6.33,2.39-9.43c2-6.37,3.08-13,5.31-19.34s5.87-12.45,11.65-15.8c10.64-6.16,24.41-1.07,36.22-4.48,5-1.43,9.35-4.31,14-6.57s9.88-4,14.9-2.79c5.88,1.37,10.22,6.32,15.7,8.84,6,2.76,13.18,2.57,18.64,6.26,3.87,2.62,6.31,6.85,8.48,11a208.81,208.81,0,0,1,16.35,41.9,63.54,63.54,0,0,1,2.67,16c.05,6.94-1.83,13.74-3.69,20.44l-3,10.6c-1.11,4-2.25,8-4.35,11.62s-5.34,6.67-9.35,7.72c-5,1.29-10.82-1.21-13-5.89-1.34-2.9-1.28-6.22-1.35-9.41a104.74,104.74,0,0,0-2-18.6c-.62-3.07-1.45-6.26-3.54-8.58-2.7-3-7-4-11-4.07-4.68-.06-9.81,1.21-12.54,5-2.19,3.06-2.57,7.36-5.48,9.75a9.07,9.07,0,0,1-4.45,1.81,14.87,14.87,0,0,1-15.73-9.45c-.92-2.64-1.37-5.92-3.87-7.16-1.3-.65-2.85-.53-4.24-.95-4.26-1.29-5.38-6.69-5.77-11.12-.45-5.19,1.28-15.44-5.17-15.79C536.69,403.66,528.68,407.67,522.29,409.8Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M537.4,478.09c-2.22,1.07-4.65,2.32-5.52,4.62-.34.9-.4,1.89-.71,2.81-1.41,4.07-6.91,4.87-9.75,8.11a12.77,12.77,0,0,0-2.51,5.61,40.68,40.68,0,0,0,1.76,24.24,19.56,19.56,0,0,0,4,6.6c5.08,5.18,13.84,5.08,20.17,1.55s10.7-9.72,14.41-16a55.68,55.68,0,0,0,4.91-10,61,61,0,0,0,2.43-10.89c2.22-14.41,5.12-30.39,4.12-45-3-.19-8.73-.4-11.38,1.48-3.32,2.36-2.4,7.12-3.6,10.57C552.89,470.09,544.65,474.47,537.4,478.09Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M540,480c-3.75.23-10.47-3.92-14.23-3.71A117.11,117.11,0,0,1,519,462.43c2-2.87,5.22-3.57,10.09,0C533,465.18,538.4,474.69,540,480Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M596.53,322c-4.07,2.15-6.59,2.25-8.6,1.82s-6,1.57-6,1.57c-35.25,12.06-36.64,17.75-36.64,17.75l40.81-14.41c7.85-3.44,8-2.23,8-2.23,6,5.64,13.64,1.82,13.64,1.82s10.57-5,7.46-9.81S600.61,319.89,596.53,322Zm17-.9s-3,8-13.79,6.7c0,0-5.3-.78-3.06-4.73,0,0,11-4.62,13.91-4.29S613.5,321.14,613.5,321.14Z" transform="translate(-28 -92.59)" fill="#e8e8f0" />
+      <path d="M596.53,322c-4.07,2.15-6.59,2.25-8.6,1.82s-6,1.57-6,1.57c-35.25,12.06-36.64,17.75-36.64,17.75l40.81-14.41c7.85-3.44,8-2.23,8-2.23,6,5.64,13.64,1.82,13.64,1.82s10.57-5,7.46-9.81S600.61,319.89,596.53,322Zm17-.9s-3,8-13.79,6.7c0,0-5.3-.78-3.06-4.73,0,0,11-4.62,13.91-4.29S613.5,321.14,613.5,321.14Z" transform="translate(-28 -92.59)" opacity="0.1" />
+      <path d="M598.77,299.7c-6.1.2-7.37,4.76-7.37,4.76a8.79,8.79,0,0,0-.57,10.53L580,325.76a10.89,10.89,0,0,0-5.06,4s-23.78,21-23.43,22.91c0,0,3.88,2,28.49-20.43l6.46-5.72s1.43-10.69,11.52-12.72c0,0,1,.44,1.53-1.94a11.34,11.34,0,0,1,2.23-3.07C603.08,307.55,604.87,299.49,598.77,299.7Zm1.71,7.23s-3.27,8.44-7.93,6-.13-8.07-.13-8.07C600.5,297,600.48,306.93,600.48,306.93Z" transform="translate(-28 -92.59)" fill="#e8e8f0" />
       <circle cx="552.21" cy="236.08" r="1.29" opacity="0.1" />
-      <path
-        d="M693.06,287.88a85.16,85.16,0,0,0-11.69-5.08A77.82,77.82,0,0,0,665,280q-26.26-2.5-52.68-2.9c-3.11,0-6.29-.07-9.24,1a19.71,19.71,0,0,0-7,4.59,34.85,34.85,0,0,0-8,11.58,5.14,5.14,0,0,0-.5,3.58c.4,1.16,2,1.93,2.91,1.11A14.91,14.91,0,0,0,585.61,315a9.11,9.11,0,0,0-4.87,7.5,47.69,47.69,0,0,0,21.86-1.06c-2.12-.54-4.31,1.45-4.44,3.63a5.94,5.94,0,0,0,3.31,5.25,13.29,13.29,0,0,0,6.36,1.26c8.47,0,16.71-2.87,25.16-3.24,6.46-.29,13.12.88,19.29-1,7.16-2.22,13.55-8.51,20.93-7.2,5.89,1.05,9.73,6.52,13.57,11.1,6.14,7.31,13.73,13.23,21.26,19.1,5.8,4.52,11.86,9.16,19.05,10.69a10.58,10.58,0,0,0,6.52-.31,11.13,11.13,0,0,0,4.24-4c7.75-11,7.76-24.85,7.31-37.74-.23-6.59-1.67-7.48-7.77-10.21Q726.77,304,716.23,299,704.59,293.56,693.06,287.88Z"
-        transform="translate(-28 -92.59)"
-        fill="#fbbebe"
-      />
-      <path
-        d="M774.11,312.56a21.09,21.09,0,0,1-3.76,1.77c-2.19.52-4.42-.41-6.55-1.13-9-3-19-2.29-27.7-6a63,63,0,0,1-10.39,46.85c-1.8,2.56-4.17,5.18-7.29,5.38,1.39,4.27,5.67,6.85,9.73,8.77a104.46,104.46,0,0,0,20.24,7.14c2,.47,4.44.7,5.6-1,.7-1,1-2.71,2.23-2.65,1.88,2,1.26,6.1,3.86,7a5,5,0,0,0,2.47,0l5.8-1a10.63,10.63,0,0,0,4.88-1.68,9.56,9.56,0,0,0,2.23-2.84c6.5-11.07,9-23.88,10-36.53.49-6.28,1.1-12.94.67-19.24C785.73,312,778.81,310.37,774.11,312.56Z"
-        transform="translate(-28 -92.59)"
-        fill="#e8e8f0"
-      />
-      <path
-        d="M774.11,312.56a21.09,21.09,0,0,1-3.76,1.77c-2.19.52-4.42-.41-6.55-1.13-9-3-19-2.29-27.7-6a63,63,0,0,1-10.39,46.85c-1.8,2.56-4.17,5.18-7.29,5.38,1.39,4.27,5.67,6.85,9.73,8.77a104.46,104.46,0,0,0,20.24,7.14c2,.47,4.44.7,5.6-1,.7-1,1-2.71,2.23-2.65,1.88,2,1.26,6.1,3.86,7a5,5,0,0,0,2.47,0l5.8-1a10.63,10.63,0,0,0,4.88-1.68,9.56,9.56,0,0,0,2.23-2.84c6.5-11.07,9-23.88,10-36.53.49-6.28,1.1-12.94.67-19.24C785.73,312,778.81,310.37,774.11,312.56Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
-      <path
-        d="M438.88,636.93c-2.85-3.66-5.78-7.54-10-9.47a27.38,27.38,0,0,0-7.6-1.86c-14.07-2-28.17-4.08-42.37-4.47-4.64-.13-9.62,0-13.4,2.71-4.33,3.09-6,8.78-6.24,14.09a39.74,39.74,0,0,0,15.32,33c8.5,6.48,19.24,9.19,29.72,11.33,5.51,1.13,11.05,2.14,16.61,3s11.22,1.54,16.59,3.26c11.48,3.68,21.61,12,33.65,12.69a2.65,2.65,0,0,0,1.65-.28,2.8,2.8,0,0,0,1-1.7c2.65-9.35,11.84-31.74,0-38.28-6.19-3.41-13.06-3.56-19.12-7.89S443.48,642.84,438.88,636.93Z"
-        transform="translate(-28 -92.59)"
-        fill="#be6f72"
-      />
-      <path
-        d="M337.79,699c-7.79-6.78-18.54-10.37-24.2-19-2.49-3.8-3.75-8.26-5-12.64l-3.68-13.22a6.89,6.89,0,0,1-.38-2.53c.28-2.76,3.53-4.07,6.27-4.5,14-2.18,28.58,3.46,39.06,13s17.21,22.7,21.16,36.34a3.41,3.41,0,0,1,.12,2.18,3.36,3.36,0,0,1-1.54,1.46c-5.06,3-11.86,7.37-17.77,8.29S342,702.62,337.79,699Z"
-        transform="translate(-28 -92.59)"
-        fill="#be6f72"
-      />
-      <path
-        d="M679.57,642l41,16.41a17.47,17.47,0,0,1,10.51,20.26L700.57,807H624.29l13.28-146S666.57,637,679.57,642Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
+      <path d="M693.06,287.88a85.16,85.16,0,0,0-11.69-5.08A77.82,77.82,0,0,0,665,280q-26.26-2.5-52.68-2.9c-3.11,0-6.29-.07-9.24,1a19.71,19.71,0,0,0-7,4.59,34.85,34.85,0,0,0-8,11.58,5.14,5.14,0,0,0-.5,3.58c.4,1.16,2,1.93,2.91,1.11A14.91,14.91,0,0,0,585.61,315a9.11,9.11,0,0,0-4.87,7.5,47.69,47.69,0,0,0,21.86-1.06c-2.12-.54-4.31,1.45-4.44,3.63a5.94,5.94,0,0,0,3.31,5.25,13.29,13.29,0,0,0,6.36,1.26c8.47,0,16.71-2.87,25.16-3.24,6.46-.29,13.12.88,19.29-1,7.16-2.22,13.55-8.51,20.93-7.2,5.89,1.05,9.73,6.52,13.57,11.1,6.14,7.31,13.73,13.23,21.26,19.1,5.8,4.52,11.86,9.16,19.05,10.69a10.58,10.58,0,0,0,6.52-.31,11.13,11.13,0,0,0,4.24-4c7.75-11,7.76-24.85,7.31-37.74-.23-6.59-1.67-7.48-7.77-10.21Q726.77,304,716.23,299,704.59,293.56,693.06,287.88Z" transform="translate(-28 -92.59)" fill="#fbbebe" />
+      <path d="M774.11,312.56a21.09,21.09,0,0,1-3.76,1.77c-2.19.52-4.42-.41-6.55-1.13-9-3-19-2.29-27.7-6a63,63,0,0,1-10.39,46.85c-1.8,2.56-4.17,5.18-7.29,5.38,1.39,4.27,5.67,6.85,9.73,8.77a104.46,104.46,0,0,0,20.24,7.14c2,.47,4.44.7,5.6-1,.7-1,1-2.71,2.23-2.65,1.88,2,1.26,6.1,3.86,7a5,5,0,0,0,2.47,0l5.8-1a10.63,10.63,0,0,0,4.88-1.68,9.56,9.56,0,0,0,2.23-2.84c6.5-11.07,9-23.88,10-36.53.49-6.28,1.1-12.94.67-19.24C785.73,312,778.81,310.37,774.11,312.56Z" transform="translate(-28 -92.59)" fill="#e8e8f0" />
+      <path d="M774.11,312.56a21.09,21.09,0,0,1-3.76,1.77c-2.19.52-4.42-.41-6.55-1.13-9-3-19-2.29-27.7-6a63,63,0,0,1-10.39,46.85c-1.8,2.56-4.17,5.18-7.29,5.38,1.39,4.27,5.67,6.85,9.73,8.77a104.46,104.46,0,0,0,20.24,7.14c2,.47,4.44.7,5.6-1,.7-1,1-2.71,2.23-2.65,1.88,2,1.26,6.1,3.86,7a5,5,0,0,0,2.47,0l5.8-1a10.63,10.63,0,0,0,4.88-1.68,9.56,9.56,0,0,0,2.23-2.84c6.5-11.07,9-23.88,10-36.53.49-6.28,1.1-12.94.67-19.24C785.73,312,778.81,310.37,774.11,312.56Z" transform="translate(-28 -92.59)" opacity="0.1" />
+      <path d="M438.88,636.93c-2.85-3.66-5.78-7.54-10-9.47a27.38,27.38,0,0,0-7.6-1.86c-14.07-2-28.17-4.08-42.37-4.47-4.64-.13-9.62,0-13.4,2.71-4.33,3.09-6,8.78-6.24,14.09a39.74,39.74,0,0,0,15.32,33c8.5,6.48,19.24,9.19,29.72,11.33,5.51,1.13,11.05,2.14,16.61,3s11.22,1.54,16.59,3.26c11.48,3.68,21.61,12,33.65,12.69a2.65,2.65,0,0,0,1.65-.28,2.8,2.8,0,0,0,1-1.7c2.65-9.35,11.84-31.74,0-38.28-6.19-3.41-13.06-3.56-19.12-7.89S443.48,642.84,438.88,636.93Z" transform="translate(-28 -92.59)" fill="#be6f72" />
+      <path d="M337.79,699c-7.79-6.78-18.54-10.37-24.2-19-2.49-3.8-3.75-8.26-5-12.64l-3.68-13.22a6.89,6.89,0,0,1-.38-2.53c.28-2.76,3.53-4.07,6.27-4.5,14-2.18,28.58,3.46,39.06,13s17.21,22.7,21.16,36.34a3.41,3.41,0,0,1,.12,2.18,3.36,3.36,0,0,1-1.54,1.46c-5.06,3-11.86,7.37-17.77,8.29S342,702.62,337.79,699Z" transform="translate(-28 -92.59)" fill="#be6f72" />
+      <path d="M679.57,642l41,16.41a17.47,17.47,0,0,1,10.51,20.26L700.57,807H624.29l13.28-146S666.57,637,679.57,642Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
       <path
         d="M719.17,626.6c-.76,1.66-1.88,3.3-1.71,5.11.1,1.08.66,2.1.58,3.17-.16,2.1-2.59,3.27-4.69,3.29s-4.21-.66-6.28-.3c-3.4.58-5.7,3.71-8.64,5.52-4.1,2.52-9.22,2.37-14,2.8-10,.9-19.46,4.65-28.51,8.92-6.15,2.9-12.68,6.62-15,13-3.33,9,3.13,18.48,4.56,28a53.73,53.73,0,0,1,.28,9.66c-1.05,33.62-2.86,67.63-4.78,101.21l-366.56.43,18.05-31.63c17.6-30.85,35.67-62.28,62.22-85.87a55.9,55.9,0,0,1,13.14-8.84l21.29,19a21.42,21.42,0,0,0,5.85,4.13c4,1.63,8.48.7,12.77.84,8.25.27,15.79,4.48,22.95,8.59a131.73,131.73,0,0,1,15.12,9.59c2.82,2.16,6.89,3.51,9.83,5.5l-.69-35.9c-.07-3.24-.12-6.56.85-9.65,1.88-6,7.25-10.24,9.83-15.95,1.17-2.57,1.74-5.37,2.72-8a54.5,54.5,0,0,1,5.14-9.65l13.27-21.32c3.28-5.26,6.55-10.52,10.11-15.59,15.57-22.21,36.53-40,56.92-57.85a23.82,23.82,0,0,1,3.35-14.56,22.37,22.37,0,0,0,2.58-4.69,19.56,19.56,0,0,0,.37-6c0-.51,0-1,0-1.54a13.94,13.94,0,0,1,3.86-8.72c2.34-2.43,5.47-3.91,8.55-5.29A279.3,279.3,0,0,1,622,497.23c2.71-.64,5.58-1.24,8.25-.43.81,2.61,3.57,3.53,6.33,4.19l1.77.41a29.64,29.64,0,0,1,12.74,6.22c3.87,3.38,6.53,7.9,9.12,12.35,19.47,33.43,28.44,77.29,58.56,101.58C720.23,622.7,719.93,625,719.17,626.6Z"
         transform="translate(-28 -92.59)"
         fill="#6c63ff"
       />
-      <path
-        d="M842,216c-10.54,23.17-31.31,46-58.43,46a66,66,0,0,1-6.63-.33,27,27,0,0,0-3.14-3.46c-4.55-4.22-11-5.31-15.47-9,2.72-4.78,8.76-9.12,12.87-12.77q6.66-5.89,13.82-11.17a196.76,196.76,0,0,1,30.35-18.43c6.76-3.31,13.82-6.27,21.28-7.28a4.62,4.62,0,0,1,2.81.25c1.16.64,1.58,2.08,1.86,3.37C842.71,209.58,840.84,209.5,842,216Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
+      <path d="M842,216c-10.54,23.17-31.31,46-58.43,46a66,66,0,0,1-6.63-.33,27,27,0,0,0-3.14-3.46c-4.55-4.22-11-5.31-15.47-9,2.72-4.78,8.76-9.12,12.87-12.77q6.66-5.89,13.82-11.17a196.76,196.76,0,0,1,30.35-18.43c6.76-3.31,13.82-6.27,21.28-7.28a4.62,4.62,0,0,1,2.81.25c1.16.64,1.58,2.08,1.86,3.37C842.71,209.58,840.84,209.5,842,216Z" transform="translate(-28 -92.59)" opacity="0.1" />
       <circle cx="755.57" cy="100.4" r="67" fill="#fbbebe" />
       <path
         d="M923.1,415.82a121.77,121.77,0,0,1-5.68,23.79c-1,2.81-2.23,5.55-3.5,8.25-7.45,15.79-11.54,32.86-13.49,50.22a27.77,27.77,0,0,1-.75,4.05c-1.47,5.6-4.57,10.6-6.94,15.87a129.24,129.24,0,0,0-6,17.53,9.78,9.78,0,0,0-.56,4.71c.37,1.69,1.59,3,2.45,4.53,4.44,7.65-.69,17-2.42,25.66-.59,3-.85,6.26-2.8,8.6-1.66,2-4.24,2.92-6.69,3.76a757.3,757.3,0,0,1-106.94,27.84c-5.41,1-11,1.93-16.37.93s-10.72-4.32-12.56-9.5c-1.06-3-.88-6.26-.79-9.44.2-6.68,0-13.4-.36-20.13-1.16-22.15-3.79-44.38,2-65.6,1.73-6.26,4.17-12.3,6.13-18.49,3.83-12.07,4.82-24.55,5.78-37.07.79-10.32,1.56-20.68,3.87-30.86,1.72-7.59.58-15.48.48-23.26a87.59,87.59,0,0,1,15-50c1.73-2.55,3.63-5.07,4.54-8,1.28-4.2.4-8.71-.18-13.07a91.76,91.76,0,0,1,1.74-33.31,34,34,0,0,1,4.61-11.49c2.49-3.63,6.06-6.37,9.63-8.95a253,253,0,0,1,67.83-34.75c2.23,5.64,4.37,12.23,6.08,18,.23.78.39,1.77-.25,2.27s-1.3.23-2,.25a3.6,3.6,0,0,0-3.09,2.65,6.54,6.54,0,0,0,.38,4.24c1.36,3.5,4.29,6.11,7.11,8.58L883.54,286a34.71,34.71,0,0,0,5.53,4.22c1.78,1,3.72,1.71,5.55,2.63,7.34,3.71,12.41,10.94,15.24,18.66s1.55,17,5.24,24.33C927.36,360.14,927.26,388.89,923.1,415.82Z"
         transform="translate(-28 -92.59)"
         fill="#e8e8f0"
       />
-      <path
-        d="M913.78,670.08a107.22,107.22,0,0,1-.31,52.85c-.81,3.09-1.76,6.29-1.12,9.42.37,1.78,1.24,3.45,1.44,5.26a15.4,15.4,0,0,1-.53,4.9c-4.44,21-2.85,42.82-1.06,64.25-.76,0-1,.35-1.8.35H891.13c-.34-5.63-7.34-9.85-10.76-14.34A37.12,37.12,0,0,1,874,761.58c3-12,11.84-21.59,16.37-33.06,5-12.62,4.57-26.91,9.88-39.39C903.3,681.92,909,676.29,913.78,670.08Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M913.78,670.08a107.22,107.22,0,0,1-.31,52.85c-.81,3.09-1.76,6.29-1.12,9.42.37,1.78,1.24,3.45,1.44,5.26a15.4,15.4,0,0,1-.53,4.9c-4.44,21-2.85,42.82-1.06,64.25-.76,0-1,.35-1.8.35H891.13c-.34-5.63-7.34-9.85-10.76-14.34A37.12,37.12,0,0,1,874,761.58c3-12,11.84-21.59,16.37-33.06,5-12.62,4.57-26.91,9.88-39.39C903.3,681.92,909,676.29,913.78,670.08Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
-      <path
-        d="M873.34,573.83c-16.38-2.62-32.25,5.63-48.07,10.64-24.17,7.65-50.78,8.12-73.11,20.13a18.67,18.67,0,0,0-5.34,3.86,15.29,15.29,0,0,0-3.29,7.82A27.75,27.75,0,0,0,747,634.63c1.39,2.36,3.14,4.53,4.22,7.06,2.56,6,.85,12.92.41,19.48-1,14.65,4.68,28.91,5.82,43.55.68,8.63-.21,17.45,1.82,25.87,1.27,5.28,3.66,10.26,4.65,15.6s.56,10.56.89,15.84c.93,15.13,7.82,29.83,6.14,44.9l130,.43c-4.82-16.77-8.83-34.11-4.46-51a120.23,120.23,0,0,1,5.64-15.65c7.27-17.57,14.74-35.19,18.75-53.77s4.37-38.42-2.42-56.18c-7.56-19.8-23.63-36.27-27.13-57.17C885.33,572.79,879.35,574.79,873.34,573.83Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M736.91,160.31c-1.26-2.64-4.83-4.38-7.23-2.71S727.59,163,727,166c-1.14,5.9-7,9.92-13,10.86-2.81.45-5.94.27-8.12-1.55a11.3,11.3,0,0,1-3-4.89c-6-16-2.35-34.68,7.47-48.64A34.23,34.23,0,0,1,718,113.6c8.27-6,19.33-6,29.56-5.68a14,14,0,0,0,6.15-.71,17,17,0,0,0,4.08-3c9.69-8.52,23.08-12.1,36-11.53s25.35,5,36.83,10.89c5.49,2.81,10.87,6,15.17,10.44,10.33,10.63,12.85,26.38,14.88,41.06,2.18,15.84,4.35,32.12.68,47.69-2.08,8.82-6,17.44-5.54,26.49a213.89,213.89,0,0,1-25.28,5.59c-4,.63-8.62,1-11.55-1.83a11.44,11.44,0,0,1-2.64-4.68c-3.17-9.37-2.11-20.07-6.9-28.73a24.1,24.1,0,0,0-19.77-12.18c-3.14-.11-6.71.66-8.32,3.35a20.67,20.67,0,0,0-1.42,4.12c-2.22,6.69-11.31,10-17.3,6.27-3-1.88-5.05-5-7.76-7.34-3.44-2.95-7.85-4.47-11.71-6.85C730.3,179,741.89,170.76,736.91,160.31Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M636.62,501c-5.47,1.75-10.45,4.92-15.77,7.15-9.37,3.91-19.67,4.82-29.5,7.32a121.18,121.18,0,0,0-27.11,10.92c-.63.34-2.61,2-4.19,3.14,0-.51,0-1,0-1.54a13.94,13.94,0,0,1,3.86-8.72c2.34-2.43,5.47-3.91,8.55-5.29A279.3,279.3,0,0,1,622,497.23c2.71-.64,5.58-1.24,8.25-.43C631.1,499.41,633.86,500.33,636.62,501Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <path
-        d="M494.85,757.45c10.76,12,20.41,25.1,32.93,35.22-14.45-19.19-35.18-32-53.92-46.47-3.8-2.94-11.4-7.11-13.7-11.36-3.63-6.66,4.39-1.93,7.72-.12C478.28,740.37,487,748.71,494.85,757.45Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
-      <path
-        d="M882,407.17c-.51,4.32-2.12,8.42-3.75,12.44-4,10-8.29,19.9-14.33,28.77-4.16,6.11-9.11,11.63-13.45,17.6a202,202,0,0,0-12.24,19.73Q828,503.83,818.29,522.25c-3.09,5.88-6.16,11.81-10.15,17.12a118,118,0,0,1-9,10.24c-7,7.38-14.19,14.2-20.45,22.2-3.1,4-8.27,5.54-13.1,6.9a17.82,17.82,0,0,1-5,.9,17.26,17.26,0,0,1-5-1.11,126.72,126.72,0,0,1-15.8-6c-1.16-22.15-3.79-44.38,2-65.6,1.73-6.26,4.17-12.3,6.13-18.49,3.83-12.07,4.82-24.55,5.78-37.07,1.19-2.51,2.46-5,3.69-7.42,8.34-16.48,15.37-34.63,13.2-53a99,99,0,0,1-1.15-10,37.68,37.68,0,0,1,2.05-12.07,66.74,66.74,0,0,1,38-41,21.27,21.27,0,0,1,9-2c4,.21,7.83,2.29,11.73,1.53,13.21,5.81,23.9,15.73,31.89,27.75s8.43,28.08,17.12,39.6C881.8,398.23,882.5,402.86,882,407.17Z"
-        transform="translate(-28 -92.59)"
-        opacity="0.1"
-      />
+      <path d="M913.78,670.08a107.22,107.22,0,0,1-.31,52.85c-.81,3.09-1.76,6.29-1.12,9.42.37,1.78,1.24,3.45,1.44,5.26a15.4,15.4,0,0,1-.53,4.9c-4.44,21-2.85,42.82-1.06,64.25-.76,0-1,.35-1.8.35H891.13c-.34-5.63-7.34-9.85-10.76-14.34A37.12,37.12,0,0,1,874,761.58c3-12,11.84-21.59,16.37-33.06,5-12.62,4.57-26.91,9.88-39.39C903.3,681.92,909,676.29,913.78,670.08Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M913.78,670.08a107.22,107.22,0,0,1-.31,52.85c-.81,3.09-1.76,6.29-1.12,9.42.37,1.78,1.24,3.45,1.44,5.26a15.4,15.4,0,0,1-.53,4.9c-4.44,21-2.85,42.82-1.06,64.25-.76,0-1,.35-1.8.35H891.13c-.34-5.63-7.34-9.85-10.76-14.34A37.12,37.12,0,0,1,874,761.58c3-12,11.84-21.59,16.37-33.06,5-12.62,4.57-26.91,9.88-39.39C903.3,681.92,909,676.29,913.78,670.08Z" transform="translate(-28 -92.59)" opacity="0.1" />
+      <path d="M873.34,573.83c-16.38-2.62-32.25,5.63-48.07,10.64-24.17,7.65-50.78,8.12-73.11,20.13a18.67,18.67,0,0,0-5.34,3.86,15.29,15.29,0,0,0-3.29,7.82A27.75,27.75,0,0,0,747,634.63c1.39,2.36,3.14,4.53,4.22,7.06,2.56,6,.85,12.92.41,19.48-1,14.65,4.68,28.91,5.82,43.55.68,8.63-.21,17.45,1.82,25.87,1.27,5.28,3.66,10.26,4.65,15.6s.56,10.56.89,15.84c.93,15.13,7.82,29.83,6.14,44.9l130,.43c-4.82-16.77-8.83-34.11-4.46-51a120.23,120.23,0,0,1,5.64-15.65c7.27-17.57,14.74-35.19,18.75-53.77s4.37-38.42-2.42-56.18c-7.56-19.8-23.63-36.27-27.13-57.17C885.33,572.79,879.35,574.79,873.34,573.83Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M736.91,160.31c-1.26-2.64-4.83-4.38-7.23-2.71S727.59,163,727,166c-1.14,5.9-7,9.92-13,10.86-2.81.45-5.94.27-8.12-1.55a11.3,11.3,0,0,1-3-4.89c-6-16-2.35-34.68,7.47-48.64A34.23,34.23,0,0,1,718,113.6c8.27-6,19.33-6,29.56-5.68a14,14,0,0,0,6.15-.71,17,17,0,0,0,4.08-3c9.69-8.52,23.08-12.1,36-11.53s25.35,5,36.83,10.89c5.49,2.81,10.87,6,15.17,10.44,10.33,10.63,12.85,26.38,14.88,41.06,2.18,15.84,4.35,32.12.68,47.69-2.08,8.82-6,17.44-5.54,26.49a213.89,213.89,0,0,1-25.28,5.59c-4,.63-8.62,1-11.55-1.83a11.44,11.44,0,0,1-2.64-4.68c-3.17-9.37-2.11-20.07-6.9-28.73a24.1,24.1,0,0,0-19.77-12.18c-3.14-.11-6.71.66-8.32,3.35a20.67,20.67,0,0,0-1.42,4.12c-2.22,6.69-11.31,10-17.3,6.27-3-1.88-5.05-5-7.76-7.34-3.44-2.95-7.85-4.47-11.71-6.85C730.3,179,741.89,170.76,736.91,160.31Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M636.62,501c-5.47,1.75-10.45,4.92-15.77,7.15-9.37,3.91-19.67,4.82-29.5,7.32a121.18,121.18,0,0,0-27.11,10.92c-.63.34-2.61,2-4.19,3.14,0-.51,0-1,0-1.54a13.94,13.94,0,0,1,3.86-8.72c2.34-2.43,5.47-3.91,8.55-5.29A279.3,279.3,0,0,1,622,497.23c2.71-.64,5.58-1.24,8.25-.43C631.1,499.41,633.86,500.33,636.62,501Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <path d="M494.85,757.45c10.76,12,20.41,25.1,32.93,35.22-14.45-19.19-35.18-32-53.92-46.47-3.8-2.94-11.4-7.11-13.7-11.36-3.63-6.66,4.39-1.93,7.72-.12C478.28,740.37,487,748.71,494.85,757.45Z" transform="translate(-28 -92.59)" opacity="0.1" />
+      <path d="M882,407.17c-.51,4.32-2.12,8.42-3.75,12.44-4,10-8.29,19.9-14.33,28.77-4.16,6.11-9.11,11.63-13.45,17.6a202,202,0,0,0-12.24,19.73Q828,503.83,818.29,522.25c-3.09,5.88-6.16,11.81-10.15,17.12a118,118,0,0,1-9,10.24c-7,7.38-14.19,14.2-20.45,22.2-3.1,4-8.27,5.54-13.1,6.9a17.82,17.82,0,0,1-5,.9,17.26,17.26,0,0,1-5-1.11,126.72,126.72,0,0,1-15.8-6c-1.16-22.15-3.79-44.38,2-65.6,1.73-6.26,4.17-12.3,6.13-18.49,3.83-12.07,4.82-24.55,5.78-37.07,1.19-2.51,2.46-5,3.69-7.42,8.34-16.48,15.37-34.63,13.2-53a99,99,0,0,1-1.15-10,37.68,37.68,0,0,1,2.05-12.07,66.74,66.74,0,0,1,38-41,21.27,21.27,0,0,1,9-2c4,.21,7.83,2.29,11.73,1.53,13.21,5.81,23.9,15.73,31.89,27.75s8.43,28.08,17.12,39.6C881.8,398.23,882.5,402.86,882,407.17Z" transform="translate(-28 -92.59)" opacity="0.1" />
       <polygon points="564.86 260.31 564.44 259.4 548.1 266.94 545.37 268.2 542.65 269.45 565.69 319.4 568.41 318.14 571.14 316.88 587.48 309.34 587.06 308.44 570.72 315.98 570.3 315.07 586.64 307.53 586.22 306.62 569.88 314.16 569.46 313.25 585.8 305.71 585.39 304.8 569.04 312.34 568.62 311.44 584.97 303.9 584.55 302.99 568.2 310.53 567.78 309.62 584.13 302.08 583.71 301.17 567.37 308.71 566.95 307.8 583.29 300.26 582.87 299.36 566.53 306.9 566.11 305.99 582.45 298.45 582.03 297.54 565.69 305.08 565.27 304.17 581.62 296.63 581.2 295.72 564.85 303.26 564.43 302.36 580.78 294.81 580.36 293.91 564.01 301.45 563.6 300.54 579.94 293 579.52 292.09 563.18 299.63 562.76 298.72 579.1 291.18 578.68 290.27 562.34 297.81 561.92 296.91 578.26 289.37 577.85 288.46 561.5 296 561.08 295.09 577.43 287.55 577.01 286.64 560.66 294.18 560.25 293.27 576.59 285.74 576.17 284.83 559.83 292.37 559.41 291.46 575.75 283.92 575.33 283.01 558.99 290.55 558.57 289.64 574.91 282.1 574.5 281.19 558.15 288.74 557.73 287.83 574.08 280.29 573.66 279.38 557.31 286.92 556.89 286.01 573.24 278.47 572.82 277.56 556.48 285.1 556.06 284.19 572.4 276.65 571.98 275.75 555.64 283.29 555.22 282.38 571.56 274.84 571.14 273.93 554.8 281.47 554.38 280.56 570.73 273.02 570.31 272.12 553.96 279.65 553.54 278.75 569.89 271.21 569.47 270.3 553.12 277.84 552.71 276.93 569.05 269.39 568.63 268.48 552.29 276.02 551.87 275.11 568.21 267.57 567.79 266.67 551.45 274.21 551.03 273.3 567.37 265.76 566.96 264.85 550.61 272.39 550.19 271.48 566.54 263.94 566.12 263.03 549.77 270.57 549.35 269.67 565.7 262.13 565.28 261.22 548.93 268.76 548.52 267.85 564.86 260.31" />
       <path
         d="M644.16,462.76c-2.11,3.57-5.34,6.67-9.35,7.72-5,1.29-10.82-1.21-13-5.89-1.34-2.9-1.28-6.22-1.35-9.41a104.74,104.74,0,0,0-2-18.6c-.62-3.07-1.45-6.26-3.54-8.58-2.7-3-7-4-11-4.07-4.68-.06-9.81,1.21-12.54,5-2.19,3.06-2.57,7.36-5.48,9.75a9.07,9.07,0,0,1-4.45,1.81,14.87,14.87,0,0,1-15.73-9.45c-.92-2.64-1.37-5.92-3.87-7.16-1.3-.65-2.85-.53-4.24-.95-4.26-1.29-5.38-6.69-5.77-11.12-.45-5.19,1.28-15.44-5.17-15.79-6.9-.38-14.91,3.63-21.3,5.76-4.1,1.65-8.92,3.55-12.69,1.24-2.77-1.71-3.91-5.26-3.74-8.51s1.41-6.33,2.39-9.43c1.68-5.24,2.69-10.68,4.23-16a47.48,47.48,0,0,0-1.93,4.62c-2.22,6.31-3.26,13-5.3,19.34-1,3.1-2.22,6.18-2.39,9.43s1,6.8,3.74,8.51c3.77,2.31,8.59.41,12.69-1.24,6.39-2.13,14.4-6.14,21.3-5.76,6.45.35,4.72,10.6,5.17,15.79.39,4.43,1.51,9.83,5.77,11.12,1.39.42,2.94.3,4.24.95,2.5,1.24,3,4.52,3.87,7.16a14.87,14.87,0,0,0,15.73,9.45,9.07,9.07,0,0,0,4.45-1.81c2.91-2.39,3.29-6.69,5.48-9.75,2.73-3.81,7.86-5.08,12.54-5,4,.06,8.35,1.06,11,4.07,2.09,2.32,2.92,5.51,3.54,8.58a104.74,104.74,0,0,1,2,18.6c.07,3.19,0,6.51,1.35,9.41,2.17,4.68,8,7.18,13,5.89,4-1.05,7.24-4.15,9.35-7.72a40,40,0,0,0,3.68-9.24C644.62,461.94,644.4,462.35,644.16,462.76Z"
         transform="translate(-28 -92.59)"
         opacity="0.1"
       />
-      <path
-        d="M695.6,456.12c-8-7.68-15.23-16.18-22.41-24.66-6.88-8.11-13.78-16.26-19.32-25.33-3.43-5.61-6.49-11.73-11.76-15.66-4-3-8.89-4.4-13.31-6.69-3.18-1.65-6.11-3.74-9.25-5.45a44,44,0,0,0-22.34-5.27c-3.23.11-6.9.86-8.56,3.64-.57.95-.84,2.06-1.42,3-1.79,3-6.1,3.85-7.57,7-2.48,5.3,5,10.17,5.47,16,.22,2.92-1.39,5.64-1.86,8.53-.8,5,1.79,9.77,4.29,14.13,5.35,9.34,11.86,19.57,22.37,21.92,3.72.83,7.65.56,11.28,1.74a26.68,26.68,0,0,1,8,4.77A131,131,0,0,1,655.05,481c3.38,4.77,6.44,9.75,9.85,14.49a117.8,117.8,0,0,0,41.57,35.74l12.27-39c1.89-6,3.38-14.23-2-18.91C710,467.25,702.23,462.46,695.6,456.12Z"
-        transform="translate(-28 -92.59)"
-        fill="#fbbebe"
-      />
-      <path
-        d="M829.17,322.42c-3.9.75-7.77-1.32-11.73-1.53a21.21,21.21,0,0,0-9,2,66.78,66.78,0,0,0-38,41A38.06,38.06,0,0,0,768.42,376c.06,3.35.76,6.65,1.15,10,2.17,18.34-4.86,36.5-13.19,53-4.61,9.11-9.81,18.72-8.72,28.87.14,1.36.36,2.89-.47,4-1,1.32-3.16,1.39-4.09,2.78s-.08,3.49-.82,5.06c-1,2.22-4.26,1.95-6.59,1.16a53,53,0,0,1-17.43-9.9c-8.31,4.85-17.2,10.63-19.93,19.85A44.05,44.05,0,0,0,697,498l-4.29,35.8c-.57,4.74-.85,10.3,2.73,13.46,6.17,5.46,17.16-1.61,23.76,3.33,1.69,1.26,2.79,3.14,4,4.85,7.21,9.89,19.62,14.24,31.26,18a17.57,17.57,0,0,0,5,1.1,17,17,0,0,0,5-.9c4.84-1.36,10-2.94,13.1-6.89,6.27-8,13.46-14.82,20.46-22.2a121.26,121.26,0,0,0,9-10.24c4-5.32,7.06-11.25,10.15-17.13q9.69-18.42,19.92-36.54A201.75,201.75,0,0,1,849.44,461c4.35-6,9.29-11.5,13.45-17.6,6-8.88,10.31-18.82,14.33-28.77,1.63-4,3.24-8.13,3.76-12.44s-.18-8.94-2.8-12.41c-8.69-11.53-9.12-27.58-17.11-39.6S842.39,328.22,829.17,322.42Z"
-        transform="translate(-28 -92.59)"
-        fill="#e8e8f0"
-      />
-      <path
-        d="M593.13,357a1.89,1.89,0,0,0-.86,1.35c0,.5.41.89.63,1.34.61,1.28-.37,2.76-1.49,3.64s-2.48,1.56-3.09,2.85a1,1,0,0,0-.12.56,1.2,1.2,0,0,0,.44.66,5.45,5.45,0,0,0,2.47,1.62c1.53.32,3-.69,4.3-1.52a23.28,23.28,0,0,1,4.48-2.2,4.37,4.37,0,0,0,1.35-.67,3,3,0,0,0,.87-1.86c.34-2.51-1-4.92-2.53-7C597.74,353.32,594.7,355.65,593.13,357Z"
-        transform="translate(-28 -92.59)"
-        fill="#3f3d56"
-      />
-      <rect
-        x="314.13"
-        y="623.51"
-        width="119.62"
-        height="61.27"
-        rx="1.54"
-        transform="translate(310.2 -191.08) rotate(27.04)"
-        fill="#3f3d56"
-      />
-      <rect
-        x="323.8"
-        y="629.09"
-        width="100.54"
-        height="49.98"
-        transform="translate(310.19 -191.14) rotate(27.04)"
-        fill="#e8e8f0"
-      />
-      <ellipse
-        cx="325.81"
-        cy="629.44"
-        rx="1.09"
-        ry="1.65"
-        transform="translate(-410.95 540.95) rotate(-62.96)"
-        fill="#e6e8ec"
-      />
-      <ellipse
-        cx="422.77"
-        cy="679.06"
-        rx="1.79"
-        ry="2.72"
-        transform="translate(-402.25 654.38) rotate(-62.96)"
-        fill="#e6e8ec"
-      />
+      <path d="M695.6,456.12c-8-7.68-15.23-16.18-22.41-24.66-6.88-8.11-13.78-16.26-19.32-25.33-3.43-5.61-6.49-11.73-11.76-15.66-4-3-8.89-4.4-13.31-6.69-3.18-1.65-6.11-3.74-9.25-5.45a44,44,0,0,0-22.34-5.27c-3.23.11-6.9.86-8.56,3.64-.57.95-.84,2.06-1.42,3-1.79,3-6.1,3.85-7.57,7-2.48,5.3,5,10.17,5.47,16,.22,2.92-1.39,5.64-1.86,8.53-.8,5,1.79,9.77,4.29,14.13,5.35,9.34,11.86,19.57,22.37,21.92,3.72.83,7.65.56,11.28,1.74a26.68,26.68,0,0,1,8,4.77A131,131,0,0,1,655.05,481c3.38,4.77,6.44,9.75,9.85,14.49a117.8,117.8,0,0,0,41.57,35.74l12.27-39c1.89-6,3.38-14.23-2-18.91C710,467.25,702.23,462.46,695.6,456.12Z" transform="translate(-28 -92.59)" fill="#fbbebe" />
+      <path d="M829.17,322.42c-3.9.75-7.77-1.32-11.73-1.53a21.21,21.21,0,0,0-9,2,66.78,66.78,0,0,0-38,41A38.06,38.06,0,0,0,768.42,376c.06,3.35.76,6.65,1.15,10,2.17,18.34-4.86,36.5-13.19,53-4.61,9.11-9.81,18.72-8.72,28.87.14,1.36.36,2.89-.47,4-1,1.32-3.16,1.39-4.09,2.78s-.08,3.49-.82,5.06c-1,2.22-4.26,1.95-6.59,1.16a53,53,0,0,1-17.43-9.9c-8.31,4.85-17.2,10.63-19.93,19.85A44.05,44.05,0,0,0,697,498l-4.29,35.8c-.57,4.74-.85,10.3,2.73,13.46,6.17,5.46,17.16-1.61,23.76,3.33,1.69,1.26,2.79,3.14,4,4.85,7.21,9.89,19.62,14.24,31.26,18a17.57,17.57,0,0,0,5,1.1,17,17,0,0,0,5-.9c4.84-1.36,10-2.94,13.1-6.89,6.27-8,13.46-14.82,20.46-22.2a121.26,121.26,0,0,0,9-10.24c4-5.32,7.06-11.25,10.15-17.13q9.69-18.42,19.92-36.54A201.75,201.75,0,0,1,849.44,461c4.35-6,9.29-11.5,13.45-17.6,6-8.88,10.31-18.82,14.33-28.77,1.63-4,3.24-8.13,3.76-12.44s-.18-8.94-2.8-12.41c-8.69-11.53-9.12-27.58-17.11-39.6S842.39,328.22,829.17,322.42Z" transform="translate(-28 -92.59)" fill="#e8e8f0" />
+      <path d="M593.13,357a1.89,1.89,0,0,0-.86,1.35c0,.5.41.89.63,1.34.61,1.28-.37,2.76-1.49,3.64s-2.48,1.56-3.09,2.85a1,1,0,0,0-.12.56,1.2,1.2,0,0,0,.44.66,5.45,5.45,0,0,0,2.47,1.62c1.53.32,3-.69,4.3-1.52a23.28,23.28,0,0,1,4.48-2.2,4.37,4.37,0,0,0,1.35-.67,3,3,0,0,0,.87-1.86c.34-2.51-1-4.92-2.53-7C597.74,353.32,594.7,355.65,593.13,357Z" transform="translate(-28 -92.59)" fill="#3f3d56" />
+      <rect x="314.13" y="623.51" width="119.62" height="61.27" rx="1.54" transform="translate(310.2 -191.08) rotate(27.04)" fill="#3f3d56" />
+      <rect x="323.8" y="629.09" width="100.54" height="49.98" transform="translate(310.19 -191.14) rotate(27.04)" fill="#e8e8f0" />
+      <ellipse cx="325.81" cy="629.44" rx="1.09" ry="1.65" transform="translate(-410.95 540.95) rotate(-62.96)" fill="#e6e8ec" />
+      <ellipse cx="422.77" cy="679.06" rx="1.79" ry="2.72" transform="translate(-402.25 654.38) rotate(-62.96)" fill="#e6e8ec" />
       <g opacity="0.1">
-        <path
-          d="M861.33,195.72c-2.08,8.82-6,17.44-5.54,26.49a213.89,213.89,0,0,1-25.28,5.59c-4,.63-8.62,1-11.55-1.83a11.44,11.44,0,0,1-2.64-4.68c-3.17-9.37-2.11-20.07-6.9-28.73a24.1,24.1,0,0,0-19.77-12.18c-3.14-.11-6.71.66-8.32,3.35a20.67,20.67,0,0,0-1.42,4.12c-2.22,6.69-11.31,10-17.3,6.27-3-1.88-5.05-5-7.76-7.34-3.44-2.95-7.85-4.47-11.71-6.85-3.48-2.14-5.15-4.3-5.86-6.53-.88,4.81-1.13,9.23,5.86,13.53,3.86,2.38,8.27,3.9,11.71,6.85,2.71,2.32,4.72,5.46,7.76,7.34,6,3.71,15.08.42,17.3-6.27a20.67,20.67,0,0,1,1.42-4.12c1.61-2.69,5.18-3.46,8.32-3.35a24.1,24.1,0,0,1,19.77,12.18c4.79,8.66,3.73,19.36,6.9,28.73A11.44,11.44,0,0,0,819,233c2.93,2.8,7.56,2.46,11.55,1.83a213.89,213.89,0,0,0,25.28-5.59c-.49-9.05,3.46-17.67,5.54-26.49a84,84,0,0,0,1.91-22A77.18,77.18,0,0,1,861.33,195.72Z"
-          transform="translate(-28 -92.59)"
-        />
-        <path
-          d="M737.88,163.11a15.63,15.63,0,0,0-1-9.8c-1.26-2.64-4.83-4.38-7.23-2.71S727.59,156,727,159c-1.14,5.9-7,9.92-13,10.86-2.81.45-5.94.27-8.12-1.55a11.3,11.3,0,0,1-3-4.89,46.46,46.46,0,0,1-2.77-12.94,47.64,47.64,0,0,0,2.77,19.94,11.3,11.3,0,0,0,3,4.89c2.18,1.82,5.31,2,8.12,1.55,5.93-.94,11.82-5,13-10.86.57-3,.18-6.63,2.66-8.35s6,.07,7.23,2.71A13.52,13.52,0,0,1,737.88,163.11Z"
-          transform="translate(-28 -92.59)"
-        />
+        <path d="M861.33,195.72c-2.08,8.82-6,17.44-5.54,26.49a213.89,213.89,0,0,1-25.28,5.59c-4,.63-8.62,1-11.55-1.83a11.44,11.44,0,0,1-2.64-4.68c-3.17-9.37-2.11-20.07-6.9-28.73a24.1,24.1,0,0,0-19.77-12.18c-3.14-.11-6.71.66-8.32,3.35a20.67,20.67,0,0,0-1.42,4.12c-2.22,6.69-11.31,10-17.3,6.27-3-1.88-5.05-5-7.76-7.34-3.44-2.95-7.85-4.47-11.71-6.85-3.48-2.14-5.15-4.3-5.86-6.53-.88,4.81-1.13,9.23,5.86,13.53,3.86,2.38,8.27,3.9,11.71,6.85,2.71,2.32,4.72,5.46,7.76,7.34,6,3.71,15.08.42,17.3-6.27a20.67,20.67,0,0,1,1.42-4.12c1.61-2.69,5.18-3.46,8.32-3.35a24.1,24.1,0,0,1,19.77,12.18c4.79,8.66,3.73,19.36,6.9,28.73A11.44,11.44,0,0,0,819,233c2.93,2.8,7.56,2.46,11.55,1.83a213.89,213.89,0,0,0,25.28-5.59c-.49-9.05,3.46-17.67,5.54-26.49a84,84,0,0,0,1.91-22A77.18,77.18,0,0,1,861.33,195.72Z" transform="translate(-28 -92.59)" />
+        <path d="M737.88,163.11a15.63,15.63,0,0,0-1-9.8c-1.26-2.64-4.83-4.38-7.23-2.71S727.59,156,727,159c-1.14,5.9-7,9.92-13,10.86-2.81.45-5.94.27-8.12-1.55a11.3,11.3,0,0,1-3-4.89,46.46,46.46,0,0,1-2.77-12.94,47.64,47.64,0,0,0,2.77,19.94,11.3,11.3,0,0,0,3,4.89c2.18,1.82,5.31,2,8.12,1.55,5.93-.94,11.82-5,13-10.86.57-3,.18-6.63,2.66-8.35s6,.07,7.23,2.71A13.52,13.52,0,0,1,737.88,163.11Z" transform="translate(-28 -92.59)" />
       </g>
     </svg>
   )
@@ -820,218 +362,75 @@ export const BarberSvg = ({ ...props }): JSX.Element => {
 
 export const BurbujaSVG = ({ ...props }): JSX.Element => {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="2389"
-      height="765"
-    >
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="2389" height="765">
       <defs>
         <linearGradient x1="45.614%" y1="-2.833%" x2="13.272%" y2="100%" id="a">
           <stop stopColor="#FFF" stopOpacity=".64" offset="0%" />
           <stop stopColor="#FFF" stopOpacity="0" offset="100%" />
         </linearGradient>
-        <filter
-          x="-.9%"
-          y="-.3%"
-          width="101.9%"
-          height="100.7%"
-          filterUnits="objectBoundingBox"
-          id="b"
-        >
-          <feGaussianBlur
-            stdDeviation="-0.5 -6.123234e-17"
-            in="SourceGraphic"
-          />
+        <filter x="-.9%" y="-.3%" width="101.9%" height="100.7%" filterUnits="objectBoundingBox" id="b">
+          <feGaussianBlur stdDeviation="-0.5 -6.123234e-17" in="SourceGraphic" />
         </filter>
         <circle id="c" cx="48" cy="48" r="48" />
-        <filter
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          filterUnits="objectBoundingBox"
-          id="d"
-        >
+        <filter x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox" id="d">
           <feGaussianBlur in="SourceGraphic" />
         </filter>
-        <filter
-          x="-16.7%"
-          y="-16.7%"
-          width="133.3%"
-          height="133.3%"
-          filterUnits="objectBoundingBox"
-          id="e"
-        >
-          <feGaussianBlur
-            stdDeviation="16"
-            in="SourceAlpha"
-            result="shadowBlurInner1"
-          />
+        <filter x="-16.7%" y="-16.7%" width="133.3%" height="133.3%" filterUnits="objectBoundingBox" id="e">
+          <feGaussianBlur stdDeviation="16" in="SourceAlpha" result="shadowBlurInner1" />
           <feOffset in="shadowBlurInner1" result="shadowOffsetInner1" />
-          <feComposite
-            in="shadowOffsetInner1"
-            in2="SourceAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-            result="shadowInnerInner1"
-          />
-          <feColorMatrix
-            values="0 0 0 0 0.2 0 0 0 0 0.505882353 0 0 0 0 1 0 0 0 1 0"
-            in="shadowInnerInner1"
-          />
+          <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1" />
+          <feColorMatrix values="0 0 0 0 0.2 0 0 0 0 0.505882353 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1" />
         </filter>
-        <radialGradient
-          cx="48.392%"
-          cy="0%"
-          fx="48.392%"
-          fy="0%"
-          r="117.062%"
-          gradientTransform="scale(-1 -.84319) rotate(-86.229 0 .517)"
-          id="f"
-        >
+        <radialGradient cx="48.392%" cy="0%" fx="48.392%" fy="0%" r="117.062%" gradientTransform="scale(-1 -.84319) rotate(-86.229 0 .517)" id="f">
           <stop stopColor="#0062FF" stopOpacity="0" offset="0%" />
           <stop stopColor="#0062FF" stopOpacity=".32" offset="68.708%" />
           <stop stopColor="#00C2BE" offset="100%" />
         </radialGradient>
-        <filter
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          filterUnits="objectBoundingBox"
-          id="g"
-        >
+        <filter x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox" id="g">
           <feGaussianBlur in="SourceGraphic" />
         </filter>
-        <radialGradient
-          cx="47.914%"
-          cy=".603%"
-          fx="47.914%"
-          fy=".603%"
-          r="110.819%"
-          gradientTransform="scale(-1 -.84319) rotate(-56.212 -.012 .897)"
-          id="h"
-        >
+        <radialGradient cx="47.914%" cy=".603%" fx="47.914%" fy=".603%" r="110.819%" gradientTransform="scale(-1 -.84319) rotate(-56.212 -.012 .897)" id="h">
           <stop stopColor="#0062FF" offset="0%" />
           <stop stopColor="#00F5F0" offset="36.832%" />
           <stop stopColor="#00F5F0" stopOpacity="0" offset="66.454%" />
           <stop stopColor="#00A7FF" stopOpacity=".24" offset="100%" />
         </radialGradient>
-        <filter
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          filterUnits="objectBoundingBox"
-          id="i"
-        >
+        <filter x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox" id="i">
           <feGaussianBlur in="SourceGraphic" />
         </filter>
-        <radialGradient
-          cx="52.101%"
-          cy="-25.108%"
-          fx="52.101%"
-          fy="-25.108%"
-          r="112.467%"
-          id="k"
-        >
+        <radialGradient cx="52.101%" cy="-25.108%" fx="52.101%" fy="-25.108%" r="112.467%" id="k">
           <stop stopColor="#00A7FF" stopOpacity=".24" offset="0%" />
           <stop stopColor="#00F5F0" stopOpacity=".72" offset="44.314%" />
           <stop stopColor="#00F5F0" stopOpacity="0" offset="100%" />
         </radialGradient>
         <circle id="j" cx="199.723" cy="200.238" r="199.501" />
-        <filter
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          filterUnits="objectBoundingBox"
-          id="l"
-        >
+        <filter x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox" id="l">
           <feGaussianBlur in="SourceGraphic" />
         </filter>
-        <linearGradient
-          x1="88.451%"
-          y1="97.066%"
-          x2="48.181%"
-          y2="39.462%"
-          id="m"
-        >
+        <linearGradient x1="88.451%" y1="97.066%" x2="48.181%" y2="39.462%" id="m">
           <stop stopColor="#00A7FF" offset="0%" />
           <stop stopColor="#0062FF" stopOpacity="0" offset="100%" />
         </linearGradient>
-        <radialGradient
-          cx="48.392%"
-          cy="0%"
-          fx="48.392%"
-          fy="0%"
-          r="111.725%"
-          gradientTransform="scale(-1 -.8427) rotate(-56.228 0 .906)"
-          id="n"
-        >
+        <radialGradient cx="48.392%" cy="0%" fx="48.392%" fy="0%" r="111.725%" gradientTransform="scale(-1 -.8427) rotate(-56.228 0 .906)" id="n">
           <stop stopColor="#00C2BE" stopOpacity="0" offset="0%" />
           <stop stopColor="#0062FF" offset="37.439%" />
           <stop stopColor="#0062FF" stopOpacity="0" offset="65.522%" />
           <stop stopColor="#111325" stopOpacity="0" offset="100%" />
         </radialGradient>
-        <filter
-          x="-5%"
-          y="-4.2%"
-          width="110%"
-          height="108.4%"
-          filterUnits="objectBoundingBox"
-          id="o"
-        >
+        <filter x="-5%" y="-4.2%" width="110%" height="108.4%" filterUnits="objectBoundingBox" id="o">
           <feGaussianBlur stdDeviation="10" in="SourceGraphic" />
         </filter>
         <circle id="p" cx="16" cy="16" r="16" />
-        <filter
-          x="0%"
-          y="0%"
-          width="100%"
-          height="100%"
-          filterUnits="objectBoundingBox"
-          id="q"
-        >
+        <filter x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox" id="q">
           <feGaussianBlur in="SourceGraphic" />
         </filter>
-        <filter
-          x="-18.8%"
-          y="-18.8%"
-          width="137.5%"
-          height="137.5%"
-          filterUnits="objectBoundingBox"
-          id="r"
-        >
-          <feGaussianBlur
-            stdDeviation="6"
-            in="SourceAlpha"
-            result="shadowBlurInner1"
-          />
+        <filter x="-18.8%" y="-18.8%" width="137.5%" height="137.5%" filterUnits="objectBoundingBox" id="r">
+          <feGaussianBlur stdDeviation="6" in="SourceAlpha" result="shadowBlurInner1" />
           <feOffset in="shadowBlurInner1" result="shadowOffsetInner1" />
-          <feComposite
-            in="shadowOffsetInner1"
-            in2="SourceAlpha"
-            operator="arithmetic"
-            k2="-1"
-            k3="1"
-            result="shadowInnerInner1"
-          />
-          <feColorMatrix
-            values="0 0 0 0 0 0 0 0 0 0.384313725 0 0 0 0 1 0 0 0 1 0"
-            in="shadowInnerInner1"
-          />
+          <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1" />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0.384313725 0 0 0 0 1 0 0 0 1 0" in="shadowInnerInner1" />
         </filter>
-        <linearGradient
-          x1="65.533%"
-          y1="39.002%"
-          x2="20.072%"
-          y2="102.251%"
-          id="s"
-        >
+        <linearGradient x1="65.533%" y1="39.002%" x2="20.072%" y2="102.251%" id="s">
           <stop stopColor="#00F5F0" stopOpacity=".64" offset="0%" />
           <stop stopColor="#00A7FF" stopOpacity="0" offset="100%" />
         </linearGradient>
@@ -1044,56 +443,15 @@ export const BurbujaSVG = ({ ...props }): JSX.Element => {
           fill="url(#a)"
         />
         <g filter="url(#d)">
-          <use
-            filter="url(#e)"
-            xlinkHref="#c"
-            opacity=".16"
-            fill="#000"
-            transform="translate(614.837 668.992)"
-          />
+          <use filter="url(#e)" xlinkHref="#c" opacity=".16" fill="#000" transform="translate(614.837 668.992)" />
         </g>
-        <path
-          d="M463 820.585c165.685 0 300-134.315 300-300s-255.488-620.379-300-300-300 134.315-300 300 134.315 300 300 300z"
-          filter="url(#g)"
-          transform="rotate(44 1836.714 2015.613)"
-          fill="url(#f)"
-        />
-        <path
-          d="M454 820.585c165.685 0 300-134.315 300-300s-255.488-620.379-300-300-300 134.315-300 300 134.315 300 300 300z"
-          filter="url(#i)"
-          transform="rotate(-37 472.675 -1582.476)"
-          fill="url(#h)"
-          fillOpacity=".32"
-        />
-        <use
-          fill="url(#k)"
-          filter="url(#l)"
-          xlinkHref="#j"
-          transform="translate(1688.837 156.992)"
-        />
-        <ellipse
-          cx="200.223"
-          cy="200.238"
-          rx="200"
-          ry="199.501"
-          transform="translate(1437.837 171.992)"
-          fill="url(#m)"
-        />
-        <path
-          d="M381.788 685.903c165.685 0 300-134.393 300-300.175s-255.488-620.741-300-300.175-300 134.393-300 300.175 134.314 300.175 300 300.175z"
-          filter="url(#o)"
-          transform="rotate(-85 869.78 -488.593)"
-          fill="url(#n)"
-          fillOpacity=".48"
-        />
+        <path d="M463 820.585c165.685 0 300-134.315 300-300s-255.488-620.379-300-300-300 134.315-300 300 134.315 300 300 300z" filter="url(#g)" transform="rotate(44 1836.714 2015.613)" fill="url(#f)" />
+        <path d="M454 820.585c165.685 0 300-134.315 300-300s-255.488-620.379-300-300-300 134.315-300 300 134.315 300 300 300z" filter="url(#i)" transform="rotate(-37 472.675 -1582.476)" fill="url(#h)" fillOpacity=".32" />
+        <use fill="url(#k)" filter="url(#l)" xlinkHref="#j" transform="translate(1688.837 156.992)" />
+        <ellipse cx="200.223" cy="200.238" rx="200" ry="199.501" transform="translate(1437.837 171.992)" fill="url(#m)" />
+        <path d="M381.788 685.903c165.685 0 300-134.393 300-300.175s-255.488-620.741-300-300.175-300 134.393-300 300.175 134.314 300.175 300 300.175z" filter="url(#o)" transform="rotate(-85 869.78 -488.593)" fill="url(#n)" fillOpacity=".48" />
         <g filter="url(#q)">
-          <use
-            filter="url(#r)"
-            xlinkHref="#p"
-            opacity=".16"
-            fill="#000"
-            transform="translate(1439.837 105.992)"
-          />
+          <use filter="url(#r)" xlinkHref="#p" opacity=".16" fill="#000" transform="translate(1439.837 105.992)" />
         </g>
         <path
           d="M1582.91-12.78c-2.006-.734-6.265-.117-6.801-1.747.163-2.394 8.44-.771 6.802 1.748zm55.987 9.155c3.106-1.146 7.71 5.137 5.72 6.948-2.76-1.803-3.697-4.68-5.72-6.948zm48.005 15.275c2.6-.25 1.44 4.959-1.207 2.987-.324-1.869 1.283-1.421 1.207-2.987zm175.951 34.08c-1.803 2.538-4.898 3.507-8.652 3.691.787-3.476 5.587-5.702 8.652-3.69zm-369.26-62.027c-.379 3.229-3.032 3.661-6.666 2.948.942-2.219-2.176-1.91-.658-4.495 3.866.192 4.78-.231 7.323 1.547zm197.961 36.79c-1.601 2.075-3.722 3.468-5.53 5.289-4.302-1.582 1.76-8.595 5.53-5.289zm-207.602-33.782c2.726.678 3.345 2.549 4.185 4.32a471.11 471.11 0 0 1-4.546-1.035c.126-1.089.24-2.184.361-3.285zm321.065 65.32c-.167 3.257-6.002.83-4.955-1.605 1.087-.671 5.197-.207 4.955 1.605zm8.233 3.037c.407 2.302-2.11 1.027-3.627 1 .038 2.71 2.685 3.814 3.01 6.34-.569.517-1.112 1.04-1.288 2.047-1.427.911-5.687.308-6.664-.932 1.167-3.24.823-5.55-1.19-6.837 2.332-1.642 5.537-2.259 9.759-1.618zm-33.488-5.684c-.605 2.784-5.065 4.073-6.94 2.619.958-2.518 3.526-3.09 6.94-2.619zm97.179 20.079c1.826.187 3.578.432 4.314 1.31-.998 1.937-3.638 1.885-5.806 2.414-.142-2.025 1.218-2.215 1.492-3.724zm-81.51-13.852c-2.728 2.486-7.635 2.341-12.765 1.9 2.05-3.313 7.09-2.988 12.764-1.9zm-276.795-49.84c-.444 3.134-1.803 5.162-5.308 4.564.718-2.807 1.777-5.194 5.308-4.564zm218.115 42.952c3.6 1.266 6.494 2.953 6.815 6.03-2.849.12-6.828-2.574-6.815-6.03zm131.2 26.42c-2.506 6.053-15.96-1.155-18.305 5.132-2.515-.413-2.082-2.572-1.797-4.677 7.186.889 15.15-1.363 20.103-.455z"
@@ -1105,13 +463,7 @@ export const BurbujaSVG = ({ ...props }): JSX.Element => {
           fill="#252B45"
           fillOpacity=".48"
         />
-        <circle
-          cx="199.723"
-          cy="200.238"
-          r="199.501"
-          transform="rotate(18 1804.613 5815.555)"
-          fill="url(#s)"
-        />
+        <circle cx="199.723" cy="200.238" r="199.501" transform="rotate(18 1804.613 5815.555)" fill="url(#s)" />
         <path
           d="M1752.356 132.987c.027.07.082.157.172.27a1.639 1.639 0 0 0-.303-.244 1.579 1.579 0 0 0-.527.252 3.05 3.05 0 0 0 .342-.373c-.705-.45-1.824-1.085-1.809-2.041-.76.101-1.452.692-2.322.146.857-.496.61-1.36 1.678-1.69.303.311-.317.854.386 1.08.262-.074.7-1.442 1.571-.67-.137.237-.28.334-.464.273.43.834.62.717-.026.625.087.054.175.105.263.156-.102.131-.147.246-.146.348.21.102.357.222.089.686.514.372.852.052 1.311.269.361-.603.67-1.032 1.433-.675-.548.494-.022.798-.59 1.326 1.065.435 1.811-1.161 2.95-.323-.534.547-.093.847.106 1.186-.214.598-1.571-.546-1.107.397-1.23-.003-2.018-1.134-3.007-.998zm52.958 32.201c.033-.053.106-.08.196-.099a.993.993 0 0 0 .273-.404.533.533 0 0 0-.027.364c.217-.037.435-.103.474-.354.386 1.079.952 1.315 2.255 2.022-.717.938-.862.809-1.716 1.757-.37-.349-.805-.735-.198-1.33-.422-.334-.584.023-.812.342-.466-.18-.396-.454-.633-.726.262-.074.518-.062.82.023.312-.49-.21-.68-.541-.657a.942.942 0 0 0-.232.16c0 .003.002.005.003.007a.127.127 0 0 1-.003-.006c-.214.195-.41.485-.63.699-.33-.19-.606-.395-.949-.638-.049-.523.919-1.136-.17-.998-.369-.349.42-.119.154-.722.463-.498 1-.593 1.665-.3-.288.194-.635.264-.91.51.352.231.694.422.981.35zm-33.361-22.387c.295-.248.649-.331 1.247-.1-.3.142-.608.37-.848.862.562.775.74-.293 1.215.251-1.377 1.322-1.723-.815-2.486.05.042-.05.082-.1.12-.149-.092.046-.184.1-.274.174-.78-1.081-.79-.456-1.59-.513-1.015-.676-.576-2.044-2.058-1.909.214-.371.442-.69.65-.975-.835-.528-1.294.874-2.143.293.07-.5.172-.981.412-1.473-.382-.175-.588.561-.877.53-.67-.207-.14-.667-.569-.914.255-.214.605.168.934.358.403-.622-.76-.888-.775-1.393.436-.604.657 1.37 1.234.218.186 1.503 1.394 1.615 2.564 2.02-.117.203-.267.386-.404.623.677.12.92.306 1.376.884-.014-.278-.324-.502-.024-.87 1.527.158 1.375 1.118 2.296 2.033zm26.688 14.913c.074.214.226.47.123.723.67.207-.26-.69.454-1.09.974.518.834 1.293 1.545 1.884.394.002.162-.357.699-.678.263.152.54.357.803.509.141.667-.366.33-.731.658.525.079.997-.054 1.482-.135.493.285.43.7.42 1.098-.337.887-1.856.325-1.66 1.203-.55.268-.754-.975-.743-1.374-.822-.25-1.533.376-2.45-.469.108-.346.072-.665.051-.974-.251.2-.53.09-.8.332-.069-.715-1.2-1.188-1.545-1.883.53-.234 1.055-.382 1.571-.669l.002.006c.047-.081.115-.167.21-.259.33.19.639.414.948.638-.407.075-.45.228-.397.421.022.012.045.023.069.034a2.735 2.735 0 0 0-.05.025zm-.147.898c.054.073.102.15.13.234-.001-.058 0-.115.004-.173a.38.38 0 0 0-.134-.061zm44.393 29.896c-.39-.014-.818-.18-.175.315-1.25-.496-1.852-1.655-3.027-1.748.214-.372.497-.254.711-.625-.653-.693-.882.616-1.543-.216.405-.396 1.024.051 1.341-.802-.48-.232-1.003.142-1.216-.477.657.154 1.187-.08 2.206.283-.405.397.056.663-.473 1.123.184.061.314-.088.492.06.313-.315.103-.482-.089-.683 1.204-.565.87 1.763 2.108 1.442.325.263-.248.7-.107 1.005.425-.322 1.308-.507 1.615-.866.042.61.937 1.036.842 1.657 3.269-.95 4.553 2.449 7.524 3.308-.693.591.123.927-.393 1.44-.45.325-1.098-.454-1.468.188-.26-.69-.415-1.41.053-2.221-1.125-.56-1.134 1.281-1.265 1.431-.235.18-1.08-.714-.136-.98-.483-.683-.588.562-1.07-.122.214-.372.55-.268.73-.659-.322-.276-.544-.044-.867-.32-.287.42.318.588-.145 1.087-.848-.355-.045-1.062-.114-1.552-.321-.05-.597-.03-.811.342-.24-.498-.183-1.051-.645-1.543-.394-.002-.7.226-1.013.766-.16-.633-1.422-.956-1.498-1.585-.815-.336-.285.646-1.046.747-.417-.338-.554-.592-.52-.795zm-96.262-60.621c.237.074.485.219.723.4v.05c.296-.14.604-.226 1.025.256-.394.397-.844.57-1.315.626a3.085 3.085 0 0 1-.15.21 1.63 1.63 0 0 1-.28-.187 6.926 6.926 0 0 1-.83-.065c.851-.183.33-.8-.4-1.131-.035-.245.246-.579-.012-.817.639-.802.568.688 1.235.217.128.12.092.278.004.44zm41.652 24.915c.228-.318.442-.69.65-.975.121.475-.125 1.053.762 1.34-.195.338-.442.69-.67 1.01-.383-.402-.241-.95-.742-1.375zm-7.65-6.015c-.258.751-.732.433-1.107.397-.01.625.676 1.11.194 1.868-.798-.821-1.373-1.649-.73-2.763.545.044 1.071.348 1.643.498zm-3.044-.094c.502-.566-.34-1.007.44-1.142.187.739.423.56.714 1.043-.316 1.078-.984.107-1.36.836-.744-.385-1.041-.781-.428-1.463.034.245.272.517.634.726zm-17.299-10.162c.796-.846 1.687.118 2.019.76-.212.823-.77-.264-.929.545-.181-.826-.613-.534-1.09-1.305zm3.889 1.161c.823.701-.18.842-.332 1.79-.244-.185-.54-.356-.784-.542.372-.416.772-.5 1.116-1.248zm-24.68-14.057c1.485-.673.292.71.972 1.508-.376.728-1.064-.21-1.562-.182-.161-.633.025-1.336.25-2.107-.325 1.704-3.683.756-3.96-.665-.38-.175-.573.615-.948.579-.381-.176-.83-.84-1.037-.104-.62-.673.491-1.383 1.065-.78.122-.516-1.073-.801-.466-1.396 1.167 1.17 3.112.536 3.817 2.204-.015-.279-.291-.484.041-.832.713.817 1.103.141 2.54 1.15-.243.04-.517.288-.712.625zm237.877 156.307c.396-1.38 2.067-2.113 3.008-3.357-.612-.174-.275-.605-.815-.827-3.103 1.514-6.668.662-10.312-.593-.549.488-.066.81-.562 1.284-.764-.53-1.299.01-1.78.535.25.414.47.808.913 1.198.825-.194.325-1.644 1.28-1.137.428.649-.62.535-.763 1.168 1.274.958 1.624 1.742 3.458 2.89 1.856-.359 3.647-1.067 5.573-1.161zm-.444-33.048c3.502 1.887 6.24 1.235 9.464 1.443 1.657.063 2.594.604 3.528-.242 1.646-1.462 1.793-3.879 1.028-4.946-1.931-2.679-7.064-.505-9.232-.997-1.349 2.26-5.177 1.479-4.788 4.742zm-32.964-3.977c1.964-1.859 5.686-5.294 4.407-7.865-1.543.048-3.146-.342-4.675-.242-2.147 4.569-6.198 6.876-9.558 10.61 3.65.857 6.47-2.25 9.826-2.503zm-12.124.461c1.287-3.233 6.816-4.24 7.118-8.623-4.55.546-8.67 3.126-13.089 4.372-.62 2.233-2.89 1.995-4.09 4.072.508 1.053.737 2.123 2.313 2.944 2.509-1.411 4.922-2.966 7.748-2.765zm-4.027-19.971c2.777.441 2.23 4.012 4.456 5.253.322 1.526-1.22 2.423-2.193 4.184 3.593.109 7.007-3.102 10.377-1.604.552-1.11.874-2.131 1.545-3.218-2.22-5.883-9.96-9.771-14.884-5.644.905.21.02.815.7 1.029zm-7.697 15.57c1.351-.872 3.414-2.362 4.257-3.126.063-.187.021-.345-.232-.447-1.165.087-1.967 2.17-3.327 1.207-1.019.528-1.173 1.645-.698 2.367zm-.35-3.33c2.482-.13 5.365-2.575 6.884-4.513-2.213.822-4.678.382-6.919 1.099.334 1.042-.07 2.282.034 3.415zm2.261-9.013c-.95 1.104-.932 2.231-1.83 2.785 1.474 1.074 3.846.21 5.67.37.43-1.673-2.617-2.494-3.84-3.155zm-20.306 1.276c.143-3.49 4.586-2.847 3.87-5.852-2.62-.172-5.444 1.861-5.255 5.008.468.27.917.574 1.385.844zm97.497 26.625c.158.807.556-.036 1.08.445-1.843 1.572-3.134 3.73-4.989 3.777.027 2.115-1.347 2.796-.943 4.414-.859 1.023.057-.95-.783-.497-2.684 3.722-9.727 9.976-8.813 14.57-.215.68-.762.006-1.03.701-.956 1.503-1.132 2.965-2.076 3.983-.444-.39-.681.099-1.1-.411-.044 1.002-.448 1.394-1.379 1.616-.487-.237-.677-.525-.498-.913-1.518.777-4.034.039-4.757 1.677-2.07-.66-3.422-1.485-5.057-2.205.54-.627.684.127.848-.851-.496-.376-.824-.118-1.23-.263-.287-1.82-3.48-3.082-1.931-5.226-1.01-.18-1.814.517-2.776.408-.68-1.062-2.104-2.688-.436-3.647-.91-2.67 2.717-5.4 2.043-8.247-4.494-.093-2.732-5.151-5.472-5.348-.603-.036-3 .1-3.993.509-4.024 1.564-12.04 9.58-14.15 2.195 1.062-2.38 4.229-2.383 5.585-3.343.125-.062-.025-.729.336-.967.946-.481 1.72-.124 2.459-1.172.714-.928 2.29-2.654 2.427-4.049.307-2.771-4.546-7.182-.734-10.387 1.535-1.347 5.684-.426 4.756-3.374-1.302-1.065-2.838-.566-2.81-2.159-1.225-.35-.885.606-1.715.038-.021 2.043-1.94 2.588-2.925 4.834-.352.377.602.347.732.199-1.549 5.54-7.797 3.004-11.158 7.05-2.539-.08-5.099-.665-7.25 1.13-5.124-1.394-14.386 3.221-15.22-4.676 1.13-1.493 1.25-1.78 1.877-3.25-1.294-2.624-1.98-5.298-1.68-8.208-1.333-.859-2.31.14-3.444.559-1.402-1.123-2.403-.316-3.592-.109-.827-.343-.743-.876-1.412-1.262.512-.732 1.15-.988 1.761-1.35.866.276.224 1.156 1.049.962.769-.405 3.791-1.162 3.242.175.898-.242 1.885-.253 2.66-1.056-.028-1.803.94-3.79 1.579-5.745-1.91-1.326-5.318-3.607-7.517-1.883-.705-.63-.716-.458-1.082-.982-.656.828-1.662 1.72-1.811 2.752-1.87.305-4.745 2.89-3.674 5.205 1.043.2 2.106.367 3.158.707-.016.259-.026.431.169.633-1.448 1.041-3.077 1.083-4.907.16-1.3 2.02-.743 3.682-1.43 5.564.937.54 2.128 1.72 3.012 2.275-2.393 1.21-3.136-2.213-5.355-3.851-.384-1.652 1.095-3.21 1.74-4.714-.202-1.502-1.902-1.724-2.525-2.575-.913-1.197-.774-2.904-1.865-4.026 1.71-2.497 3.553-3.22 4.84-4.755-.963-3.505-5.702-1.55-6.753-4.748-1.41-.724-4.2.48-4.792-1.739-2.116-.194-4.602-1.138-6.403-3.116-.376-.351-.563.435-.964.203-2.391-1.649-4.395-.572-6.04-2.817-.74.199-5.437-.235-4.688-2.304-.436.06-.78.577-1.249.619-.093-1.305-1.428.158-1.897-.961.241-.263.621.313.848-.002.108-.34-.121-.562.02-.883-.388-.179-.695.046-.933.534-.289-1.507 1.761-1.351 2.544-.854-.17.527-.556.036-.816.333.03.642 1.397 1.208 1.633.183.343.332-.014.796.05 1.146.858.138 1.621-.181 2.545-.005.807.377.023 1.04.116 1.497.583-.468 1.244-.533 1.826-1.001.428.649 1.844.126 1.283 1.098 2.474-.27 4.464 1.996 6.621 1.812.78.271-.139.858.099 1.219.822.43 1.692-.23 1.928-.406.424.424 1.601.701 1.484 1.214 2.517-.423 4.374 1.766 6.052 2.333 1.18-.034 2.363-.155 3.593.108.362.299.553.587.498.913 3.853.661 8.068 3.63 11.344 3.824 1.034.062 1.66-.56 2.744-.738 2.518-.423 5.372.733 7.833-.75.267.155.515.342.783.497 2.698-1.972 5.965-1.068 9.062-1.335 1.824-1.538 4.7 1.82 6.603.685.992.751 1.855.802 2.66.642.372.438 1.76.658 1.114 1.313 1.564-.392 6.174 2.046 7.303 3.412.357.385.228 1.07.5 1.45.737.962 2.21 1.5 2.86 2.456 1.275 1.808.612 3.883 1.615 5.31 3.616 2 9.474 3.281 9.797 7.354 2.141.924 3.062 3.421 2.63 5.405 4.006 1.554 7.359-.084 10.48-3.018.478.097.93-.222 1.56.23 2.263-3.92 7.732-2.505 11.41-4.938 1.4.585 2.741.734 3.955.407 2.19 1.533 3.998 1.415 6.106 2.319 2.155 1.825 4.557 4.15 5.44 6.715-.091 3.477-2.116 5.748-4.238 9.347zm-160.692-69.416c.02-.034-.014-.053.039-.068-.02.034.033.02.046.072-.033-.019-.033-.019-.085-.004zm-52.318-33.565c.512.026.854-.948 1.482-.135-.637.038-1.27.754-.59 1.326-.42-.108-1.82-.42-1.09-1.305a1.12 1.12 0 0 0-.957.213c-.102-.734.561-.667.707-1.528.816.336-.073 1.039.448 1.43zm-43.492-24.8c-1 .818.71-1.077 1.144-.917 1.078.488 1.214 1.241 1.217 1.919-.373.19-.865.13-1.271.302-.468-.406-.15-1.033-1.09-1.305zm51.92 29.275c.089.682 1.397 1.077.705 1.894-.632-.5-1.088.137-1.76-.296 1.006-.905-.909-.705-1.465-1.566.163-.357.445-.239.582-.475-.948-.638-1.434-.557-2.094-1.39.345-.52.69-1.042 1.054-1.597.579.29 1.547.893 1.897 1.275-.215.372-.517.287-.732.659.963.916.39-.676 1.398.086-.339.435-.759.327-.65.975.69.174 1.19-.618 2.074.207-.185.93-.75-.297-1.01.228zm-20.82-12.494c1.64.047 2.268.86 3.244 1.829-.483.532-1.014.54-1.51 1.02-1.006-.311-1.31-.847-2.046-1.092.927-.77-.078-1.081.312-1.757zm10.135 6.698c.402.367.724.418 1.037.103.27.291.194.652-.178 1.068-1.185-.684-2.71-.169-2.7-1.784.505 1.102.825-.289 1.502-.168.123-.29-.212-.393-.404-.594.773-.274 1.267.01 1.652.864-.288.194-.602.283-.91.51zm-24.561-14.98c.884-.164 1.237 1.886.24 2.166-.437-.838-.583-1.192-1.412-.365-1.268-.462-.094-1.585-1.465-1.566.233-.632.708-1.303.68-1.86.552.41.752-.24 1.74.33-.978.02-.355 1.146-.462 1.94.217.08 1.099-.537.679-.645zm-31.843-14.41c.54.356 1.068.886 1.413.365.541.582-.55 1.484.063 2.018-.241.266-.612-.308-.859.044-.906-1.243-1.525-2.907-3.386-3.711.835-.914-.41-.507-.367-1.113 1.6-1.327 1.663.465 3.036.898-.358.468-.664.922-.275 1.237.5.198-.036-.471.581-.475.211.167-.07.5-.206.736z"
           fill="#FFF"

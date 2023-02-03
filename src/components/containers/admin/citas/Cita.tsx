@@ -22,7 +22,7 @@ const Cita = ({ cita }: CitaProps): JSX.Element => {
   // Effecto de default select estado
   useEffect(() => {
     setSelectEstado(estado)
-  }, [])
+  }, [cita])
 
   // handle Delete Servicio
   const handleDeleteCita = (): void => {

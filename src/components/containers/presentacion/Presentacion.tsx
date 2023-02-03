@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom'
-import {
-  FacebookSvg,
-  InstagramSvg,
-  SearchSvg,
-  WhatsAppSvg,
-} from '../../../assets/svg'
+import { FacebookSvg, InstagramSvg, WhatsAppSvg } from '../../../assets/svg'
 import './Presentacion.css'
 
 const Presentacion = (): JSX.Element => {
@@ -15,27 +10,13 @@ const Presentacion = (): JSX.Element => {
           Bienvenidos a barbershop <br /> mendoza
         </h1>
 
-        <p className="presentacion__parrafo">
-          Descubra y reserve profesionales de belleza más cercanos
-        </p>
-        <form className="presentacion__formulario">
-          <input type="text" placeholder="Buscar" />
-          <button type="submit" className="title" title="Buscar">
-            <SearchSvg />
-          </button>
-        </form>
+        <p className="presentacion__parrafo">Descubra y reserve profesionales de belleza más cercanos</p>
         <Link to="/servicios" className="presentacion__reservar btn-primary">
           Reservar cita
         </Link>
       </div>
 
-      <video
-        className="presentacion__video"
-        src="/introduccion-2.mp4"
-        autoPlay
-        loop
-        muted
-      ></video>
+      <video className="presentacion__video" src="/introduccion-2.mp4" autoPlay loop muted></video>
 
       <div className="presentacion__overlay"></div>
 

@@ -68,7 +68,7 @@ const Servicio = ({ servicio }: ServicioProps): JSX.Element => {
         </p>
       </td>
       <td>
-        <p className="ServiciosAdminPage__barberos">{barberos.length > 0 && barberos.map(barbero => <span key={barbero}>{barbero}</span>)}</p>
+        <p className="ServiciosAdminPage__barberos">{barberos.length > 0 && barberos.map(barbero => <span key={barbero.id}>{barbero.nombre}</span>)}</p>
       </td>
       <td>
         <p title={formatearMinutos(duracion)}>{formatearMinutos(duracion)}</p>

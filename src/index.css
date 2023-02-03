@@ -24,7 +24,7 @@
 
   --shadow-card: 0 0 10px 1px rgba(36, 36, 36, 0.4);
   --shadow-card-hover: 0 0 10px 1px rgba(36, 36, 36, 0.5);
-  --shadow-border: 1px solid rgba(164, 164, 164, 0.1);
+  --shadow-border: 1px solid rgba(164, 164, 164, 0.256);
 
   --font-1: 'Poppins', sans-serif;
 
@@ -111,6 +111,20 @@ svg {
 }
 
 /*=============== utilizades ===============*/
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
 .mr-auto {
   margin-right: auto;
 }
@@ -344,27 +358,14 @@ svg {
   color: gray;
 }
 /*=============== header admin ===============*/
-.headerAdmin__aside {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-@media (max-width: 1200px) {
-  .headerAdmin__aside {
-    display: block;
-  }
-}
-.headerAdmin__aside aside {
-  display: block;
-}
-.headerAdmin__aside.grid {
-  grid-template-columns: 0 1fr;
-}
 .headerAdmin__main {
   padding: 20px;
 }
 .loader__center {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -374,17 +375,15 @@ svg {
   font-weight: 700;
   text-transform: lowercase;
   font-size: 20px;
-}
-.logo span {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
   text-transform: uppercase;
-  font-weight: 900;
-  padding: 6px 10px;
-  font-size: 18px;
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
-  color: #fff;
-  border-radius: 10px;
-  text-shadow: 0 0 10px var(--primary-oscuro);
-  margin-left: 4px;
+}
+.logo img {
+  min-width: 50px;
+  width: 50px;
 }
 /*=============== layoutAuth ===============*/
 .layoutAuth {

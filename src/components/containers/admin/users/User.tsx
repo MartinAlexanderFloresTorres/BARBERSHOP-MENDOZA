@@ -9,7 +9,6 @@ interface UserProps {
 
 const User = ({ user }: UserProps): JSX.Element => {
   const { uid, nombre, email, phoneNumber, photoURL, rol } = user
-  console.log(user)
 
   // Funcion para actualizar el rol
   const handleRolChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -22,7 +21,7 @@ const User = ({ user }: UserProps): JSX.Element => {
     })
   }
   return (
-    <div>
+    <div className="User">
       <img
         src={photoURL}
         onError={e => {
@@ -32,13 +31,8 @@ const User = ({ user }: UserProps): JSX.Element => {
         alt={nombre}
       />
       <p>{nombre}</p>
-      <p>{email ?? phoneNumber}</p>
-      <select
-        name="rol"
-        onChange={handleRolChange}
-        value={rol?.toString()}
-        id="rol"
-      >
+      <a href={`${email !== null ? 'mailtro:'.concat(email) : phoneNumber ? 'tel:'.concat(phoneNumber) : '#'}`}>{email ?? phoneNumber}</a>
+      <select name="rol" onChange={handleRolChange} value={rol?.toString()} id="rol">
         <option value="admin">admin</option>
         <option value="barbero">barbero</option>
         <option value="user">user</option>

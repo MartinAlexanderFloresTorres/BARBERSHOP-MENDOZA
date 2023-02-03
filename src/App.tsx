@@ -13,7 +13,6 @@ import CitasPage from './pages/private/admin/CitasPage'
 import BarberosPage from './pages/private/admin/BarberosPage'
 import ReportesPage from './pages/private/admin/ReportesPage'
 import HorariosPage from './pages/private/admin/HorariosPage'
-import ConfiguracionPage from './pages/private/admin/ConfiguracionPage'
 import DashBoardPage from './pages/private/admin/DashBoardPage'
 import ServiciosAdminPage from './pages/private/admin/ServiciosAdminPage'
 
@@ -41,7 +40,6 @@ function App(): JSX.Element {
             <Route path="barberos" element={<BarberosPage />} />
             <Route path="reportes" element={<ReportesPage />} />
             <Route path="horarios" element={<HorariosPage />} />
-            <Route path="configuracion" element={<ConfiguracionPage />} />
           </Route>
 
           <Route path="*" element={<h1>404</h1>} />

@@ -5,9 +5,8 @@ import uploadImage from '../../../../firebase/uploadImage'
 import deleteImage from '../../../../firebase/deleteImage'
 import { CloseSvg, LoaderSvg } from '../../../../assets/svg'
 import './Modal.css'
-import { BarberoType } from '../../../../types'
 
-interface ModalServicioProps {
+interface ModalBarberoProps {
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
@@ -17,58 +16,50 @@ const DEFAULT_STATE = {
       url: '',
       file: null,
     },
-    servicio: '',
-    descripcion: '',
-    precio: '',
-    barberos: [],
-    duracion: '',
-    stock: '',
+    titulo: '',
+    nombre: '',
+    especialidades: '',
+    incognito: false,
   },
 }
 
-interface ModalServicioState {
+interface ModalBarberoState {
   campos: {
     imagen: {
       url: string
       file: null | File
     }
-    servicio: string
-    descripcion: string
-    precio: number | string
-    barberos: BarberoType[]
-    duracion: number | string
-    stock: number | string
+    titulo: string
+    nombre: string
+    especialidades: string
+    incognito: boolean
   }
 }
 
-const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
+const ModalBarbero = ({ setOpenModal }: ModalBarberoProps): JSX.Element => {
   // Estados
   const [loadingSubmit, setLoadingSubmit] = useState<boolean>(false)
-  const [campos, setCampos] = useState<ModalServicioState['campos']>(DEFAULT_STATE.campos)
+  const [campos, setCampos] = useState<ModalBarberoState['campos']>(DEFAULT_STATE.campos)
   const [checkedImage, setCheckedImage] = useState<boolean>(false)
 
   // useMain
-  const { addServicio, barberos, servicioEdit, addServicioEdit, EditServicio } = useMain()
+  const { addBarbero, barberoEdit, addBarberoEdit, EditBarbero } = useMain()
 
   // useEffect
   useEffect(() => {
-    if (servicioEdit) {
-      console.log(servicioEdit.barberos)
-
+    if (barberoEdit) {
       setCampos({
-        imagen: { file: null, url: servicioEdit.imagen },
-        servicio: servicioEdit.servicio,
-        descripcion: servicioEdit.descripcion,
-        precio: servicioEdit.precio,
-        duracion: servicioEdit.duracion,
-        stock: servicioEdit.stock,
-        barberos: servicioEdit.barberos,
+        imagen: { file: null, url: barberoEdit.imagen },
+        titulo: barberoEdit.titulo,
+        nombre: barberoEdit.nombre,
+        especialidades: barberoEdit.especialidades,
+        incognito: barberoEdit.incognito,
       })
     }
-  }, [servicioEdit])
+  }, [barberoEdit])
 
   useEffect(() => {
-    if (servicioEdit) {
+    if (barberoEdit) {
       if (checkedImage) {
         if (!campos.imagen.file) {
           setCampos(prev => ({ ...prev, imagen: { url: '', file: null } }))
@@ -76,7 +67,7 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
       } else {
         setCampos(prev => ({
           ...prev,
-          imagen: { file: null, url: servicioEdit.imagen },
+          imagen: { file: null, url: barberoEdit.imagen },
         }))
       }
     }
@@ -92,6 +83,11 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target
 
+    if (name === 'incognito') {
+      setCampos(prev => ({ ...prev, [name]: !prev.incognito }))
+      return
+    }
+
     setCampos({ ...campos, [name]: value })
   }
 
@@ -103,29 +99,6 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
       const url = URL.createObjectURL(file)
       setCampos(prev => ({ ...prev, imagen: { url, file } }))
     }
-  }
-
-  // add Barbero
-  const addBarbero = (barber: BarberoType): void => {
-    // Si el barbero ya esta en el array, no lo agregamos
-    if (campos.barberos.includes(barber)) return
-
-    setCampos(prev => ({ ...prev, barberos: [...prev.barberos, barber] }))
-  }
-
-  // remove Barbero
-  const removeBarbero = (id: string): void => {
-    const newBarberos = campos.barberos.filter(barberoSelect => barberoSelect.id !== id)
-    setCampos(prev => ({
-      ...prev,
-      barberos: newBarberos,
-    }))
-  }
-
-  // isSelect
-  const isSelect = (id: string): boolean => {
-    const ids = campos.barberos.map(barbero => barbero.id)
-    return ids.includes(id)
   }
 
   // handle Submit
@@ -144,17 +117,16 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
       return
     }
 
-    // Validar barberos
-    if (campos.barberos.length === 0) {
+    // Validar imagen
+    if (!campos.imagen.file && checkedImage) {
       void Swal.fire({
         icon: 'warning',
-        title: 'Debes seleccionar al menos un barbero',
+        title: 'Debes seleccionar una imagen',
       })
       return
     }
 
-    // Validar imagen
-    if (!campos.imagen.file && checkedImage) {
+    if (!campos.imagen.url) {
       void Swal.fire({
         icon: 'warning',
         title: 'Debes seleccionar una imagen',
@@ -168,28 +140,25 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
       const data = {
         ...campos,
         imagen: url,
-        precio: Number(campos.precio),
-        duracion: Number(campos.duracion),
-        stock: Number(campos.stock),
       }
 
       // Enviar formulario
-      if (servicioEdit) {
+      if (barberoEdit) {
         if (checkedImage || campos.imagen.file) {
-          await deleteImage(servicioEdit.imagen)
+          await deleteImage(barberoEdit.imagen)
         }
-        await EditServicio({
+        await EditBarbero({
           ...data,
-          id: servicioEdit.id,
+          id: barberoEdit.id,
         })
       } else {
-        await addServicio(data)
+        await addBarbero(data as never)
       }
 
       // Mostrar Alerta
       void Swal.fire({
         icon: 'success',
-        title: 'Servicio agregado correctamente',
+        title: 'Barbero agregado correctamente',
       })
 
       // Limpiar formulario
@@ -200,7 +169,7 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
       console.log(error)
       void Swal.fire({
         icon: 'error',
-        title: 'Ocurrio un error al agregar el servicio',
+        title: 'Ocurrio un error al agregar el barbero',
       })
     }
     setLoadingSubmit(false)
@@ -209,20 +178,20 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
   // Cerrar moda
   const handleCloseModal = (): void => {
     setOpenModal(false)
-    servicioEdit && addServicioEdit(null as never)
+    barberoEdit && addBarberoEdit(null as never)
   }
   return (
     <section className={'Modal'}>
       <section className={`Modal__contenedor ${loadingSubmit ? 'loader' : ''}`}>
         <div className="Modal__top">
-          <h2>{servicioEdit ? 'Editar Servicio' : 'Agregar Servicio'}</h2>
+          <h2>{barberoEdit ? 'Editar Barbero' : 'Agregar Barbero'}</h2>
           <button type="button" className="Modal__topClose" onClick={handleCloseModal}>
             <CloseSvg />
           </button>
         </div>
 
         <form onSubmit={handleSubmit}>
-          {servicioEdit && (
+          {barberoEdit && (
             <label className="Modal__editarBtn btn btn-black" htmlFor="checkboxImage">
               {checkedImage ? 'No editar imagen' : 'Editar imagen'}
               <input id="checkboxImage" name="checkboxImage" type="checkbox" checked={checkedImage} onChange={() => setCheckedImage(!checkedImage)} />
@@ -236,59 +205,29 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
                 const target = e.target as HTMLImageElement
                 target.src = '/foto_default.png'
               }}
-              alt="Servicio"
+              alt="barbero"
             />
             <input accept="image/*" type="file" name="imagen" id="imagen" onChange={handleImage} style={{ display: 'none' }} />
           </label>
 
-          <label htmlFor="servicio">
-            <span>Servicio</span>
-            <input type="text" name="servicio" id="servicio" placeholder="Servicio" value={campos.servicio} onChange={handleChange} />
+          <label htmlFor="titulo">
+            <span>titulo</span>
+            <input type="text" name="titulo" id="titulo" placeholder="titulo" value={campos.titulo} onChange={handleChange} />
           </label>
 
-          <label htmlFor="descripcion">
-            <span>Descripción</span>
-            <textarea name="descripcion" id="descripcion" placeholder="descripcion" value={campos.descripcion} onChange={handleChange} />
+          <label htmlFor="nombre">
+            <span>nombre</span>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre" value={campos.nombre} onChange={handleChange} />
           </label>
 
-          <label htmlFor="precio">
-            <span>Precio (soles)</span>
-            <input type="number" min={0} max={1000} name="precio" id="precio" placeholder="Precio" value={campos.precio} onChange={handleChange} />
+          <label htmlFor="especialidades">
+            <span>especialidades</span>
+            <input type="text" name="especialidades" id="especialidades" placeholder="especialidades" value={campos.especialidades} onChange={handleChange} />
           </label>
 
-          <label htmlFor="duracion">
-            <span>Duración (minutos)</span>
-            <input type="number" min={0} max={2000} name="duracion" id="duracion" placeholder="120" value={campos.duracion} onChange={handleChange} />
-          </label>
-
-          <label htmlFor="stock">
-            <span>Stock</span>
-            <input type="number" min={0} name="stock" id="stock" placeholder="stock" value={campos.stock} onChange={handleChange} />
-          </label>
-
-          <label htmlFor="barbero">
-            <span>Barberos</span>
-            <div className="Modal__barberosSelect">
-              {campos.barberos.length > 0 ? (
-                campos.barberos.map(barber => (
-                  <div key={barber.id} className="btn-primary">
-                    {barberos.find(barberFind => barberFind.id === barber.id)?.nombre ?? ''}
-                    <button type="button" onClick={() => removeBarbero(barber.id)}>
-                      <CloseSvg />
-                    </button>
-                  </div>
-                ))
-              ) : (
-                <span>No hay barberos seleccionados</span>
-              )}
-            </div>
-            <div className="Modal__barberosOffSelect">
-              {barberos.map(barber => (
-                <button className="btn" type="button" key={barber.id} onClick={() => addBarbero(barber)} disabled={isSelect(barber.id)}>
-                  {barber.nombre}
-                </button>
-              ))}
-            </div>
+          <label className="Modal__editarBtn btn btn-black" htmlFor="incognito">
+            incognito
+            <input type="checkbox" name="incognito" id="incognito" placeholder="incognito" checked={campos.incognito} onChange={handleChange} />
           </label>
 
           <div className="Modal__botones">
@@ -296,7 +235,7 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
               Cancelar
             </button>
             <button type="submit" className="btn-primary">
-              {servicioEdit ? 'Editar' : 'Agregar'}
+              {barberoEdit ? 'Editar' : 'Agregar'}
             </button>
           </div>
         </form>
@@ -311,4 +250,4 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
   )
 }
 
-export default ModalServicio
+export default ModalBarbero

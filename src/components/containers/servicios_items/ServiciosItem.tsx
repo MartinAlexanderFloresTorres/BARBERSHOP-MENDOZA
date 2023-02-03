@@ -1,9 +1,10 @@
+import { LoaderSvg } from '../../../assets/svg'
 import useMain from '../../../hooks/useMain'
 import Servicio from './servicios/Servicio'
 
 const ServiciosItem = (): JSX.Element => {
   // useMain
-  const { servicios } = useMain()
+  const { servicios, loadingServicio } = useMain()
 
   return (
     <div>
@@ -12,12 +13,13 @@ const ServiciosItem = (): JSX.Element => {
         <p>Elija los servicios que desea realizar</p>
       </div>
 
-      <section className="servicios_servicios">
-        {servicios.length > 0 &&
-          servicios.map(servicio => (
-            <Servicio key={servicio.id} servicio={servicio} resumen={false} />
-          ))}
-      </section>
+      {loadingServicio ? (
+        <div className="loader__center">
+          <LoaderSvg />
+        </div>
+      ) : (
+        <section className="servicios_servicios">{servicios.length > 0 && servicios.map(servicio => <Servicio key={servicio.id} servicio={servicio} resumen={false} />)}</section>
+      )}
     </div>
   )
 }

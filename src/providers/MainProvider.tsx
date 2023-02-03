@@ -3,7 +3,7 @@ import { auth, db } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { addDoc, collection, deleteDoc, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { DEFAULT_STATE_CITA, MainContext, MainContextProps, MainProviderProps } from '../contexts/MainContext'
-import { EstadoType, ServicioCitaType, ServicioType } from '../types'
+import { BarberoType, EstadoType, ServicioCitaType, ServicioType } from '../types'
 import { camposCita } from '../components/containers/admin/modales/ModalCita'
 
 const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
@@ -23,9 +23,13 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   const [servicioEdit, setServicioEdit] = useState<ServicioType | null>(null)
   const [loadingServicio, setLoadingServicio] = useState<boolean>(true)
 
+  // Estado para barberos page
+  const [barberos, setBarberos] = useState<BarberoType[]>([])
+  const [loadingBarbero, setLoadingBarbero] = useState<boolean>(true)
+  const [barberoEdit, setBarberoEdit] = useState<BarberoType | null>(null)
+
   // Estados para Citas page
   const [citaEdit, setCitaEdit] = useState<ServicioCitaType | null>(null)
-  const [loadingCita, setLoadingCita] = useState<boolean>(false)
 
   // Obtener Servicios
   useEffect(() => {
@@ -43,24 +47,6 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
       unsubscribe()
     }
   }, [])
-  // agregar un campo de rol para todo los usuarios
-  /*   const handleRol = async (rol: MainContextProps['rol']): Promise<void> => {
-    try {
-      const user = auth.currentUser
-      if (user) {
-        await setDoc(doc(db, 'usuarios', user.uid), {
-          email: user.email,
-          phoneNumber: user.phoneNumber,
-          nombre: user.displayName,
-          photoURL: user.photoURL,
-          rol: 'admin',
-          uid: user.uid,
-        })
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  } */
 
   // Efecto de redireccionamiento
   useEffect(() => {
@@ -85,6 +71,23 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
       setRol(null)
     }
   }, [user])
+
+  // Obtener Barberos
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'barberos'), snapshot => {
+      const barberosFirebase = snapshot.docs.map(doc => ({
+        ...(doc.data() as {}),
+        id: doc.id,
+      })) as []
+
+      setLoadingBarbero(false)
+      setBarberos(barberosFirebase)
+    })
+
+    return () => {
+      unsubscribe()
+    }
+  }, [])
 
   // handleCita para el formulario de citas
   const handleCita = (cita: Function): void => {
@@ -112,7 +115,7 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   // eliminar del carrito
   const deleteCart = (servicio: ServicioType): void => {
     const existe = carrito.find(item => item.id === servicio.id)
-    if (!existe) {
+    if (existe) {
       setCarrito(carrito.filter(item => item.id !== servicio.id))
     }
   }
@@ -148,7 +151,6 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   }
 
   // Edit Cita
-
   const EditCita = async (cita: camposCita): Promise<void> => {
     if (cita.id) {
       await updateDoc(doc(db, 'citas', cita.id), { ...cita })
@@ -168,6 +170,27 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
       console.error(error)
     }
   }
+
+  // editar barbero
+  const EditBarbero = async (barbero: BarberoType): Promise<void> => {
+    await updateDoc(doc(db, 'barberos', barbero.id), { ...barbero })
+  }
+
+  // Add Barbero Edit
+  const addBarberoEdit = (barbero: BarberoType): void => {
+    setBarberoEdit(barbero)
+  }
+
+  // Add Barbero
+  const addBarbero = async (barbero: BarberoType): Promise<void> => {
+    await addDoc(collection(db, 'barberos'), barbero)
+  }
+
+  // Eliminar Barbero
+  const DeleteBarbero = async (id: string): Promise<void> => {
+    await deleteDoc(doc(db, 'barberos', id))
+  }
+
   return (
     <MainContext.Provider
       value={{
@@ -196,8 +219,14 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
         DeleteCita,
         addCitaEdit,
         citaEdit,
-        loadingCita,
         updateEstado,
+        barberoEdit,
+        loadingBarbero,
+        barberos,
+        EditBarbero,
+        addBarberoEdit,
+        addBarbero,
+        DeleteBarbero,
       }}
     >
       {children}

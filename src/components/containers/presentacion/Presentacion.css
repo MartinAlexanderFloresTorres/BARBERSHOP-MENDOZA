@@ -41,37 +41,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.presentacion__formulario {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 10px;
-  row-gap: 10px;
-  font-size: 20px;
-  font-weight: 500;
-  text-transform: capitalize;
-  padding: 8px 12px;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: var(--shadow-border);
-  box-shadow: var(--shadow-card);
-}
-.presentacion__formulario input {
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 500;
-  text-transform: capitalize;
-  transition: var(--transition-3s);
-}
-.presentacion__formulario button.title:hover::after {
-  top: -30px;
-}
 
 /*=============== redes ===============*/
 .redes {
