@@ -13,7 +13,8 @@
   justify-content: space-between;
   margin-bottom: 30px;
 }
-.servicios__navegacion button {
+.servicios__navegacion a {
+  text-align: center;
   width: 100%;
   padding: 10px;
   background: var(--primary);
@@ -24,10 +25,10 @@
   letter-spacing: 1px;
   transition: var(--transition-3s);
 }
-.servicios__navegacion button:hover {
+.servicios__navegacion a:hover {
   opacity: 0.9;
 }
-.servicios__navegacion button.active {
+.servicios__navegacion a.active {
   background: var(--white);
   color: var(--black);
 }
@@ -168,6 +169,54 @@
 .servicios_servicio.selecionado button.btn-primary:hover::before {
   opacity: 0;
 }
+.servicios_servicioCantidad {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+.servicios_servicioCantidad p {
+  width: 40px;
+  margin: 0;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.servicios_servicioCantidad button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--shadow-border);
+  margin: 0;
+  border-radius: 50%;
+  transition: var(--transition-3s);
+}
+.servicios_servicio.selecionado .servicios_servicioCantidad button {
+  border-color: var(--white);
+}
+.servicios_servicioCantidad button:hover {
+  border-color: #fff;
+}
+.servicios_servicioCantidad button:active {
+  transform: scale(0.9);
+}
+.servicios_servicioCantidad button:disabled:hover,
+.servicios_servicioCantidad button:disabled:active,
+.servicios_servicioCantidad button:disabled {
+  cursor: not-allowed;
+  border: var(--shadow-border);
+  transform: none;
+}
+.servicios_servicioCantidad button svg {
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+}
 .servicios_servicio span {
   display: block;
   position: absolute;
@@ -227,7 +276,7 @@ button.btn-black {
     flex-direction: column;
     gap: 20px;
   }
-  .servicios__navegacion button {
+  .servicios__navegacion a {
     width: 100%;
   }
   .servicios__encabezado {

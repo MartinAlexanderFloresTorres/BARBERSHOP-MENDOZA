@@ -12,6 +12,29 @@
   justify-content: space-between;
   align-items: center;
 }
+.header__flex {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.header__flex .header__card {
+  position: relative;
+}
+.header__flex .header__card span {
+  position: absolute;
+  top: -18px;
+  right: -10px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .header__navegacion {
   display: flex;
   justify-content: space-between;

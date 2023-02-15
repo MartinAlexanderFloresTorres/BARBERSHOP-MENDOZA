@@ -68,7 +68,7 @@ const Cita = ({ cita }: CitaProps): JSX.Element => {
   }
 
   return (
-    <tr className="CitasPage__centerBottom">
+    <tr className="CitasPage__centerBottom" title={email}>
       <td>
         <p>{nombre}</p>
       </td>
@@ -76,6 +76,7 @@ const Cita = ({ cita }: CitaProps): JSX.Element => {
         <div className="CitasPage__centerBottomServicios">
           {servicios.map(servicio => (
             <div key={servicio.id}>
+              {servicio.cantidad > 1 && <p className="cantidad">{servicio.cantidad}</p>}
               <img src={servicio.imagen} alt={servicio.servicio} />
               <h2>{servicio.servicio}</h2>
               <span>{formatearMinutos(servicio.duracion)}</span>
@@ -85,7 +86,7 @@ const Cita = ({ cita }: CitaProps): JSX.Element => {
         </div>
       </td>
       <td>
-        <p>{1}</p>
+        <p>{servicios.length}</p>
       </td>
       <td>
         <p className="break-all" title={formatearFecha(fecha)}>

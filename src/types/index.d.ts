@@ -42,6 +42,7 @@ export interface ServicioType {
   barberos: BarberoType[]
   duracion: number
   stock: number
+  cantidad: number
 }
 
 export interface BarberoType {
@@ -65,4 +66,5 @@ export type ServicioCitaType = {
   pagado: boolean
   servicios: ServicioType[]
   estado: EstadoType
+  createdAt: Date
 }

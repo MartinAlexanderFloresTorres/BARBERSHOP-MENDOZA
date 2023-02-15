@@ -12,7 +12,7 @@ const Navegacion = (): JSX.Element => {
   const { pathname } = useLocation()
 
   // useMain
-  const { carrito, changeItem } = useMain()
+  const { carrito } = useMain()
 
   // Handle is Visible
   const handleIsVisible = (): void => {
@@ -38,26 +38,17 @@ const Navegacion = (): JSX.Element => {
     <>
       <section className={`navegacion ${isVisible ? 'visible' : ''} container`}>
         <div className="navegacion__links">
-          <Link
-            to={'/'}
-            title="Inicio"
-            className={pathname === '/' ? 'active' : ''}
-          >
+          <Link to={'/'} title="Inicio" className={pathname === '/' ? 'active' : ''}>
             <HomeSvg />
             <span>Inicio</span>
           </Link>
-          <Link
-            to={'/servicios'}
-            title="Servicios"
-            className={pathname === '/servicios' ? 'active' : ''}
-            onClick={() => changeItem(1)}
-          >
+          <Link to={'/servicios'} title="Servicios" className={pathname === '/servicios' ? 'active' : ''}>
             <TijeraSvg />
             <span>Servicios</span>
           </Link>
 
           {carrito.length > 0 && (
-            <Link to="/servicios" title="Resumen" onClick={() => changeItem(3)}>
+            <Link to="/servicios/informacion" title="Informacion">
               <ShoppingCartSvg />
               <span>Continuar compra</span>
             </Link>
@@ -66,11 +57,7 @@ const Navegacion = (): JSX.Element => {
       </section>
 
       {pathname !== '/servicios' && (
-        <section
-          className={`${
-            isVisible ? 'navegacion_subVisible' : ''
-          } navegacion_sub`}
-        >
+        <section className={`${isVisible ? 'navegacion_subVisible' : ''} navegacion_sub`}>
           <div className="container">
             <h2>Reservar cita</h2>
 

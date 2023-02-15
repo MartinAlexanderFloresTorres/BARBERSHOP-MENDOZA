@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { auth, db } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { addDoc, collection, deleteDoc, doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, query, updateDoc, where } from 'firebase/firestore'
 import { DEFAULT_STATE_CITA, MainContext, MainContextProps, MainProviderProps } from '../contexts/MainContext'
 import { BarberoType, EstadoType, ServicioCitaType, ServicioType } from '../types'
 import { camposCita } from '../components/containers/admin/modales/ModalCita'
@@ -10,10 +10,9 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   // ESTADOS
   const [servicios, setServicios] = useState<MainContextProps['servicios']>([])
   const [carrito, setCarrito] = useState<MainContextProps['servicios']>([])
-  const [item, setItem] = useState<number>(1)
   const [user, loadingLogin, errorLogin] = useAuthState(auth)
   const [rol, setRol] = useState<MainContextProps['rol']>(null)
-  const [loadingRol, setLoadingRol] = useState<boolean>(false)
+  const [loadingRol, setLoadingRol] = useState<boolean>(true)
 
   // Estados para el formulario de citas
   const [cita, setCita] = useState<MainContextProps['cita']>(DEFAULT_STATE_CITA)
@@ -51,22 +50,31 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
   // Efecto de redireccionamiento
   useEffect(() => {
     if (user) {
-      // Obtener el rol del usuario
-      const getRol = async (): Promise<void> => {
-        setLoadingRol(true)
+      // Agregar al usuario a la base de datos
+      const verificarUser = async (): Promise<void> => {
         try {
-          const docRef = doc(db, 'usuarios', user.uid)
-          const docSnap = await getDoc(docRef)
-          if (docSnap.exists()) {
-            const rol = docSnap.data()?.rol as MainContextProps['rol']
-            setRol(rol)
+          setLoadingRol(true)
+          // Verificar si el usuario existe mediante un where y buscar por el uid
+          const querySnapshot = await getDocs(query(collection(db, 'usuarios'), where('uid', '==', user.uid)))
+          if (querySnapshot.empty) {
+            await addDoc(collection(db, 'usuarios'), {
+              uid: user.uid,
+              email: user.email,
+              rol: 'user',
+              photoURL: user.photoURL,
+              phoneNumber: user.phoneNumber,
+              displayName: user.displayName,
+            })
+          } else {
+            const user = querySnapshot.docs[0].data()
+            setRol(user.rol as MainContextProps['rol'])
           }
         } catch (error) {
           console.log(error)
         }
         setLoadingRol(false)
       }
-      void getRol()
+      void verificarUser()
     } else {
       setRol(null)
     }
@@ -99,15 +107,28 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
       setIsValidForm(true)
     }
   }
-  // Chage item
-  const changeItem = (item: number): void => {
-    setItem(item)
-  }
 
   // agregar al carrito
   const addCart = (servicio: ServicioType): void => {
     const existe = carrito.find(item => item.id.toString() === servicio.id.toString())
-    if (existe) return
+
+    if (servicio.cantidad === 0) {
+      // Filtrar
+      setCarrito(carrito.filter(item => item.id !== servicio.id))
+      return
+    }
+
+    if (existe) {
+      const newCarrito = carrito.map(item => {
+        if (item.id === servicio.id) {
+          return { ...item, cantidad: servicio.cantidad }
+        } else {
+          return item
+        }
+      })
+      setCarrito(newCarrito)
+      return
+    }
 
     setCarrito([...carrito, servicio])
   }
@@ -202,12 +223,11 @@ const MainProvider = ({ children }: MainProviderProps): JSX.Element => {
         deleteCart,
         resetCart,
         carrito,
-        item,
-        changeItem,
         cita,
         handleCita,
         isValidForm,
         rol,
+        setRol,
         loadingRol,
         addServicio,
         deleteServicio,

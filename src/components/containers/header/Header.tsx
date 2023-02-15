@@ -1,16 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import {
-  CloseSvg,
-  ColeccionSvg,
-  LoaderSvg,
-  LoginSvg,
-  LogoutSvg,
-  MenuSvg,
-  ShoppingCartSvg,
-  TijeraSvg,
-  UserSvg,
-} from '../../../assets/svg'
+import { CloseSvg, ColeccionSvg, LoaderSvg, LoginSvg, LogoutSvg, MenuSvg, ShoppingCartSvg, TijeraSvg, UserSvg } from '../../../assets/svg'
 import Logo from '../logo/Logo'
 import useMain from '../../../hooks/useMain'
 import useAuth from '../../../hooks/useAuth'
@@ -26,14 +16,13 @@ const Header = (): JSX.Element => {
   const [signOut, loadingOut] = useSignOut(authApp)
 
   // useMain
-  const { user, rol, loadingLogin, carrito, changeItem } = useMain()
+  const { user, rol, loadingLogin, carrito } = useMain()
 
   // useAuth
   const auth = useAuth()
 
   // useLocation para obtener la ruta actual
   const location = useLocation()
-  const { pathname } = location
 
   // Funcion para mostrar el menu
   const handleShowMenu = (): void => {
@@ -51,87 +40,81 @@ const Header = (): JSX.Element => {
     <header className="header">
       <section className="header__top container">
         <Logo />
-        <button className="header__menu" onClick={handleShowMenu} title="Menu">
-          {showMenu ? <CloseSvg /> : <MenuSvg />}
-        </button>
 
-        <nav className={`header__navegacion ${showMenu ? 'open' : ''}`}>
-          {rol === 'admin' && (
-            <Link to="/admin" title="Admin">
-              <ColeccionSvg />
-              <span>Panel Administrador</span>
-            </Link>
-          )}
+        <div className="header__flex">
+          <nav className={`header__navegacion ${showMenu ? 'open' : ''}`}>
+            {rol === 'admin' && (
+              <Link to="/admin" title="Admin" state={location}>
+                <ColeccionSvg />
+                <span>Administrador</span>
+              </Link>
+            )}
 
-          {pathname !== '/servicios' && (
-            <Link
-              to="/servicios"
-              title="servicios"
-              onClick={() => changeItem(1)}
-            >
+            <Link to="/servicios" title="servicios">
               <TijeraSvg />
               <span>servicios</span>
             </Link>
-          )}
 
-          {carrito.length > 0 && (
-            <Link to="/servicios" title="Resumen" onClick={() => changeItem(3)}>
-              <ShoppingCartSvg />
-              <span>Continuar compra</span>
-            </Link>
-          )}
+            {loadingLogin ? (
+              <LoaderSvg />
+            ) : auth ? (
+              <>
+                <Link to="/auth/perfil" title="Perfil">
+                  {user?.photoURL ? (
+                    <img
+                      className="header__photoURL"
+                      src={user?.photoURL}
+                      onError={e => {
+                        const img = e.target as HTMLImageElement
+                        img.src = 'https://picsum.photos/200/300'
+                        console.warn('No se pudo cargar la imagen')
+                      }}
+                      alt={user?.displayName ?? 'usuario'}
+                    />
+                  ) : (
+                    <UserSvg />
+                  )}
+                  <span className="header__displayName">{user?.displayName}</span>
+                </Link>
 
-          {loadingLogin ? (
-            <LoaderSvg />
-          ) : auth ? (
-            <>
-              <Link to="/auth/profile" title="Perfil">
-                {user?.photoURL ? (
-                  <img
-                    className="header__photoURL"
-                    src={user?.photoURL}
-                    onError={e => {
-                      const img = e.target as HTMLImageElement
-                      img.src = 'https://picsum.photos/200/300'
-                      console.warn('No se pudo cargar la imagen')
-                    }}
-                    alt={user?.displayName ?? 'usuario'}
-                  />
-                ) : (
+                <button title="Cerrar Sesion" onClick={handleSignOut} disabled={loadingOut}>
+                  {loadingOut ? (
+                    <LoaderSvg />
+                  ) : (
+                    <>
+                      <LogoutSvg />
+                      <span>Cerrar Sesion</span>
+                    </>
+                  )}
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/auth/login" state={location} title="Login">
+                  <LoginSvg />
+                  <span>Login</span>
+                </Link>
+
+                <Link to="/auth/register" title="Registrarse">
                   <UserSvg />
-                )}
-                <span className="header__displayName">{user?.displayName}</span>
-              </Link>
+                  <span>Registrarse</span>
+                </Link>
+              </>
+            )}
+          </nav>
 
-              <button
-                title="Cerrar Sesion"
-                onClick={handleSignOut}
-                disabled={loadingOut}
-              >
-                {loadingOut ? (
-                  <LoaderSvg />
-                ) : (
-                  <>
-                    <LogoutSvg />
-                    <span>Cerrar Sesion</span>
-                  </>
-                )}
-              </button>
-            </>
-          ) : (
-            <>
-              <Link to="/auth/login" state={location} title="Login">
-                <LoginSvg />
-                <span>Login</span>
+          <div className="header__flex">
+            {carrito.length > 0 && (
+              <Link className="header__card" to="/servicios/informacion" title="Resumen">
+                <ShoppingCartSvg /> <span>{carrito.length}</span>
               </Link>
+            )}
 
-              <Link to="/auth/register" title="Registrarse">
-                <UserSvg />
-                <span>Registrarse</span>
-              </Link>
-            </>
-          )}
-        </nav>
+            <button className="header__menu" onClick={handleShowMenu} title="Menu">
+              {showMenu ? <CloseSvg /> : <MenuSvg />}
+            </button>
+          </div>
+        </div>
       </section>
     </header>
   )

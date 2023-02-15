@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useMain from '../../../hooks/useMain'
 import { DEFAULT_STATE_CITA, InterfaceCitaProps } from '../../../contexts/MainContext'
 import { validarHorarioAndFecha } from '../../../helpers'
@@ -9,7 +9,7 @@ const InformacionCitaItem = (): JSX.Element => {
   const [alerta, setAlerta] = useState<string>('')
 
   // useMain
-  const { user, changeItem, handleCita } = useMain()
+  const { user, handleCita } = useMain()
 
   // Efecto de usuario
   useEffect(() => {
@@ -91,7 +91,7 @@ const InformacionCitaItem = (): JSX.Element => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (alerta === '') {
-      changeItem(3)
+      console.log('Submit')
     }
   }
   return (

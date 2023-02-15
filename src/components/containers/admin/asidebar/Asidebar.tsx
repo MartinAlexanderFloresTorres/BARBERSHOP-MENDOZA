@@ -1,10 +1,10 @@
+import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useSignOut } from 'react-firebase-hooks/auth'
 import { auth as authApp } from '../../../../firebase'
-import { CalendarSvg, ChartBarSvg, CitasSvg, FriendsSvg, HomeSvg, LoaderSvg, LogoutSvg, TijeraSvg, UsersSvg } from '../../../../assets/svg'
+import { ChartBarSvg, CitasSvg, FriendsSvg, HomeSvg, LoaderSvg, LogoutSvg, TijeraSvg, UsersSvg } from '../../../../assets/svg'
 import Logo from '../../logo/Logo'
 import './Asidebar.css'
-import { useEffect } from 'react'
 
 interface AsidebarProps {
   handleShowMenu: () => void
@@ -38,7 +38,7 @@ const Asidebar = ({ showMenu, handleShowMenu }: AsidebarProps): JSX.Element => {
   }
 
   return (
-    <aside className={`Asidebar ${showMenu ? 'close' : ''}`}>
+    <aside className={`Asidebar ${showMenu ? '' : 'close'}`}>
       <section className="Asidebar__top container">
         <Logo />
 
@@ -72,11 +72,6 @@ const Asidebar = ({ showMenu, handleShowMenu }: AsidebarProps): JSX.Element => {
             <Link className={pathname === '/admin/reportes' ? 'active' : ''} to="/admin/reportes" title="reportes" onClick={handleShowMenu}>
               <ChartBarSvg />
               <span>reportes</span>
-            </Link>
-
-            <Link className={pathname === '/admin/horarios' ? 'active' : ''} to="/admin/horarios" title="horarios" onClick={handleShowMenu}>
-              <CalendarSvg />
-              <span>horarios</span>
             </Link>
           </nav>
 

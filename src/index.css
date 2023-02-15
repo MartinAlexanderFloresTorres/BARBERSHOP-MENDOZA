@@ -15,6 +15,9 @@
   --secondary: rgb(108, 99, 255);
   --secondary-oscuro: rgb(86, 77, 233);
 
+  --success: rgb(48, 209, 88);
+  --danger: rgb(255, 69, 58);
+
   --btn-black: rgb(29, 29, 29);
   --btn-black-oscuro: rgb(22, 22, 22);
 
@@ -346,8 +349,8 @@ svg {
 .alerta-error {
   padding: 10px;
   margin-bottom: 20px;
-  background: rgba(248, 49, 49, 0.1);
-  border-color: rgba(248, 49, 49, 0.2);
+  background: rgba(248, 49, 49, 0.275);
+  border-color: rgba(248, 49, 49, 0.682);
   color: #fff;
 }
 .vacio {
@@ -533,7 +536,25 @@ svg {
 .form__redes button:active {
   transform: scale(0.95);
 }
-
+/*=============== NotFound ===============*/
+.NotFound {
+  text-align: center;
+  padding: 30px;
+}
+.NotFound h1 {
+  font-size: 100px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.NotFound h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.NotFound a {
+  width: fit-content;
+  margin: 0 auto;
+}
 /*=============== loader boton ===============*/
 .pl,
 .pl__worm {

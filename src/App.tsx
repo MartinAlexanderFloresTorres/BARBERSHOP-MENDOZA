@@ -12,9 +12,13 @@ import UsersPage from './pages/private/admin/UsersPage'
 import CitasPage from './pages/private/admin/CitasPage'
 import BarberosPage from './pages/private/admin/BarberosPage'
 import ReportesPage from './pages/private/admin/ReportesPage'
-import HorariosPage from './pages/private/admin/HorariosPage'
 import DashBoardPage from './pages/private/admin/DashBoardPage'
 import ServiciosAdminPage from './pages/private/admin/ServiciosAdminPage'
+import PerfilPage from './pages/private/auth/PerfilPage'
+import ServiciosItem from './components/containers/servicios_items/ServiciosItem'
+import ResumenItem from './components/containers/servicios_items/ResumenItem'
+import InformacionCitaItem from './components/containers/servicios_items/InformacionCitaItem'
+import NotFound from './pages/public/NotFound'
 
 function App(): JSX.Element {
   return (
@@ -23,13 +27,18 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="servicios" element={<ServiciosPage />} />
+            <Route path="servicios" element={<ServiciosPage />}>
+              <Route index element={<ServiciosItem />} />
+              <Route path="informacion" element={<InformacionCitaItem />} />
+              <Route path="resumen" element={<ResumenItem />} />
+            </Route>
           </Route>
 
           <Route path="/auth" element={<LayoutAuth />}>
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="recuperacion" element={<RecuperacionPage />} />
+            <Route path="perfil" element={<PerfilPage />} />
           </Route>
 
           <Route path="admin" element={<LayoutAdmin />}>
@@ -39,10 +48,9 @@ function App(): JSX.Element {
             <Route path="servicios" element={<ServiciosAdminPage />} />
             <Route path="barberos" element={<BarberosPage />} />
             <Route path="reportes" element={<ReportesPage />} />
-            <Route path="horarios" element={<HorariosPage />} />
           </Route>
 
-          <Route path="*" element={<h1>404</h1>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainProvider>
     </BrowserRouter>

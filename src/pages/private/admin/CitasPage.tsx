@@ -5,8 +5,8 @@ import { estados } from '../../../constants'
 import Cita from '../../../components/containers/admin/citas/Cita'
 import useMain from '../../../hooks/useMain'
 import ModalCita from '../../../components/containers/admin/modales/ModalCita'
-import '../../../styles/CitasPage.css'
 import useGetCitas from '../../../hooks/useGetCitas'
+import '../../../styles/CitasPage.css'
 
 const CitasPage = (): JSX.Element => {
   // UseGetCitas
@@ -84,8 +84,8 @@ const CitasPage = (): JSX.Element => {
             <thead className="CitasPage__centerTop">
               <tr>
                 <th>Nombre</th>
+                <th>Citas</th>
                 <th>Servicios</th>
-                <th>Order</th>
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Estado</th>

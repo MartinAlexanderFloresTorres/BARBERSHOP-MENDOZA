@@ -26,8 +26,6 @@ const DEFAULT_STATE = {
   deleteCart: () => {},
   resetCart: () => {},
   carrito: [],
-  item: 1,
-  changeItem: () => {},
   user: null,
   loadingLogin: false,
   errorLogin: undefined,
@@ -35,7 +33,8 @@ const DEFAULT_STATE = {
   handleCita: () => {},
   isValidForm: false,
   rol: null,
-  loadingRol: false,
+  setRol: () => {},
+  loadingRol: true,
   addServicio: async () => await Promise.resolve(),
   deleteServicio: async () => await Promise.resolve(),
   addServicioEdit: () => {},
@@ -65,8 +64,6 @@ export interface MainContextProps {
   deleteCart: (servicio: ServicioType) => void
   resetCart: () => void
   carrito: ServicioType[]
-  item: number
-  changeItem: (n: number) => void
   user: UserInterface | null | undefined
   loadingLogin: boolean
   errorLogin: Error | undefined
@@ -74,6 +71,7 @@ export interface MainContextProps {
   handleCita: (cita: Function) => void
   isValidForm: boolean
   rol: Roles
+  setRol: (rol: Roles) => void
   loadingRol: boolean
   addServicio: (servicio: object) => Promise<void>
   deleteServicio: (id: string) => Promise<void>

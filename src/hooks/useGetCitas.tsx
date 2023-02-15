@@ -21,6 +21,17 @@ const useGetCitas = (): useGetCitasReturn => {
         id: doc.id,
       })) as []
 
+      // Ordenar por fecha de creacion -> createdAt
+      serviciosFirebase.sort((a: ServicioCitaType, b: ServicioCitaType) => {
+        if (a.createdAt > b.createdAt) {
+          return -1
+        }
+        if (a.createdAt < b.createdAt) {
+          return 1
+        }
+        return 0
+      })
+
       setLoadingCitas(false)
       setCitas(serviciosFirebase)
     })

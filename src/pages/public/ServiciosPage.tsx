@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, Outlet } from 'react-router-dom'
 import Sweetalert from 'sweetalert2'
 import { db } from '../../firebase'
 import { addDoc, collection, getDocs, query } from 'firebase/firestore'
-import ServiciosItem from '../../components/containers/servicios_items/ServiciosItem'
-import InformacionCitaItem from '../../components/containers/servicios_items/InformacionCitaItem'
-import ResumenItem from '../../components/containers/servicios_items/ResumenItem'
 import useMain from '../../hooks/useMain'
 import useAuth from '../../hooks/useAuth'
 import RedesAuth from '../../components/containers/redes/RedesAuth'
@@ -23,10 +20,11 @@ const ServiciosPage = (): JSX.Element => {
   const [loading, setLoading] = useState<boolean>(false)
 
   // useMain
-  const { isValidForm, carrito, resetCart, handleCita, item, changeItem, cita, user, EditServicio } = useMain()
+  const { isValidForm, carrito, resetCart, handleCita, cita, user, EditServicio } = useMain()
 
   // useLocation para obtener la ruta actual
   const location = useLocation()
+  const { pathname } = location
 
   // useNavigate
   const navigate = useNavigate()
@@ -38,10 +36,6 @@ const ServiciosPage = (): JSX.Element => {
   useEffect(() => {
     // Scroll al inicio
     window.scrollTo(0, 0)
-    // Si el carrito esta vacio, cambiar a item 1
-    if (carrito.length === 0) {
-      changeItem(1)
-    }
   }, [])
 
   // Manejar alerta
@@ -58,11 +52,13 @@ const ServiciosPage = (): JSX.Element => {
   // Agregar cita a firebase
   const addCita = async (newcita: ServicioCitaType): Promise<void> => {
     let i = 0
+    // Actualizar stock de servicios
     newcita.servicios.forEach(async (servicio: ServicioType) => {
+      // aumentar cantidad de servicios
       i += 1
       // Actualizar stock
       if (servicio.stock > 0) {
-        const serv = { ...servicio, stock: servicio.stock - 1 }
+        const serv = { ...servicio, stock: servicio.stock - servicio.cantidad }
 
         await EditServicio(serv)
       } else {
@@ -70,6 +66,7 @@ const ServiciosPage = (): JSX.Element => {
       }
     })
 
+    // Si i es mayor a 0, agregar cita
     if (i > 0) {
       // Agregar cita a firebase
       await addDoc(collection(db, 'citas'), newcita)
@@ -85,10 +82,11 @@ const ServiciosPage = (): JSX.Element => {
         estado: 'pendiente',
         ...cita,
         servicios: carrito,
+        createdAt: new Date(),
       }
       // Validar datos
       if (Object.values(cita).includes('')) {
-        return changeItem(2)
+        console.log('Faltan datos')
       }
 
       setLoading(true)
@@ -181,9 +179,7 @@ const ServiciosPage = (): JSX.Element => {
 
           // Si es el ultimo servicio, agregar cita
           if (index === servicios.length - 1) {
-            // Agregar cita
-            console.log('add')
-
+            // Agregar cita a firebase
             await addCita(newcita)
             // Mostrar alerta de cita reservada
             handleAlerta({ mensaje: 'Cita reservada', tipo: 'success' })
@@ -194,7 +190,7 @@ const ServiciosPage = (): JSX.Element => {
             handleCita(() => DEFAULT_STATE_CITA)
 
             // Redireccionar a servicios
-            changeItem(1)
+            navigate('/servicios')
             break
           }
         }
@@ -205,7 +201,7 @@ const ServiciosPage = (): JSX.Element => {
 
       setLoading(false)
     } else {
-      navigate('/login', { state: location })
+      navigate('/auth/login', { state: location })
     }
   }
 
@@ -213,89 +209,78 @@ const ServiciosPage = (): JSX.Element => {
     <section className="serviciosPage container">
       <section className="servicios__grid">
         <div className="servicios__navegacion">
-          <button className={item === 1 ? 'active' : ''} onClick={() => changeItem(1)}>
+          <Link to={'/servicios'} className={pathname === '/servicios' ? 'active' : ''}>
             Servicios
-          </button>
-          <button className={item === 2 ? 'active' : ''} onClick={() => changeItem(2)}>
+          </Link>
+          <Link to={'/servicios/informacion'} className={pathname === '/servicios/informacion' ? 'active' : ''}>
             Información citas
-          </button>
-          <button className={item === 3 ? 'active' : ''} onClick={() => changeItem(3)}>
+          </Link>
+          <Link to={'/servicios/resumen'} className={pathname === '/servicios/resumen' ? 'active' : ''}>
             Resumen {carrito.length > 0 && `(${carrito.length})`}
-          </button>
+          </Link>
         </div>
 
-        {item === 1 ? <ServiciosItem /> : item === 2 ? <InformacionCitaItem /> : <ResumenItem />}
+        <Outlet />
 
         <div className="servicios__botones">
-          {item === 1 ? (
-            <button onClick={() => changeItem(2)} className="btn-primary ml-auto">
+          {pathname === '/servicios' ? (
+            <Link to={'/servicios/informacion'} state={location} className="btn-primary ml-auto">
               <span>Siguiente</span>
               <ChevronRigthtSvg />
-            </button>
-          ) : item === 2 ? (
+            </Link>
+          ) : pathname === '/servicios/informacion' ? (
             <>
-              <button onClick={() => changeItem(1)} className="btn-primary mr-auto">
+              <Link to={'/servicios'} state={location} className="btn-primary mr-auto">
                 <ChevronLeftSvg />
                 <span>Anterior</span>
-              </button>
+              </Link>
               {isValidForm && (
-                <button onClick={() => changeItem(3)} className="btn-primary">
+                <Link to={'/servicios/resumen'} state={location} className="btn-primary">
                   <span>Siguiente</span>
                   <ChevronRigthtSvg />
-                </button>
-              )}
-
-              {!auth && (
-                <section className="servicios__auth">
-                  <button className="btn-black" onClick={() => navigate('/auth/login', { state: location })}>
-                    Debes iniciar sesión
-                  </button>
-
-                  <section className="servicios__authContainer">
-                    <button className="btn-primary" onClick={() => navigate('/auth/login', { state: location })}>
-                      Email <MailSvg />
-                    </button>
-                    <RedesAuth />
-                  </section>
-                </section>
+                </Link>
               )}
             </>
           ) : (
-            <>
-              <button onClick={() => changeItem(2)} className="btn-primary">
-                <ChevronLeftSvg />
-                <span>Anterior</span>
-              </button>
+            pathname === '/servicios/resumen' && (
+              <>
+                <Link to={'/servicios/informacion'} className="btn-primary">
+                  <ChevronLeftSvg />
+                  <span>Anterior</span>
+                </Link>
 
-              {carrito.length > 0 && auth && (
-                <button className="btn-black" onClick={async () => await handleReservar()} disabled={loading}>
-                  {loading ? (
-                    <>
-                      Reservando <LoaderSvg />
-                    </>
-                  ) : (
-                    <>
-                      Reservar <CalendarSvg />
-                    </>
-                  )}
-                </button>
-              )}
-
-              {!auth && (
-                <section className="servicios__auth">
-                  <button className="btn-black" onClick={() => navigate('/auth/login', { state: location })}>
-                    Debes iniciar sesión
+                {carrito.length > 0 && auth && (
+                  <button className="btn-black" onClick={async () => await handleReservar()} disabled={loading}>
+                    {loading ? (
+                      <>
+                        Reservando <LoaderSvg />
+                      </>
+                    ) : (
+                      <>
+                        Reservar <CalendarSvg />
+                      </>
+                    )}
                   </button>
+                )}
+              </>
+            )
+          )}
 
-                  <section className="servicios__authContainer">
-                    <button className="btn-primary" onClick={() => navigate('/auth/login', { state: location })}>
-                      Email <MailSvg />
-                    </button>
-                    <RedesAuth />
-                  </section>
-                </section>
-              )}
-            </>
+          {(pathname === '/servicios/resumen' || pathname === '/servicios/informacion') && !auth && (
+            <section className="servicios__auth">
+              <Link to={'/auth/login'} state={location} className="btn-black">
+                Debes iniciar sesión
+              </Link>
+
+              <section className="servicios__authContainer">
+                <Link to={'/auth/login'} state={location} className="btn-primary">
+                  Email <MailSvg />
+                </Link>
+                <Link to={location.pathname} state={location}>
+                  <RedesAuth />
+                </Link>
+              </section>
+            </section>
           )}
         </div>
       </section>

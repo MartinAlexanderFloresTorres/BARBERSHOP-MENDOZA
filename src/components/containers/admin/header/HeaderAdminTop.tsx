@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { EyeSlashSvg, EyeSvg, UserSvg } from '../../../../assets/svg'
+import { CloseSvg, MenuSvg, UserSvg } from '../../../../assets/svg'
 import useMain from '../../../../hooks/useMain'
-import './headerAdminTop.css'
 import Asidebar from '../asidebar/Asidebar'
+import './headerAdminTop.css'
 
 interface HeaderAdminTopProps {
   handleShowMenu: () => void
@@ -19,11 +19,11 @@ const HeaderAdminTop = ({ handleShowMenu, showMenu }: HeaderAdminTopProps): JSX.
       <header className="HeaderAdminTop">
         <section className="HeaderAdminTop__top">
           <button className="HeaderAdminTop__menu" onClick={handleShowMenu} title="Menu (Esc)">
-            {showMenu ? <EyeSvg /> : <EyeSlashSvg />}
+            {showMenu ? <CloseSvg /> : <MenuSvg />}
           </button>
 
           <section className="HeaderAdminTop__right">
-            <Link to="/auth/profile" title="Perfil">
+            <Link to="/auth/perfil" title="Perfil">
               {user?.photoURL ? (
                 <img
                   className="HeaderAdminTop__photoURL"

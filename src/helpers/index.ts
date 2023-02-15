@@ -78,21 +78,24 @@ export const validarHorarioAndFecha = (_fecha: string, _hora: string): string =>
     return 'El mes no puede ser menor al mes actual'
   }
 
-  if (dia < hoy.getDate()) {
-    return 'La dia no puede ser menor al dia actual'
-  }
+  // si el mes es igual al actual
+  if (mes === hoy.getMonth() + 1) {
+    if (dia < hoy.getDate() + 1) {
+      return 'La dia no puede ser menor al dia actual'
+    }
 
-  // no puede ser domingo
-  if (new Date(year, mes - 1, dia).getDay() === 0) {
-    return 'El dia no puede ser domingo'
-  }
+    // no puede ser domingo
+    if (new Date(year, mes - 1, dia).getDay() === 0) {
+      return 'El dia no puede ser domingo'
+    }
 
-  if (hora < 11 || (hora === 11 && minutos < 30)) {
-    return 'La hora no puede ser menor a 11:30 AM'
-  }
+    if (hora < 8 || (hora === 8 && minutos < 30)) {
+      return 'La hora no puede ser menor a 08:30 AM'
+    }
 
-  if (hora > 19 || (hora === 19 && minutos > 30)) {
-    return 'La hora no puede ser mayor a 7:30 PM'
+    if (hora > 19 || (hora === 19 && minutos > 30)) {
+      return 'La hora no puede ser mayor a 7:30 PM'
+    }
   }
 
   return ''

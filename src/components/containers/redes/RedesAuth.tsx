@@ -1,33 +1,21 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import {
-  useSignInWithFacebook,
-  useSignInWithGithub,
-  useSignInWithGoogle,
-} from 'react-firebase-hooks/auth'
+import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { auth } from '../../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import useAlerta from '../../../hooks/useAlerta'
-import {
-  FacebookSvg,
-  GithubSvg,
-  GoogleSvg,
-  LoaderSvg,
-} from '../../../assets/svg'
+import { FacebookSvg, GithubSvg, GoogleSvg, LoaderSvg } from '../../../assets/svg'
 
 const RedesAuth = (): JSX.Element => {
   // Auth Google
-  const [signInWithGoogle, , loadingGoogle, errorGoogle] =
-    useSignInWithGoogle(auth)
+  const [signInWithGoogle, , loadingGoogle, errorGoogle] = useSignInWithGoogle(auth)
 
   // Auth Facebook
-  const [signInWithFacebook, , loadingFacebook, errorFacebook] =
-    useSignInWithFacebook(auth)
+  const [signInWithFacebook, , loadingFacebook, errorFacebook] = useSignInWithFacebook(auth)
 
   // Auth GitHub
-  const [signInWithGithub, , loadingGithub, errorGithub] =
-    useSignInWithGithub(auth)
+  const [signInWithGithub, , loadingGithub, errorGithub] = useSignInWithGithub(auth)
 
   // useAlerta
   const [alerta, setAlerta] = useAlerta()
@@ -41,18 +29,15 @@ const RedesAuth = (): JSX.Element => {
   // Efecto de redireccionamiento
   onAuthStateChanged(auth, userFirebase => {
     if (userFirebase) {
-      if (state?.pathname) {
+      if (state) {
         navigate(state.pathname)
-      } else {
-        navigate('/')
       }
     }
   })
 
   // Efecto de alerta
   useEffect(() => {
-    const errorCode =
-      errorGoogle?.code ?? errorFacebook?.code ?? errorGithub?.code
+    const errorCode = errorGoogle?.code ?? errorFacebook?.code ?? errorGithub?.code
     if (errorCode) {
       setAlerta(errorCode)
     }
@@ -62,20 +47,13 @@ const RedesAuth = (): JSX.Element => {
     <>
       {alerta && <p className="alerta">{alerta}</p>}
       <section className="form__redes">
-        <button
-          title="Google"
-          onClick={async () => await signInWithGoogle()}
-          disabled={loadingGoogle}
-        >
+        <button title="Google" onClick={async () => await signInWithGoogle()} disabled={loadingGoogle}>
           {loadingGoogle ? <LoaderSvg /> : <GoogleSvg />}
         </button>
-        <button
-          title="Facebook"
-          onClick={async () => await signInWithFacebook()}
-        >
+        <button title="Facebook" onClick={async () => await signInWithFacebook()} disabled={loadingFacebook}>
           {loadingFacebook ? <LoaderSvg /> : <FacebookSvg />}
         </button>
-        <button title="GitHub" onClick={async () => await signInWithGithub()}>
+        <button title="GitHub" onClick={async () => await signInWithGithub()} disabled={loadingGithub}>
           {loadingGithub ? <LoaderSvg /> : <GithubSvg />}
         </button>
       </section>

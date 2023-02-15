@@ -181,6 +181,7 @@ const ModalServicio = ({ setOpenModal }: ModalServicioProps): JSX.Element => {
         await EditServicio({
           ...data,
           id: servicioEdit.id,
+          cantidad: servicioEdit.cantidad,
         })
       } else {
         await addServicio(data)

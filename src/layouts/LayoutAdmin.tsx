@@ -1,6 +1,5 @@
 import { Outlet, useLocation, Navigate } from 'react-router-dom'
 import SnowContainer from '../components/animations/SnowContainer'
-import Asidebar from '../components/containers/admin/asidebar/Asidebar'
 import HeaderAdminTop from '../components/containers/admin/header/HeaderAdminTop'
 import { useState } from 'react'
 import useAuth from '../hooks/useAuth'
@@ -20,34 +19,47 @@ const LayoutAdmin = (): JSX.Element => {
   // useAuth
   const auth = useAuth()
 
-  if (loadingLogin) return <></>
+  if (loadingLogin) {
+    return (
+      <div className="loader__center">
+        <LoaderSvg />
+      </div>
+    )
+  }
 
   // Funcion para mostrar el menu
   const handleShowMenu = (): void => {
     setShowMenu((prev: boolean) => !prev)
   }
 
-  return auth ? (
+  if (!auth) {
+    return <Navigate to="/auth/login" state={location} />
+  }
+
+  if (loadingRol) {
+    return (
+      <div className="loader__center">
+        <LoaderSvg />
+      </div>
+    )
+  }
+
+  return (
     <>
       <section className={'headerAdmin__aside'}>
-        <HeaderAdminTop handleShowMenu={handleShowMenu} showMenu={showMenu} />
-
-        {loadingRol ? (
-          <div className="loader__center">
-            <LoaderSvg />
-          </div>
-        ) : (
-          rol === 'admin' && (
+        {rol === 'admin' ? (
+          <>
+            <HeaderAdminTop handleShowMenu={handleShowMenu} showMenu={showMenu} />
             <main className="headerAdmin__main">
               <Outlet />
             </main>
-          )
+          </>
+        ) : (
+          <Navigate to="/" state={location} />
         )}
       </section>
       <SnowContainer />
     </>
-  ) : (
-    <Navigate to="/auth/login" state={location} />
   )
 }
 
