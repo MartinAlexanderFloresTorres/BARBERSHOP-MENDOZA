@@ -38,7 +38,7 @@ const UsersPage = (): JSX.Element => {
   // Effecto de resultados de busqueda
   useEffect(() => {
     const busquedaMinus = busqueda.toLowerCase().trim()
-    const filtro = (user: UserType): boolean => user.nombre.toLowerCase().trim().includes(busquedaMinus)
+    const filtro = (user: UserType): boolean => user.displayName.toLowerCase().trim().includes(busquedaMinus)
 
     if (busqueda.length > 0) {
       const resultados = users.filter(filtro)
@@ -57,7 +57,7 @@ const UsersPage = (): JSX.Element => {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     const busquedaMinus = busqueda.toLowerCase().trim()
-    const resultados = users.filter(user => user.nombre.toLowerCase().trim().includes(busquedaMinus))
+    const resultados = users.filter(user => user.displayName.toLowerCase().trim().includes(busquedaMinus))
     setResultados(resultados)
   }
 

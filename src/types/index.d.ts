@@ -26,7 +26,7 @@ export type Roles = 'admin' | 'user' | 'barbero' | null
 export interface UserType {
   id: string
   uid: string
-  nombre: string
+  displayName: string
   email: string | null
   phoneNumber: string | null
   photoURL: string

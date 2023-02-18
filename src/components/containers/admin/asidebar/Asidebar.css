@@ -5,11 +5,12 @@
   bottom: 0;
   height: calc(100vh - 76px);
   z-index: 150;
-
   padding: 10px 20px;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.1);
-  border: var(--shadow-border);
+  border-right: var(--shadow-border);
+  border-top: var(--shadow-border);
+  border-bottom: var(--shadow-border);
   box-shadow: var(--shadow-card);
   transition: var(--transition-3s);
 }

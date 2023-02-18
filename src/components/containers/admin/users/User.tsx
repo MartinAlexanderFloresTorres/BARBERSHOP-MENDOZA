@@ -11,7 +11,7 @@ interface UserProps {
 }
 
 const User = ({ user }: UserProps): JSX.Element => {
-  const { uid, nombre, email, phoneNumber, photoURL, rol } = user
+  const { uid, displayName, email, phoneNumber, photoURL, rol } = user
 
   // useMain
   const { setRol, user: usuario } = useMain()
@@ -54,12 +54,12 @@ const User = ({ user }: UserProps): JSX.Element => {
             const target = e.target as HTMLImageElement
             target.src = 'https://via.placeholder.com/150'
           }}
-          alt={nombre}
+          alt={displayName}
         />
       ) : (
         <UserSvg />
       )}
-      <p>{nombre}</p>
+      <p>{displayName}</p>
       <a href={`${email !== null ? 'mailtro:'.concat(email) : phoneNumber ? 'tel:'.concat(phoneNumber) : '#'}`}>{email ?? phoneNumber}</a>
       <select name="rol" onChange={handleRolChange} value={rol?.toString()} id="rol">
         <option value="admin">administrador</option>

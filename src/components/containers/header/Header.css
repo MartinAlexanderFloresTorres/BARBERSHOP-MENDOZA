@@ -1,11 +1,23 @@
-.header {
+.header,
+.header__sub {
   position: relative;
   z-index: 120;
   padding: 10px 20px;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.1);
-  border: var(--shadow-border);
+  border-bottom: var(--shadow-border);
   box-shadow: var(--shadow-card);
+}
+.header__sub {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: none;
+}
+.header__sub.visible {
+  display: block;
 }
 .header__top {
   display: flex;
@@ -128,5 +140,16 @@
   }
   .header__menu {
     display: block;
+  }
+}
+@media (max-width: 500px) {
+  .header__sub .header__top {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+  }
+  .header__sub .header__top a {
+    width: 100%;
+    justify-content: center;
   }
 }

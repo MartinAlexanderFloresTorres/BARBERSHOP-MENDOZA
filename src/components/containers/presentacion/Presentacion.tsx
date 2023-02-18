@@ -24,13 +24,13 @@ const Presentacion = (): JSX.Element => {
         <div className="container"></div>
 
         <div className="redes__redes">
-          <a href="#" className="title" title="Facebook">
+          <a href={import.meta.env.VITE_FACEBOOK} className="title" title="Facebook">
             <FacebookSvg />
           </a>
-          <a href="#" className="title" title="Instagram">
+          <a href={import.meta.env.VITE_INSTAGRAM} className="title" title="Instagram">
             <InstagramSvg />
           </a>
-          <a href="#" className="title" title="WhatsApp">
+          <a href={import.meta.env.VITE_WHATSAPP} className="title" title="WhatsApp">
             <WhatsAppSvg />
           </a>
         </div>
