@@ -223,12 +223,14 @@ const ServiciosPage = (): JSX.Element => {
         <Outlet />
 
         <div className="servicios__botones">
-          {pathname === '/servicios' ? (
+          {pathname === '/servicios' && carrito.length > 0 && (
             <Link to={'/servicios/informacion'} state={location} className="btn-primary ml-auto">
               <span>Siguiente</span>
               <ChevronRigthtSvg />
             </Link>
-          ) : pathname === '/servicios/informacion' ? (
+          )}
+
+          {pathname === '/servicios/informacion' && (
             <>
               <Link to={'/servicios'} state={location} className="btn-primary mr-auto">
                 <ChevronLeftSvg />
@@ -241,29 +243,29 @@ const ServiciosPage = (): JSX.Element => {
                 </Link>
               )}
             </>
-          ) : (
-            pathname === '/servicios/resumen' && (
-              <>
-                <Link to={'/servicios/informacion'} className="btn-primary">
-                  <ChevronLeftSvg />
-                  <span>Anterior</span>
-                </Link>
+          )}
 
-                {carrito.length > 0 && auth && (
-                  <button className="btn-black" onClick={async () => await handleReservar()} disabled={loading}>
-                    {loading ? (
-                      <>
-                        Reservando <LoaderSvg />
-                      </>
-                    ) : (
-                      <>
-                        Reservar <CalendarSvg />
-                      </>
-                    )}
-                  </button>
-                )}
-              </>
-            )
+          {pathname === '/servicios/resumen' && (
+            <>
+              <Link to={'/servicios/informacion'} className="btn-primary">
+                <ChevronLeftSvg />
+                <span>Anterior</span>
+              </Link>
+
+              {carrito.length > 0 && auth && (
+                <button className="btn-black" onClick={async () => await handleReservar()} disabled={loading}>
+                  {loading ? (
+                    <>
+                      Reservando <LoaderSvg />
+                    </>
+                  ) : (
+                    <>
+                      Reservar <CalendarSvg />
+                    </>
+                  )}
+                </button>
+              )}
+            </>
           )}
 
           {(pathname === '/servicios/resumen' || pathname === '/servicios/informacion') && !auth && (

@@ -191,9 +191,7 @@ const RegisterPage = (): JSX.Element => {
         </div>
 
         <div className="form__group">
-          <label className="form__label" htmlFor="file">
-            Foto
-          </label>
+          Foto
           {campos.file ? (
             <div className="form__file">
               <img src={URL.createObjectURL(campos.file)} alt="Foto" />
@@ -202,10 +200,12 @@ const RegisterPage = (): JSX.Element => {
               </button>
             </div>
           ) : (
-            <div>
-              Seleccione una foto
-              <input type="file" name="file" onChange={handleChange} id="file" placeholder="Nombre" />
-            </div>
+            <label className="form__label form__label--margin" htmlFor="file">
+              <div className="form__file">
+                <span>Seleccione una foto</span>
+                <input type="file" accept="image/jpeg, image/png, image/jpg, image/gif, image/webp, image/svg+xml" name="file" onChange={handleChange} id="file" placeholder="Nombre" />
+              </div>
+            </label>
           )}
         </div>
 
