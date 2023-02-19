@@ -21,7 +21,7 @@ const RedesAuth = (): JSX.Element => {
   const [alerta, setAlerta] = useAlerta()
 
   // useLocation
-  const { state } = useLocation()
+  const { state, pathname } = useLocation()
 
   // useNavigate
   const navigate = useNavigate()
@@ -31,7 +31,7 @@ const RedesAuth = (): JSX.Element => {
     if (userFirebase) {
       if (state) {
         navigate(state.pathname)
-      }
+      } else if (pathname !== '/auth/login') navigate('/')
     }
   })
 
