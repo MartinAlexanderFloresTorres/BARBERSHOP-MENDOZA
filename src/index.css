@@ -114,6 +114,10 @@ svg {
 }
 
 /*=============== utilizades ===============*/
+.swal2-popup {
+  background: var(--fondo) !important;
+  color: var(--white) !important;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
