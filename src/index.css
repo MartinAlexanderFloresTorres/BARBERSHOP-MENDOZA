@@ -117,6 +117,7 @@ svg {
 .swal2-popup {
   background: var(--fondo) !important;
   color: var(--white) !important;
+  border: var(--shadow-border) !important;
 }
 .mx-auto {
   margin-left: auto;
