@@ -31,7 +31,7 @@ const RedesAuth = (): JSX.Element => {
     if (userFirebase) {
       if (state) {
         navigate(state.pathname)
-      } else if (pathname === '/auth/login') navigate('/')
+      } else if (pathname !== '/auth/login') navigate('/')
     }
   })
 
